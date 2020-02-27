@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pcodigo: 1
+  pdescripcion: MyString
+  pdetalle: MyString
+  ppicture: 
+  pstock: 1
+  pstockcatalogo: 1
+  pvalor: 1
+  pvactivacioncatalogo: false
+  category: one
+  brand: one
+
+two:
+  pcodigo: 1
+  pdescripcion: MyString
+  pdetalle: MyString
+  ppicture: 
+  pstock: 1
+  pstockcatalogo: 1
+  pvalor: 1
+  pvactivacioncatalogo: false
+  category: two
+  brand: two

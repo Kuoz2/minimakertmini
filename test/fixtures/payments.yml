@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pagomonto: 1
+  pagovuelto: 1
+  half_payment: one
+  sales: one
+
+two:
+  pagomonto: 1
+  pagovuelto: 1
+  half_payment: two
+  sales: two

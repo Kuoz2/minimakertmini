@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dvcantidad: 1
+  dvprecio: 1
+  voucher: one
+  product: one
+
+two:
+  dvcantidad: 1
+  dvprecio: 1
+  voucher: two
+  product: two
