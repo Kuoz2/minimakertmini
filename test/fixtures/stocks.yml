@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pstock: 1
+  pstockcatalogo: 1
+
+two:
+  pstock: 1
+  pstockcatalogo: 1
