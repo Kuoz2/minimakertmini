@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_210051) do
+ActiveRecord::Schema.define(version: 2020_05_19_010159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_210051) do
     t.string "pdescripcion"
     t.string "pdetalle"
     t.binary "ppicture"
-    t.integer "pstock"
-    t.integer "pstockcatalogo"
     t.integer "pvalor"
     t.boolean "pvactivacioncatalogo"
     t.bigint "category_id", null: false
@@ -56,8 +54,10 @@ ActiveRecord::Schema.define(version: 2020_02_25_210051) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "pactivado"
+    t.bigint "stock_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["stock_id"], name: "index_products_on_stock_id"
   end
 
   create_table "sales", force: :cascade do |t|
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 2020_02_25_210051) do
     t.index ["voucher_id"], name: "index_sales_on_voucher_id"
   end
 
+  create_table "stocks", force: :cascade do |t|
+    t.integer "pstock"
+    t.integer "pstockcatalogo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "stock_lost"
+    t.integer "stock_security"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -78,6 +87,12 @@ ActiveRecord::Schema.define(version: 2020_02_25_210051) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "jti"
+    t.string "name_user"
+    t.string "m_lastname"
+    t.string "f_lastname"
+    t.integer "p_contacts"
+    t.string "address"
+    t.string "rut_user"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["jti"], name: "index_users_on_jti", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

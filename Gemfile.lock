@@ -174,7 +174,6 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
-  devise
   devise-jwt
   dry-configurable (= 0.9.0)
   pg (>= 0.18, < 2.0)

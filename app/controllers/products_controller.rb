@@ -1,22 +1,28 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
+  before_action :calcular_producto_stock, only: [:product_total_valor]
 
   # GET /products
   def index
     @products = Product.all
 
-    render json: @products
+    render json: @products, :include => [:stock]
   end
 
   # GET /products/1
   def show
-    render json: @product
+    render json: @product, include:[:stock]
+  end
+
+  #Valor de todos los productos ingresados este mes.
+  def product_total_valor
+    render json: @productos_calculados
   end
 
   # POST /products
   def create
-    @product = Product.new(product_params)
-    @product.ppicture = Base64.decode64(@product.ppicture)
+    @stock = Stock.new(params.permit![:stock_id])
+    @product = @stock.products.new(product_params)
     if @product.save
       render json: @product, status: :created, location: @product
     else
@@ -39,6 +45,12 @@ class ProductsController < ApplicationController
   end
 
   private
+
+    #Calcular el total de los productos.
+  def calcular_producto_stock
+   @productos_calculados = Product.all.map { |p| p.pvalor * p.pstock}
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
@@ -56,7 +68,9 @@ class ProductsController < ApplicationController
                                       :category_id ,
                                       :brand_id ,
                                       :pvactivacioncatalogo,
-                                      :ppicture)
+                                      :ppicture,
+                                      {stock_id: [:pstock,:pstockcatalogo,:stock_lost,:stock_security]}
+      )
 
     end
 

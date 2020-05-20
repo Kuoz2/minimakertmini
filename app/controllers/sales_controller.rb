@@ -13,6 +13,7 @@ class SalesController < ApplicationController
     render json: @sale
   end
 
+
   def create
     @paymet = Payment.new(params.permit![:payment_id ])
     @sale = @paymet.sales.new(sales_params)
@@ -30,7 +31,7 @@ class SalesController < ApplicationController
 
   def sales_params
     params.require(:sale).permit(
-        {:payment_id =>[:pagomonto,:pagovuelto,{:half_payment_id => [:id,:mpnombre, :created_at, :updated_at]}]},
+        {:payment_id =>[:pagomonto,:pagovuelto,:half_payment_id ]},
         :voucher_id)
   end
 end

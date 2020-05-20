@@ -5,7 +5,7 @@ class VouchersController < ApplicationController
   def index
     @vouchers = Voucher.all
 
-    render json: @vouchers, :include => [:voucher_details => {:include => :product}]
+    render json: @vouchers, :include => [:voucher_details]
   end
 
   # GET /vouchers/1
@@ -21,6 +21,11 @@ class VouchersController < ApplicationController
     else
       render json: @voucher.errors, status: :unprocessable_entity
     end
+  end
+
+  def showlast
+    @voucher_last = Voucher.last
+    render json: @voucher_last
   end
 
   # PATCH/PUT /vouchers/1
