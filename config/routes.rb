@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resource :sales
   end
 
-
+  resource :stocks do
+    resource :products
+  end
 
   resources :half_payments
   resources :voucher_details do
@@ -33,11 +35,8 @@ Rails.application.routes.draw do
     collection do
       get 'product_total_valor'
     end
-    resource :stocks
   end
-  resources :stocks do
-    resource :products
-  end
+  resources :stocks
   resources :sales
   resources :categories
   resources :brands

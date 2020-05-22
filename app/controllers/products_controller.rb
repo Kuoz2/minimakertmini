@@ -62,14 +62,13 @@ class ProductsController < ApplicationController
                                       :pactivado,
                                       :pdescripcion,
                                       :pdetalle,
-                                      :pstock,
-                                      :pstockcatalogo,
                                       :pvalor,
                                       :category_id ,
                                       :brand_id ,
                                       :pvactivacioncatalogo,
                                       :ppicture,
-                                      {stock_id: [:pstock,:pstockcatalogo,:stock_lost,:stock_security]}
+                                      {:stock_id => [:pstock,:pstockcatalogo,:stock_lost,:stock_security]}
+
       )
 
     end
