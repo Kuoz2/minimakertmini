@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_010159) do
+ActiveRecord::Schema.define(version: 2020_05_22_225656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_010159) do
   add_foreign_key "payments", "half_payments"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
+  add_foreign_key "products", "stocks"
   add_foreign_key "voucher_details", "products"
   add_foreign_key "voucher_details", "vouchers"
 end

@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
-    render json: @product, include:[:stock]
+    render json: @product, :include=>[:stock]
   end
 
   #Valor de todos los productos ingresados este mes.
@@ -22,16 +22,18 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @stock = Stock.new(params.permit![:stock_id])
+
     @product = @stock.products.new(product_params)
     if @product.save
       render json: @product, status: :created, location: @product
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render json: @product, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /products/1
   def update
+
     if @product.update(product_params)
       render json: @product
     else
@@ -65,9 +67,10 @@ class ProductsController < ApplicationController
                                       :pvalor,
                                       :category_id ,
                                       :brand_id ,
+                                      {:stock_id => [:pstock,:pstockcatalogo,:stock_lost,:stock_security]},
+
                                       :pvactivacioncatalogo,
                                       :ppicture,
-                                      {:stock_id => [:pstock,:pstockcatalogo,:stock_lost,:stock_security]}
 
       )
 
