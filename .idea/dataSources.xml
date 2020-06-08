@@ -25,5 +25,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/prijectoeccommerspostsale_development2</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - postgres@localhost" uuid="204f0654-1a08-45d4-9cf4-11c28e02f000">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+    </data-source>
   </component>
 </project>

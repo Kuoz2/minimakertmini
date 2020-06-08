@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_22_225656) do
+ActiveRecord::Schema.define(version: 2020_06_08_173357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(version: 2020_05_22_225656) do
     t.index ["stock_id"], name: "index_products_on_stock_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string "name_role"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sales", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -93,9 +99,11 @@ ActiveRecord::Schema.define(version: 2020_05_22_225656) do
     t.integer "p_contacts"
     t.string "address"
     t.string "rut_user"
+    t.bigint "role_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["jti"], name: "index_users_on_jti", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
   create_table "voucher_details", force: :cascade do |t|
@@ -120,6 +128,7 @@ ActiveRecord::Schema.define(version: 2020_05_22_225656) do
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "stocks"
+  add_foreign_key "users", "roles"
   add_foreign_key "voucher_details", "products"
   add_foreign_key "voucher_details", "vouchers"
 end
