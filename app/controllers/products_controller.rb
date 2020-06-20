@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
   before_action :calcular_producto_stock, only: [:product_total_valor]
+  before_action :buscando_las_perdidas,only: [:productos_perdidas]
 
   # GET /products
   def index
@@ -14,7 +15,12 @@ class ProductsController < ApplicationController
     render json: @product, :include=>[:stock]
   end
 
-  #Valor de todos los productos ingresados este mes.
+  #Mostrar los productos y los stock perdidos.
+  def productos_perdidas
+    render json: @datos_producto
+  end
+
+  #Ganancia total de los productos
   def product_total_valor
     render json: @productos_calculados
   end
@@ -48,9 +54,15 @@ class ProductsController < ApplicationController
 
   private
 
+
+    #Buscar el stock y sus perdidas.
+  def buscando_las_perdidas
+    @datos_producto = Product.all.map {|d| {'codigo'=> d.pcodigo, 'detalle'=>d.pdetalle,'perdida'=>d.stock.stock_lost} }
+  end
+
     #Calcular el total de los productos.
   def calcular_producto_stock
-   @productos_calculados = Product.all.map { |p| p.pvalor * p.pstock}
+   @productos_calculados = Product.all.map { |p| p.pvalor * p.stock.pstock}
   end
 
     # Use callbacks to share common setup or constraints between actions.

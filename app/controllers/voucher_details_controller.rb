@@ -11,6 +11,8 @@ class VoucherDetailsController < ApplicationController
     render json: @voucher_details, :include => [:voucher, :product]
   end
 
+
+
   def show_date
     render json: @voucher_date, :include => [:voucher, :product]
   end

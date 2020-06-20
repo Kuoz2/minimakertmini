@@ -6,5 +6,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
-  belongs_to :role
+#before_save :encryptar_role
+#private
+ # def encryptar_role
+  #  l = Digest::SHA2.new(256)
+   # l<<self.role
+    #self.role = l.hexdigest
+  #end
 end

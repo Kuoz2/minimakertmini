@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :providers
   devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resource :stocks do
+
     resource :products
   end
 
@@ -34,9 +36,15 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get 'product_total_valor'
+      get 'productos_perdidas'
     end
   end
-  resources :stocks
+  resources :stocks do
+    collection do
+      get 'mostrat_todos'
+      get 'mostrar_stock_de_perdidas'
+    end
+  end
   resources :sales
   resources :categories
   resources :brands

@@ -1,11 +1,9 @@
 class Product < ApplicationRecord
   #RELACION ENTRE EL PRODUCTO Y EL STOCK
   belongs_to :stock, optional: true, class_name: "Stock", inverse_of: :products, :foreign_key => "stock_id"
-
-
-
-
+  #Relacion entre productos y categorias
   belongs_to :category, foreign_key: "category_id", class_name: "Category"
+  #Relacion entre productos y marca
   belongs_to :brand, class_name: 'Brand' ,foreign_key: 'brand_id', optional:true
 
   has_many :voucher_details, inverse_of: :product

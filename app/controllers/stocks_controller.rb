@@ -1,11 +1,21 @@
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :update, :destroy]
+  before_action :stock_perdida_este_mes, only: [:mostrar_stock_de_perdidas]
 
   # GET /stocks
   def index
     @stocks = Stock.all
 
     render json: @stocks
+  end
+
+  def mostrat_todos
+    @list_stock = Stock.all
+    render json: @list_stock
+  end
+
+  def mostrar_stock_de_perdidas
+    render :json =>  @perdida_stock_anterior
   end
 
   # GET /stocks/1
@@ -39,10 +49,19 @@ class StocksController < ApplicationController
   end
 
   private
+
+    #Mostrar solamente las perdidas de este mes.
+    def stock_perdida_este_mes
+      #Fecha actual en la que estamos.
+          fecha = Time.zone.today.month
+      nueva_fecha = fecha
+
+      @perdida_stock_anterior = Stock.all.filter{|sa| sa.created_at.to_s[6,1] == nueva_fecha.to_s}.map(&:stock_lost).reduce(:+)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
       @stock = Stock.find(params[:id])
-
     end
 
     # Only allow a trusted parameter "white list" through.
