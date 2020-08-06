@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
     post '/logi', to: 'users/sessions#create'
+    get 'mostrar_usuarios',to: 'users/registrations#mostrar_usuarios'
   end
 
   resources :payments do
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
     resource :products
   end
 
+
+
   resources :half_payments
   resources :voucher_details do
     collection do
@@ -25,24 +28,30 @@ Rails.application.routes.draw do
       get 'show_cantidad'
       get 'show_after_month'
       get 'producto_max_vend'
+      get 'las_ganancias_totales_meses'
     end
     resource :vouchers
   end
   resources :vouchers , shallow: true do
     collection do
           get 'showlast'
-      end
+          get 'mostrar_ganancias_por_mes'
+    end
   end
   resources :products do
     collection do
       get 'product_total_valor'
       get 'productos_perdidas'
+      get 'agregando_quantity'
     end
   end
   resources :stocks do
     collection do
+      get 'buscar_las_fechas_perdidas'
+      get 'stock_products'
       get 'mostrat_todos'
       get 'mostrar_stock_de_perdidas'
+      get 'p_mes_anterior'
     end
   end
   resources :sales

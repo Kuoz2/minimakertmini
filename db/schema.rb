@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_050722) do
+ActiveRecord::Schema.define(version: 2020_08_05_225022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,27 +55,26 @@ ActiveRecord::Schema.define(version: 2020_06_17_050722) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "pactivado"
     t.bigint "stock_id"
+    t.bigint "provider_id"
+    t.integer "precio_provider"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["provider_id"], name: "index_products_on_provider_id"
     t.index ["stock_id"], name: "index_products_on_stock_id"
   end
 
   create_table "providers", force: :cascade do |t|
     t.string "nombre_provider"
-    t.string "nip_provider"
+    t.string "rut_provider"
+    t.string "web_provider"
+    t.string "detalle_provider"
     t.string "direccion_provider"
-    t.string "ciudad_provider"
     t.string "comuna_provider"
     t.integer "telefono_provider"
     t.integer "telefono_persona_provider"
     t.string "correo_provider"
-    t.string "formadepago_provider"
-    t.integer "plazo_provider"
     t.integer "contabilidad_provider"
-    t.integer "gasto_provider"
-    t.string "concepto_gasto_provider"
     t.string "banco_provider"
-    t.integer "codigo_provider"
     t.binary "factura_provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -97,6 +96,8 @@ ActiveRecord::Schema.define(version: 2020_06_17_050722) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "stock_lost"
     t.integer "stock_security"
+    t.bigint "provider_id"
+    t.index ["provider_id"], name: "index_stocks_on_provider_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -141,7 +142,9 @@ ActiveRecord::Schema.define(version: 2020_06_17_050722) do
   add_foreign_key "payments", "half_payments"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
+  add_foreign_key "products", "providers"
   add_foreign_key "products", "stocks"
+  add_foreign_key "stocks", "providers"
   add_foreign_key "voucher_details", "products"
   add_foreign_key "voucher_details", "vouchers"
 end

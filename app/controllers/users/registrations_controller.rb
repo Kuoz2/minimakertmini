@@ -17,6 +17,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.save!
     render json: resource, status: :created
   end
+
+   def mostrar_usuarios
+     @user = User.all.as_json(:only=>[:email,:name_user,:m_lastname,:role])
+     render json: @user
+
+   end
   # GET /resource/edit
   # def edit
   #   super

@@ -6,8 +6,13 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.all
+    render json: @products, :include => [:stock, :category]
+  end
 
-    render json: @products, :include => [:stock]
+  def agregando_quantity
+    @producto_quantity = Product.all.as_json
+    @roductos_quantity[].push({:quantity => 1})
+    render :json => @producto_quantity
   end
 
   # GET /products/1
@@ -57,7 +62,7 @@ class ProductsController < ApplicationController
 
     #Buscar el stock y sus perdidas.
   def buscando_las_perdidas
-    @datos_producto = Product.all.map {|d| {'codigo'=> d.pcodigo, 'detalle'=>d.pdetalle,'perdida'=>d.stock.stock_lost} }
+    @datos_producto = Product.all.map {|d| {'codigo'=> d.pcodigo, 'detalle'=>d.pdetalle,'perdida'=>d.stock.stock_lost, 'idproducto'=>d.id,'idstock'=>d.stock.id} }
   end
 
     #Calcular el total de los productos.
@@ -80,9 +85,10 @@ class ProductsController < ApplicationController
                                       :category_id ,
                                       :brand_id ,
                                       {:stock_id => [:pstock,:pstockcatalogo,:stock_lost,:stock_security]},
-
                                       :pvactivacioncatalogo,
                                       :ppicture,
+                                      :provider_id,
+                                      :precio_provider
 
       )
 

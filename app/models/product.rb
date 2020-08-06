@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   belongs_to :category, foreign_key: "category_id", class_name: "Category"
   #Relacion entre productos y marca
   belongs_to :brand, class_name: 'Brand' ,foreign_key: 'brand_id', optional:true
+  #Relacion entre el proveedor y el producto.
+  belongs_to :payment, class_name: 'Provider', foreign_key: 'provider_id', optional: true
 
   has_many :voucher_details, inverse_of: :product
 
