@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
     post '/logi', to: 'users/sessions#create'
-    get '/mostrar_usuarios',to: 'users/registrations#mostrar_usuarios'
+    get '/mostrar_usuarios',to: 'users/registrations#mostrar_usuarios', defaults: {format: :json}
   end
 
   resources :payments do
