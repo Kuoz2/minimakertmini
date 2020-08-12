@@ -19,9 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
    def mostrar_usuarios
-     @user = User.all.as_json(:only=>[:email,:name_user,:m_lastname,:role])
-     render json: @user
-
+     @user = User.all.where(role: "administrador").exists?
+     render json: @user.as_json
    end
   # GET /resource/edit
   # def edit
@@ -47,7 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_sign_up_params
