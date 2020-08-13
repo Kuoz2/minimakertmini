@@ -19,7 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
    def mostrar_usuarios
-     render json:  {prueba: 'hola'}
+     @user = User.all.where(role: "administrador").present?
+     render json: [{resultado: @user}]
    end
   # GET /resource/edit
   # def edit
