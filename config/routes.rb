@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :providers
-  devise_for :users, controller: {registrations: ['users/autentications', 'users/autentiactions/mostrar_usuarios'], sessions: 'users/sessions'}
+  devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
     post '/logi', to: 'users/sessions#create'
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
           get 'mostrar_ganancias_por_mes'
     end
   end
-  resources :products do
+  resources :products, shallow: true do
     collection do
       get 'product_total_valor'
       get 'productos_perdidas'
