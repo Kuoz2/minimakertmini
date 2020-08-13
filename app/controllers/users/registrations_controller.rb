@@ -19,15 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
    def mostrar_usuarios
-     user = User.all.where(role: "administrador").blank?
-
-     if user
-       render json: { resultado: true}
-
-     else
             render json: {resultado: false}
-
-     end
    end
   # GET /resource/edit
   # def edit
