@@ -43,7 +43,7 @@ Rails.application.routes.draw do
       get 'product_total_valor'
       get 'productos_perdidas'
       get 'agregando_quantity'
-      get 'mostrar_usuarios'
+      get 'mostrar_usuarios', defaults:{format: :json}
 
     end
   end
