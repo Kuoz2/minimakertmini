@@ -19,8 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
    def mostrar_usuarios
-     @user = User.all
-     render json:  @user
+     render json:  {prueba: 'hola'}
    end
   # GET /resource/edit
   # def edit
