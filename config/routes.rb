@@ -17,19 +17,23 @@ Rails.application.routes.draw do
     resource :products
   end
 
-  resources :voucher_details
+  resources :voucher_details do
+    collection do
+
+        get 'show_date'
+        get 'show_cantidad'
+        get 'show_best_sale'
+        get 'show_cantidad'
+        get 'show_after_month'
+        get 'producto_max_vend'
+        get 'las_ganancias_totales_meses'
+
+    end
+  end
 
   resources :half_payments
   resources :voucher_details do
-    collection do
-      get 'show_date'
-      get 'show_cantidad'
-      get 'show_best_sale'
-      get 'show_cantidad'
-      get 'show_after_month'
-      get 'producto_max_vend'
-      get 'las_ganancias_totales_meses'
-    end
+
     resource :vouchers
   end
   resources :vouchers , shallow: true do
