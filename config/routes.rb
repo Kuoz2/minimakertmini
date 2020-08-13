@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :providers
-  devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
+  devise_for :users, controller: {registrations: ['users/autentications', 'users/autentiactions/mostrar_usuarios'], sessions: 'users/sessions'}
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
     post '/logi', to: 'users/sessions#create'
