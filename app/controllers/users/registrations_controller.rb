@@ -20,7 +20,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    def mostrar_usuarios
      @user = User.exists?(role: "administrador")
-     render json: [{resultado: @user}]
+
+     if !@user
+       render json: { resultado: true}
+
+     else
+            render json: {resultado: false}
+
+     end
    end
   # GET /resource/edit
   # def edit
