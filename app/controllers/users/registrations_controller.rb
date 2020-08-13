@@ -19,9 +19,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
    def mostrar_usuarios
-     @user = User.exists?(role: "administrador")
+     user = User.all.where(role: "administrador").blank?
 
-     if !@user
+     if user
        render json: { resultado: true}
 
      else
