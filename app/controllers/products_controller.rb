@@ -57,6 +57,8 @@ class ProductsController < ApplicationController
     @product.destroy
   end
 
+
+
   private
 
 
