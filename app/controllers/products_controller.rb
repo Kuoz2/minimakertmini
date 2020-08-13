@@ -42,10 +42,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def mostrar_usuarios
-    @user = User.all.where(role: "administrador").exists?
-    render json: [{resultado: @user}]
-  end
 
   # PATCH/PUT /products/1
   def update
