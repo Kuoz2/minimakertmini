@@ -25,10 +25,11 @@ module Prijectoeccommerspostsale
     config.load_defaults 6.0
     config.api_only = true
     config.angular_rails_csrf_domain = :all
+    config.action_controller.include_all_helpers = true
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3000/', 'http://localhost:4200'
+        origins 'http://localhost:3000/', 'http://localhost:4200','https://marketmini.herokuapp.com', 'https://proyectofallido.herokuapp.com'
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
