@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_225022) do
+ActiveRecord::Schema.define(version: 2020_10_03_233240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2020_08_05_225022) do
     t.string "cnombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "decreases", force: :cascade do |t|
+    t.string "mproducto"
+    t.integer "mcodigo"
+    t.integer "munidades"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "product_type"
+    t.bigint "product_id"
+    t.index ["product_type", "product_id"], name: "index_decreases_on_product_type_and_product_id"
   end
 
   create_table "half_payments", force: :cascade do |t|

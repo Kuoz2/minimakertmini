@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  resources :decreases
   resources :providers
   devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
   devise_scope :user do

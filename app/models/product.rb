@@ -8,6 +8,8 @@ class Product < ApplicationRecord
   #Relacion entre el proveedor y el producto.
   belongs_to :payment, class_name: 'Provider', foreign_key: 'provider_id', optional: true
 
+  has_many :decreases
+
   has_many :voucher_details, inverse_of: :product
 
   validates_presence_of :category_id, :brand, :stock
