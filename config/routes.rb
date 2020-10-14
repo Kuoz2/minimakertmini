@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :taxes
   resources :decreases
   resources :providers
   devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
     post '/regi', to: 'users/registrations#create'
     post '/logi', to: 'users/sessions#create'
     get '/mostrar_usuarios',to: 'users/registrations#mostrar_usuarios', defaults: {format: :json}, as: 'mostrar_usuarios'
+    get '/mostrar_los_usuarios', to:'users/registrations#mostrar_los_usuarios', defaults:{format: :json}, as: 'mostrar_los_usuarios'
   end
 
   resources :payments do
@@ -61,6 +63,5 @@ Rails.application.routes.draw do
   end
   resources :sales
   resources :categories
-  resources :brands
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -5,7 +5,7 @@ class DecreasesController < ApplicationController
   def index
     @decreases = Decrease.all
 
-    render json: @decreases
+    render json: @decreases, :include => [:product]
   end
 
   # GET /decreases/1
@@ -15,6 +15,7 @@ class DecreasesController < ApplicationController
 
   # POST /decreases
   def create
+
     @decrease = Decrease.new(decrease_params)
 
     if @decrease.save
@@ -46,6 +47,6 @@ class DecreasesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def decrease_params
-      params.require(:decrease).permit(:mproducto, :mcodigo, :munidades, :product_id)
+      params.require(:decrease).permit(:categoriasMrm, :unidadesMrm, :causaMrm, :hora, :product_id, :user_id )
     end
 end

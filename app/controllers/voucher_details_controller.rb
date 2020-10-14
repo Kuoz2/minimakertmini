@@ -148,7 +148,7 @@ class VoucherDetailsController < ApplicationController
   def voucher_detail_params
     params.require(:voucher_detail).permit(:dvcantidad,
                                            :dvprecio,
-                                           {:voucher => [:vtotal,:vnumerodebusqueda]},
+                                           {:voucher => [:vtotal,:vnumerodebusqueda, :vhora, :vdia]},
                                            :product_id)
   end
 end

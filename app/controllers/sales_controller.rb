@@ -32,6 +32,6 @@ class SalesController < ApplicationController
   def sales_params
     params.require(:sale).permit(
         {:payment_id =>[:pagomonto,:pagovuelto,:half_payment_id ]},
-        :voucher_id)
+        :voucher_id, :user_id)
   end
 end

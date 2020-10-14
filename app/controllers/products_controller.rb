@@ -86,12 +86,12 @@ class ProductsController < ApplicationController
                                       :pdetalle,
                                       :pvalor,
                                       :category_id ,
-                                      :brand_id ,
                                       {:stock_id => [:pstock,:pstockcatalogo,:stock_lost,:stock_security]},
                                       :pvactivacioncatalogo,
                                       :ppicture,
                                       :provider_id,
-                                      :precio_provider
+                                      :precio_provider,
+                                      :tax_id
 
       )
 

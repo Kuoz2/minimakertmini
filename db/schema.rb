@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_03_233240) do
+ActiveRecord::Schema.define(version: 2020_10_12_005933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,14 +28,17 @@ ActiveRecord::Schema.define(version: 2020_10_03_233240) do
   end
 
   create_table "decreases", force: :cascade do |t|
-    t.string "mproducto"
-    t.integer "mcodigo"
-    t.integer "munidades"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "product_type"
     t.bigint "product_id"
+    t.string "categoriasMrm"
+    t.integer "unidadesMrm"
+    t.string "causaMrm"
+    t.string "hora"
+    t.bigint "user_id"
     t.index ["product_type", "product_id"], name: "index_decreases_on_product_type_and_product_id"
+    t.index ["user_id"], name: "index_decreases_on_user_id"
   end
 
   create_table "half_payments", force: :cascade do |t|
@@ -54,24 +57,25 @@ ActiveRecord::Schema.define(version: 2020_10_03_233240) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "pcodigo"
+    t.bigint "pcodigo", default: 0, null: false
     t.string "pdescripcion"
     t.string "pdetalle"
     t.binary "ppicture"
     t.integer "pvalor"
     t.boolean "pvactivacioncatalogo"
     t.bigint "category_id", null: false
-    t.bigint "brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "pactivado"
     t.bigint "stock_id"
     t.bigint "provider_id"
     t.integer "precio_provider"
-    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.bigint "tax_id"
+    t.bigint "piva"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
     t.index ["stock_id"], name: "index_products_on_stock_id"
+    t.index ["tax_id"], name: "index_products_on_tax_id"
   end
 
   create_table "providers", force: :cascade do |t|
@@ -96,7 +100,9 @@ ActiveRecord::Schema.define(version: 2020_10_03_233240) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "voucher_id"
     t.bigint "payment_id"
+    t.bigint "user_id"
     t.index ["payment_id"], name: "index_sales_on_payment_id"
+    t.index ["user_id"], name: "index_sales_on_user_id"
     t.index ["voucher_id"], name: "index_sales_on_voucher_id"
   end
 
@@ -109,6 +115,13 @@ ActiveRecord::Schema.define(version: 2020_10_03_233240) do
     t.integer "stock_security"
     t.bigint "provider_id"
     t.index ["provider_id"], name: "index_stocks_on_provider_id"
+  end
+
+  create_table "taxes", force: :cascade do |t|
+    t.string "tnombre"
+    t.decimal "timpuesto", precision: 5, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -148,14 +161,19 @@ ActiveRecord::Schema.define(version: 2020_10_03_233240) do
     t.integer "vtotal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "vhora"
+    t.string "vdia"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_vouchers_on_user_id"
   end
 
+  add_foreign_key "decreases", "users"
   add_foreign_key "payments", "half_payments"
-  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "providers"
   add_foreign_key "products", "stocks"
   add_foreign_key "stocks", "providers"
   add_foreign_key "voucher_details", "products"
   add_foreign_key "voucher_details", "vouchers"
+  add_foreign_key "vouchers", "users"
 end
