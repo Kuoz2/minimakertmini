@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/marketmini.iml" filepath="$PROJECT_DIR$/.idea/modules/marketmini.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/prijectoeccommerspostsale.iml" filepath="$PROJECT_DIR$/.idea/prijectoeccommerspostsale.iml" />
     </modules>
   </component>

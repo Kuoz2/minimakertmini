@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 2020_10_12_005933) do
     t.integer "precio_provider"
     t.bigint "tax_id"
     t.bigint "piva"
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
     t.index ["stock_id"], name: "index_products_on_stock_id"

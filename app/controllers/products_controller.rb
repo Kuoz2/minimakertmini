@@ -91,7 +91,9 @@ class ProductsController < ApplicationController
                                       :ppicture,
                                       :provider_id,
                                       :precio_provider,
-                                      :tax_id
+                                      :tax_id,
+                                      :piva,
+                                      :brand_id,
 
       )
 

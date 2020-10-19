@@ -25,7 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    def mostrar_los_usuarios
      @users = User.all
-     render json: @user
+     render json: @users
    end
   # GET /resource/edit
   # def edit
