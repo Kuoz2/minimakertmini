@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-  before_action :set_stock, only: [:show, :update, :destroy]
+
   before_action :stock_perdida_este_mes, only: [:mostrar_stock_de_perdidas]
   before_action :mes_anterior, only: [:p_mes_anterior]
   before_action :productos_en_stock, only: [:stock_products]
@@ -22,19 +22,14 @@ class StocksController < ApplicationController
     if @perdida_stock_anterior ==  []
       render json: 0
     else
-
           render :json =>  @perdida_stock_anterior
-
-
     end
 
   end
 
   #Prueba de busqueda del stock
   def buscar_las_fechas_perdidas
-    render :json => @prueba_stock_prod.group_by{|h| h.keys.first}.values
-    .map{|a| {a.first.keys.first => a.inject(0){|sum, h| sum + h.values.first.to_i}.to_s
-    }}
+    render :json => @prueba_stock_prod.group_by {|h| h.keys.first}.values.map{|a| {a.first.keys.first => a.inject(0){|sum, h| sum + h.values.first.to_i}.to_s}}
   end
 
   #Mostar el stock y el valor del producto
@@ -101,6 +96,8 @@ class StocksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
       @stock = Stock.find(params[:id])
+
+      render json: @stock
     end
 
     #Buscar el stock y el valor del producto
@@ -129,24 +126,24 @@ class StocksController < ApplicationController
   end
 
   def method_name(a, data)
-    case a.created_at.to_s[6, 1]
-    when 1.to_s
+    case a.created_at.to_s[5, 2]
+    when 01.to_s
       data.push({:Ene => a.stock_lost})
-    when 2.to_s
+    when 02.to_s
       data.push({:Feb =>a.stock_lost})
-    when 3.to_s
+    when 03.to_s
       data.push({:Marz => a.stock_lost})
-    when 4.to_s
+    when 04.to_s
       data.push({:Abr => a.stock_lost})
-    when 5.to_s
+    when 05.to_s
       data.push({:May => a.stock_lost})
-    when 6.to_s
+    when 06.to_s
       data.push({:Jun => a.stock_lost})
-    when 7.to_s
+    when 07.to_s
       data.push({:Jul => a.stock_lost})
-    when 8.to_s
+    when 08.to_s
       data.push({:Agos => a.stock_lost})
-    when 9.to_s
+    when 09.to_s
       data.push({:Sep => a.stock_lost})
     when 10.to_s
       data.push({:Oct => a.stock_lost})
