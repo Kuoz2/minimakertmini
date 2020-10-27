@@ -127,23 +127,23 @@ class StocksController < ApplicationController
 
   def method_name(a, data)
     case a.created_at.to_s[5, 2]
-    when 01.to_s
+    when 1.to_s
       data.push({:Ene => a.stock_lost})
-    when 02.to_s
+    when 2.to_s
       data.push({:Feb =>a.stock_lost})
-    when 03.to_s
+    when 3.to_s
       data.push({:Marz => a.stock_lost})
-    when 04.to_s
+    when 4.to_s
       data.push({:Abr => a.stock_lost})
-    when 05.to_s
+    when 5.to_s
       data.push({:May => a.stock_lost})
-    when 06.to_s
+    when 6.to_s
       data.push({:Jun => a.stock_lost})
-    when 07.to_s
+    when 7.to_s
       data.push({:Jul => a.stock_lost})
-    when 08.to_s
+    when 8.to_s
       data.push({:Agos => a.stock_lost})
-    when 09.to_s
+    when 9.to_s
       data.push({:Sep => a.stock_lost})
     when 10.to_s
       data.push({:Oct => a.stock_lost})
