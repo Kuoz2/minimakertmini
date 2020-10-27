@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_provider: MyString
+  nip_provider: MyString
+  direccion_provider: MyString
+  ciudad_provider: MyString
+  comuna_provider: MyString
+  telefono_provider: 1
+  telefono_persona_provider: 
+  correo_provider: MyString
+  formadepago_provider: MyString
+  plazo_provider: 1
+  contabilidad_provider: 1
+  gasto_provider: 1
+  concepto_gasto_provider: MyString
+  banco_provider: MyString
+  codigo_provider: 1
+  factura_provider: 
+
+two:
+  nombre_provider: MyString
+  nip_provider: MyString
+  direccion_provider: MyString
+  ciudad_provider: MyString
+  comuna_provider: MyString
+  telefono_provider: 1
+  telefono_persona_provider: 
+  correo_provider: MyString
+  formadepago_provider: MyString
+  plazo_provider: 1
+  contabilidad_provider: 1
+  gasto_provider: 1
+  concepto_gasto_provider: MyString
+  banco_provider: MyString
+  codigo_provider: 1
+  factura_provider: 
