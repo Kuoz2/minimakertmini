@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def productos_perdidas
     render json: @datos_producto
   end
-
+#datos guardado
   #Ganancia total de los productos
   def product_total_valor
     render json: @productos_calculados
