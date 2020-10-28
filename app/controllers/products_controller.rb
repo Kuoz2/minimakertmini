@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.all
-    render json: @products, :include => [:stock, :category]
+    render json: @products, :include => [:stock, :category, :brand]
   end
 
   def agregando_quantity
