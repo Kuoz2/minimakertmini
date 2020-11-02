@@ -61,9 +61,11 @@ class StocksController < ApplicationController
     end
   end
 
+
+
   # PATCH/PUT /stocks/1
   def update
-    if @stock.update(stock_params)
+    if @stock.update_attributes(stock_params)
       render json: @stock
     else
       render json: @stock.errors, status: :unprocessable_entity
@@ -96,7 +98,7 @@ class StocksController < ApplicationController
     def set_stock
       @stock = Stock.find(params[:id])
 
-      render json: @stock
+
     end
 
     #Buscar el stock y el valor del producto

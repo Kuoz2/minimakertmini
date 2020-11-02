@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   resources :payments do
     resource :sales
   end
-
-
   resources :voucher_details do
     collection do
 
@@ -49,7 +47,7 @@ Rails.application.routes.draw do
 
     end
   end
-  resources :stocks do
+  resources :stocks, shallow: true do
     collection do
       get 'buscar_las_fechas_perdidas'
       get 'stock_products'
@@ -57,6 +55,7 @@ Rails.application.routes.draw do
       get 'mostrar_stock_de_perdidas'
       get 'p_mes_anterior'
     end
+
   end
   resources :sales
   resources :categories
