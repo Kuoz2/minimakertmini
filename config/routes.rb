@@ -15,10 +15,6 @@ Rails.application.routes.draw do
     resource :sales
   end
 
-  resource :stocks do
-
-    resource :products
-  end
 
   resources :voucher_details do
     collection do

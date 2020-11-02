@@ -1,10 +1,9 @@
 class StocksController < ApplicationController
-  before_action :set_stock, :only => [:update]
+  before_action :set_stock, :only => [:update, :show, :destroy]
   before_action :stock_perdida_este_mes, only: [:mostrar_stock_de_perdidas]
   before_action :mes_anterior, only: [:p_mes_anterior]
   before_action :productos_en_stock, only: [:stock_products]
   before_action :buscar_fecha_perdidas, only: [:buscar_las_fechas_perdidas]
-
   # GET /stocks
   def index
     @stocks = Stock.all
