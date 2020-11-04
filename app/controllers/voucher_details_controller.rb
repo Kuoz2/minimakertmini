@@ -127,8 +127,12 @@ class VoucherDetailsController < ApplicationController
   def ganancia_mes_pasado
     fecha = Time.zone.today.month
     nueva_fecha = fecha - 1
+      if nueva_fecha.to_s.length == 2
+    @total_venta_anterior = Voucher.all.filter{|n| n.created_at.to_s[5,2] == nueva_fecha.to_s}.map(&:vtotal).reduce(:+)
+      else
+        @total_venta_anterior = Voucher.all.filter{|n| n.created_at.to_s[6,1] == nueva_fecha.to_s}.map(&:vtotal).reduce(:+)
 
-    @total_venta_anterior = Voucher.all.filter{|n| n.created_at.to_s[6,1] == nueva_fecha.to_s}.map(&:vtotal).reduce(:+)
+      end
   end
 
   #tODAS LAS GANANCIAS OBTENIDAS.
@@ -139,7 +143,7 @@ class VoucherDetailsController < ApplicationController
     #ganancias mensuales
   def ganancias_mensual
     fecha =Time.zone.today.month
-    if fecha == 2
+    if fecha.to_s.length == 2
     @total_ventas = Voucher.all.filter {|n| n.created_at.to_s[5,2] == fecha.to_s}.map(&:vtotal).reduce(:+)
     else
       @total_ventas = Voucher.all.filter {|n| n.created_at.to_s[6,1] == fecha.to_s}.map(&:vtotal).reduce(:+)
