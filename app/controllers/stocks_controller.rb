@@ -85,14 +85,24 @@ class StocksController < ApplicationController
           fecha = Time.zone.today.month
       nueva_fecha = fecha
 
-      @perdida_stock_anterior = Stock.all.filter{|sa| sa.created_at.to_s[6,1] == nueva_fecha.to_s}.as_json(include:{:products => {:only => [:pvalor]}} , :only => :stock_lost)
+          if nueva_fecha == 2
+      @perdida_stock_anterior = Stock.all.filter{|sa| sa.created_at.to_s[5,2] == nueva_fecha.to_s}.as_json(include:{:products => {:only => [:pvalor]}} , :only => :stock_lost)
+          else
+            @perdida_stock_anterior = Stock.all.filter{|sa| sa.created_at.to_s[6,1] == nueva_fecha.to_s}.as_json(include:{:products => {:only => [:pvalor]}} , :only => :stock_lost)
+          end
+
     end
 
     #Muestra las perdidas del mes anterior.
     def mes_anterior
       fecha = Time.zone.today.month - 1
-      @mes_anterior = Stock.all.filter{|a| a.created_at.to_s[6,1] == fecha.to_s}.map(&:stock_lost).reduce(:+)
-    end
+      if fecha.to_s.length == 2
+        @mes_anterior = Stock.all.filter{|a| a.created_at.to_s[5,2] == fecha.to_s}.map(&:stock_lost).reduce(:+)
+
+      else
+        @mes_anterior = Stock.all.filter{|a| a.created_at.to_s[6,1] == fecha.to_s}.map(&:stock_lost).reduce(:+)
+      end
+      end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
