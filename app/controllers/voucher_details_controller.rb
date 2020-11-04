@@ -139,7 +139,11 @@ class VoucherDetailsController < ApplicationController
     #ganancias mensuales
   def ganancias_mensual
     fecha =Time.zone.today.month
-    @total_ventas = Voucher.all.filter {|n| n.created_at.to_s[6,1] == fecha.to_s}.map(&:vtotal).reduce(:+)
+    if fecha == 2
+    @total_ventas = Voucher.all.filter {|n| n.created_at.to_s[5,2] == fecha.to_s}.map(&:vtotal).reduce(:+)
+    else
+      @total_ventas = Voucher.all.filter {|n| n.created_at.to_s[6,1] == fecha.to_s}.map(&:vtotal).reduce(:+)
+    end
   end
 
 
