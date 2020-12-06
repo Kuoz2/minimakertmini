@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_005933) do
+ActiveRecord::Schema.define(version: 2020_12_06_213458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "archings", force: :cascade do |t|
+    t.string "arhoraini"
+    t.string "arhoracier"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "voucher_id"
+    t.bigint "decrease_id"
+    t.index ["decrease_id"], name: "index_archings_on_decrease_id"
+    t.index ["voucher_id"], name: "index_archings_on_voucher_id"
+  end
 
   create_table "brands", force: :cascade do |t|
     t.string "bnombre"
@@ -25,6 +36,28 @@ ActiveRecord::Schema.define(version: 2020_10_12_005933) do
     t.string "cnombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "config_vouchers", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "bexistentes"
+    t.string "RutEmpresa"
+    t.string "fechaEmision"
+    t.string "RutReceptor"
+    t.integer "TipoDocumento"
+    t.bigint "CantidadDesde"
+    t.bigint "CantidadHasta"
+    t.string "FechaAutori"
+    t.bigint "numeroFolio"
+    t.bigint "montoTotal"
+    t.string "rasonSocial"
+    t.string "itemVendido"
+    t.binary "moduloLLave"
+    t.string "ExponenteLLave"
+    t.bigint "identidadLLave"
+    t.string "fechahoraGTimbre"
+    t.binary "firmaTimbre"
   end
 
   create_table "decreases", force: :cascade do |t|
@@ -72,8 +105,6 @@ ActiveRecord::Schema.define(version: 2020_10_12_005933) do
     t.integer "precio_provider"
     t.bigint "tax_id"
     t.bigint "piva"
-    t.bigint "brand_id"
-    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
     t.index ["stock_id"], name: "index_products_on_stock_id"
@@ -166,9 +197,12 @@ ActiveRecord::Schema.define(version: 2020_10_12_005933) do
     t.string "vhora"
     t.string "vdia"
     t.bigint "user_id"
+    t.string "hora_creacion"
     t.index ["user_id"], name: "index_vouchers_on_user_id"
   end
 
+  add_foreign_key "archings", "decreases"
+  add_foreign_key "archings", "vouchers"
   add_foreign_key "decreases", "users"
   add_foreign_key "payments", "half_payments"
   add_foreign_key "products", "categories"

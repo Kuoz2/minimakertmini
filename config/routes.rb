@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :config_vouchers
+  resources :archings
   resources :brands
   resources :taxes
   resources :decreases

@@ -5,7 +5,7 @@ class DecreasesController < ApplicationController
   def index
     @decreases = Decrease.all
 
-    render json: @decreases, :include => [:product]
+    render json: @decreases, :include => [:product  ]
   end
 
   # GET /decreases/1

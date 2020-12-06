@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 
   has_many :voucher_details, inverse_of: :product
 
-  validates_presence_of :category_id,:stock
+  validates_presence_of :category_id,:stock, :brand_id
   accepts_nested_attributes_for :voucher_details, allow_destroy: true
   accepts_nested_attributes_for :decreases
 end

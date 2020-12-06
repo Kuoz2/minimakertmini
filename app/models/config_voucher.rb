@@ -1,0 +1,2 @@
+class ConfigVoucher < ApplicationRecord
+end

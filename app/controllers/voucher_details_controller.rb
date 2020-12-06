@@ -2,14 +2,14 @@ class VoucherDetailsController < ApplicationController
   before_action :set_voucher_detail, only: [:show, :update, :destroy]
   before_action :fecha_del_mes, only: [:show_date, :show_best_sale]
   before_action :ganancias_mensual, only: [:show_cantidad]
-  before_action :ganancia_mes_pasado, only: [:show_after_month]
+    before_action :ganancia_mes_pasado, only: [:show_after_month]
   before_action :producto_mas_vendido, only: [:producto_max_vend]
   before_action :ganancias_totales_obtenidas,only: [:las_ganancias_totales_meses]
   # GET /voucher_details
   def index
     @voucher_details = VoucherDetail.all
 
-    render json: @voucher_details, :include => [:voucher, :product]
+    render json: @voucher_details, :include => [:voucher, :product => {:include => [:category]} ]
   end
 
 #mOOSTRAR TODAS LAS GANANCIAS OBTENIDAS.
@@ -92,12 +92,22 @@ class VoucherDetailsController < ApplicationController
     @voucher_detail = VoucherDetail.find(params[:id])
   end
 
+
+
   #mes de actual
   def fecha_del_mes
+    fecha =Time.zone.today.month
+    if fecha.to_s.length == 2
     @voucher_date = VoucherDetail.all.filter do |d|
-      d.created_at.to_s[5,2] == Time.now.to_s[5,2]
+      d.created_at.to_s[5,2] == fecha.to_s
     end
+    else
+      @voucher_date = VoucherDetail.all.filter do |d|
+        d.created_at.to_s[6,1] == fecha.to_s
+      end
+      end
   end
+
   #Productos mas vendidos
   def producto_mas_vendido
 
@@ -149,14 +159,17 @@ class VoucherDetailsController < ApplicationController
       @total_ventas = Voucher.all.filter {|n| n.created_at.to_s[6,1] == fecha.to_s}.map(&:vtotal).reduce(:+)
     end
   end
-
-
-
     # Only allow a trusted parameter "white list" through.
   def voucher_detail_params
     params.require(:voucher_detail).permit(:dvcantidad,
                                            :dvprecio,
                                            {:voucher => [:vtotal,:vnumerodebusqueda, :vhora, :vdia]},
                                            :product_id)
+  end
+  #obtener fecha y dia actual.
+  def obtener_fecha_dia
+    mes = Time.zone.today.month
+    dia = Time.zone.today.day
+      
   end
 end
