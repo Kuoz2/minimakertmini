@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_213458) do
+ActiveRecord::Schema.define(version: 2020_12_06_225219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 2020_12_06_213458) do
     t.integer "precio_provider"
     t.bigint "tax_id"
     t.bigint "piva"
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
     t.index ["stock_id"], name: "index_products_on_stock_id"
@@ -205,6 +207,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_213458) do
   add_foreign_key "archings", "vouchers"
   add_foreign_key "decreases", "users"
   add_foreign_key "payments", "half_payments"
+  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "providers"
   add_foreign_key "products", "stocks"

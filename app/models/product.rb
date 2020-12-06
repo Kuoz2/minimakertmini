@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   belongs_to :payment, class_name: 'Provider', foreign_key: 'provider_id', optional: true
   #Relacion entre los impuestos y el producto.
   belongs_to :tax, class_name: 'Tax', foreign_key: 'tax_id'
-  belongs_to :brand, :optional => true ,foreign_key: "brand_id", class_name: "Brand"
+  belongs_to :brand, foreign_key: "brand_id", class_name: "Brand"
 
   has_many :decreases
 
