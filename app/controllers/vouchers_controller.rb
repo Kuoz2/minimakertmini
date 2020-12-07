@@ -33,7 +33,11 @@ class VouchersController < ApplicationController
 
   def showlast
     @voucher_last = Voucher.last
+    if @voucher_last != 'null'
     render json: @voucher_last
+    else
+      render json: 0
+      end
   end
 
   # PATCH/PUT /vouchers/1
