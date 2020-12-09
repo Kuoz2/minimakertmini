@@ -4,7 +4,6 @@ class ConfigVouchersController < ApplicationController
   # GET /config_vouchers
   def index
     @config_vouchers = ConfigVoucher.all
-
     render json: @config_vouchers
   end
 
@@ -46,6 +45,21 @@ class ConfigVouchersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def config_voucher_params
-      params.require(:config_voucher).permit(:bdte, :bcantidad, :bemitidas, :bexistentes)
+      params.require(:config_voucher).permit(:RutEmpresa,
+                                             :fechaEmision,
+                                             :RutReceptor,
+                                             :TipoDocumento,
+                                             :CantidadDesde,
+                                             :CantidadHasta,
+                                             :FechaAutori,
+                                             :numeroFolio,
+                                             :montoTotal,
+                                             :rasonSocial,
+                                             :itemVendido,
+                                             :moduloLLave,
+                                             :ExponenteLLave,
+                                             :identidadLLave,
+                                             :fechahoraGTimbre,
+                                             :firmaTimbre)
     end
 end

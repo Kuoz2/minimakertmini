@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_225219) do
+ActiveRecord::Schema.define(version: 2020_12_09_072131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 2020_12_06_225219) do
     t.string "itemVendido"
     t.binary "moduloLLave"
     t.string "ExponenteLLave"
-    t.bigint "identidadLLave"
     t.string "fechahoraGTimbre"
     t.binary "firmaTimbre"
+    t.string "identidadLLave"
   end
 
   create_table "decreases", force: :cascade do |t|

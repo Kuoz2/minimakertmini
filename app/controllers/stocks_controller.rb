@@ -137,7 +137,7 @@ class StocksController < ApplicationController
   end
 
   def method_name(a, data)
-    case a.created_at.to_s[5, 2]
+    case a.created_at.to_s[6, 1]
     when 1.to_s
       data.push({:Ene => a.stock_lost})
     when 2.to_s
