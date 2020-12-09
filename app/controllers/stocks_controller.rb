@@ -85,7 +85,7 @@ class StocksController < ApplicationController
           fecha = Time.zone.today.month
       nueva_fecha = fecha
 
-          if nueva_fecha == 2
+          if nueva_fecha.to_s.length == 2
       @perdida_stock_anterior = Stock.all.filter{|sa| sa.created_at.to_s[5,2] == nueva_fecha.to_s}.as_json(include:{:products => {:only => [:pvalor]}} , :only => :stock_lost)
           else
             @perdida_stock_anterior = Stock.all.filter{|sa| sa.created_at.to_s[6,1] == nueva_fecha.to_s}.as_json(include:{:products => {:only => [:pvalor]}} , :only => :stock_lost)
@@ -137,7 +137,7 @@ class StocksController < ApplicationController
   end
 
   def method_name(a, data)
-    case a.created_at.to_s[6, 1]
+    case a.created_at.to_s[5, 2]
     when 1.to_s
       data.push({:Ene => a.stock_lost})
     when 2.to_s
