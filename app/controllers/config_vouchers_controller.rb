@@ -4,6 +4,7 @@ class ConfigVouchersController < ApplicationController
   # GET /config_vouchers
   def index
     @config_vouchers = ConfigVoucher.all
+
     render json: @config_vouchers
   end
 
@@ -15,12 +16,13 @@ class ConfigVouchersController < ApplicationController
   # POST /config_vouchers
   def create
     @config_voucher = ConfigVoucher.new(config_voucher_params)
-
+if @config_vouchers == []
     if @config_voucher.save
       render json: @config_voucher, status: :created, location: @config_voucher
     else
       render json: @config_voucher.errors, status: :unprocessable_entity
     end
+  end
   end
 
   # PATCH/PUT /config_vouchers/1

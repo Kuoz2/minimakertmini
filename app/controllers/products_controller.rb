@@ -94,6 +94,7 @@ class ProductsController < ApplicationController
                                       :tax_id,
                                       :piva,
                                       :brand_id,
+                                      :pvneto
 
       )
 

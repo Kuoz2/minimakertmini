@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_072131) do
+ActiveRecord::Schema.define(version: 2020_12_12_194939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,10 +54,11 @@ ActiveRecord::Schema.define(version: 2020_12_09_072131) do
     t.string "rasonSocial"
     t.string "itemVendido"
     t.binary "moduloLLave"
-    t.string "ExponenteLLave"
     t.string "fechahoraGTimbre"
     t.binary "firmaTimbre"
-    t.string "identidadLLave"
+    t.binary "identidadLLave"
+    t.binary "ExponenteLLave"
+    t.bigint "identificacionLlave"
   end
 
   create_table "decreases", force: :cascade do |t|
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_072131) do
     t.bigint "tax_id"
     t.bigint "piva"
     t.bigint "brand_id"
+    t.bigint "pvneto"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
@@ -187,6 +189,8 @@ ActiveRecord::Schema.define(version: 2020_12_09_072131) do
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "fecha_emision"
+    t.string "hora_emision"
     t.index ["product_id"], name: "index_voucher_details_on_product_id"
     t.index ["voucher_id"], name: "index_voucher_details_on_voucher_id"
   end

@@ -112,7 +112,7 @@ class VoucherDetailsController < ApplicationController
   def producto_mas_vendido
 
     producto_vendido =  VoucherDetail.all.map { |de|
-           de.as_json(:except =>[:id,:dvprecio,:voucher_id,:product_id ,:created_at,:updated_at],
+           de.as_json(:except =>[:id,:dvprecio,:voucher_id,:product_id ,:cRreated_at,:updated_at],
                                                                  :include => [:product => {:only =>[:pdescripcion, :pvalor, :pstock]}]) }
 
          @producto_max = producto_vendido
@@ -163,6 +163,8 @@ class VoucherDetailsController < ApplicationController
   def voucher_detail_params
     params.require(:voucher_detail).permit(:dvcantidad,
                                            :dvprecio,
+                                           :fecha_emision,
+                                           :hora_emision,
                                            {:voucher => [:vtotal,:vnumerodebusqueda, :vhora, :vdia]},
                                            :product_id)
   end
