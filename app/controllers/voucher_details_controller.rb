@@ -165,6 +165,9 @@ class VoucherDetailsController < ApplicationController
                                            :dvprecio,
                                            :fecha_emision,
                                            :hora_emision,
+                                           :stadoEnv,
+                                           :numerofolio,
+                                           :tipoEnvio,
                                            {:voucher => [:vtotal,:vnumerodebusqueda, :vhora, :vdia]},
                                            :product_id)
   end

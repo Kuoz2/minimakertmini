@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_194939) do
+ActiveRecord::Schema.define(version: 2020_12_14_015601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_12_12_194939) do
     t.binary "identidadLLave"
     t.binary "ExponenteLLave"
     t.bigint "identificacionLlave"
+    t.string "rutEmisor"
   end
 
   create_table "decreases", force: :cascade do |t|
@@ -191,6 +192,9 @@ ActiveRecord::Schema.define(version: 2020_12_12_194939) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "fecha_emision"
     t.string "hora_emision"
+    t.boolean "stadoEnv"
+    t.bigint "numerofolio"
+    t.string "tipoEnvio"
     t.index ["product_id"], name: "index_voucher_details_on_product_id"
     t.index ["voucher_id"], name: "index_voucher_details_on_voucher_id"
   end

@@ -62,6 +62,7 @@ if @config_vouchers == []
                                              :ExponenteLLave,
                                              :identidadLLave,
                                              :fechahoraGTimbre,
-                                             :firmaTimbre)
+                                             :firmaTimbre,
+                                             :rutEmisor)
     end
 end
