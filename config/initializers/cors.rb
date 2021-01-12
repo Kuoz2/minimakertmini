@@ -11,7 +11,8 @@
 
      resource '*',
        headers: :any,
-       methods: [:get, :post, :put, :patch, :delete, :options, :head],
+              :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+              methods: [:get, :post, :put, :patch, :delete, :options, :head],
        max_age: 15
    end
  end

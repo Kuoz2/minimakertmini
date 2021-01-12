@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
     post '/logi', to: 'users/sessions#create'
+    delete 'logout', to: 'session#destroy'
     get '/mostrar_usuarios',to: 'users/registrations#mostrar_usuarios', defaults: {format: :json}, as: 'mostrar_usuarios'
     get '/mostrar_los_usuarios', to:'users/registrations#mostrar_los_usuarios', defaults:{format: :json}, as: 'mostrar_los_usuarios'
   end
