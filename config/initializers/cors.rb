@@ -9,10 +9,11 @@
    allow do
      origins '*'
 
-     resource '*',
-       headers: :any,
-              :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+     resource( '*',
+       :headers => :any,
+              :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client', 'Authorization','Some-Custom-Response-Header'],
               methods: [:get, :post, :put, :patch, :delete, :options, :head],
-       max_age: 15
+       max_age: 600
+     )
    end
  end

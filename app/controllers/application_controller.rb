@@ -1,4 +1,14 @@
 class ApplicationController < ActionController::API
+  before_action :cors_set_access_control_headers
+  before_action :validation_error
+
+  def cors_set_access_control_headers
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Expose-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token, ' \
+    'Auth-Token, Email, X-User-Token, X-User-Email, x-xsrf-token'
+  end
+
+
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
