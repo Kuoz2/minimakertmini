@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   before_action :cors_set_access_control_headers
-  before_action :validation_error
 
   def cors_set_access_control_headers
     response.headers['Access-Control-Allow-Origin'] = '*'
