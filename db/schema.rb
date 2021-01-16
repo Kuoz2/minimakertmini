@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_14_015601) do
+ActiveRecord::Schema.define(version: 2021_01_16_230833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_12_14_015601) do
     t.string "causaMrm"
     t.string "hora"
     t.bigint "user_id"
+    t.boolean "solution_boolean"
     t.index ["product_type", "product_id"], name: "index_decreases_on_product_type_and_product_id"
     t.index ["user_id"], name: "index_decreases_on_user_id"
   end
