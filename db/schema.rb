@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_01_16_230833) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.bigint "pcodigo", default: 0, null: false
+      t.bigint "pcodigo", default: 0, null: false
     t.string "pdescripcion"
     t.string "pdetalle"
     t.binary "ppicture"
