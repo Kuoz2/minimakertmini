@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mrmsolutions
   resources :config_vouchers
   resources :archings
   resources :brands
@@ -47,7 +48,11 @@ Rails.application.routes.draw do
       get 'product_total_valor'
       get 'productos_perdidas'
       get 'agregando_quantity'
-
+      get 'inventario_gestionable'
+      get 'tomar_productos_vencidos'
+      get 'tomar_productos_meses_vencidos'
+      get 'estado_vencimiento'
+      get 'vencimientoproximomes'
     end
   end
   resources :stocks, shallow: true do

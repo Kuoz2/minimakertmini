@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_230833) do
+ActiveRecord::Schema.define(version: 2021_05_10_154920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_01_16_230833) do
     t.string "causaMrm"
     t.string "hora"
     t.bigint "user_id"
-    t.boolean "solution_boolean"
+    t.boolean "solution_boolean", default: false, null: false
     t.index ["product_type", "product_id"], name: "index_decreases_on_product_type_and_product_id"
     t.index ["user_id"], name: "index_decreases_on_user_id"
   end
@@ -81,6 +81,16 @@ ActiveRecord::Schema.define(version: 2021_01_16_230833) do
     t.string "mpnombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mrmsolutions", force: :cascade do |t|
+    t.string "mrmsolucion"
+    t.string "mrmfechasolucion"
+    t.bigint "cantidad_veces_cometido"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "decrease_id"
+    t.index ["decrease_id"], name: "index_mrmsolutions_on_decrease_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -93,7 +103,7 @@ ActiveRecord::Schema.define(version: 2021_01_16_230833) do
   end
 
   create_table "products", force: :cascade do |t|
-      t.bigint "pcodigo", default: 0, null: false
+    t.bigint "pcodigo", default: 0, null: false
     t.string "pdescripcion"
     t.string "pdetalle"
     t.binary "ppicture"
@@ -110,6 +120,7 @@ ActiveRecord::Schema.define(version: 2021_01_16_230833) do
     t.bigint "piva"
     t.bigint "brand_id"
     t.bigint "pvneto"
+    t.string "fecha_vencimiento"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"

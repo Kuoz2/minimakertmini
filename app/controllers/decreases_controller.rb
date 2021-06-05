@@ -47,6 +47,6 @@ class DecreasesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def decrease_params
-      params.require(:decrease).permit(:categoriasMrm, :unidadesMrm, :causaMrm, :hora, :product_id, :user_id )
+      params.require(:decrease).permit(:categoriasMrm, :unidadesMrm, :causaMrm, :hora, :product_id, :user_id, :solution_boolean )
     end
 end

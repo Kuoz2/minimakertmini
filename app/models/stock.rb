@@ -3,5 +3,5 @@ class Stock < ApplicationRecord
   #Relacion con el proveedor
   belongs_to :payment, class_name: 'Provider', foreign_key: :provider_id, optional:true
 
-           accepts_nested_attributes_for :products
+  accepts_nested_attributes_for :products
 end

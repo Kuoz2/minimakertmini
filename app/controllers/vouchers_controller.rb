@@ -71,7 +71,7 @@ class VouchersController < ApplicationController
 
   def busqueda_fv(fv, informacion)
 
-    case fv.created_at.to_s[6, 1]
+    case fv.created_at.to_s[6, 2]
     when 1.to_s
       informacion.push({:Ene => fv.vtotal})
     when 2.to_s
