@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    @stock = Stock.new(params.permit![:stock_id])
+    @stock = Stock.new(params.permit![:stock_id, :date_expirations_id])
 
     @product = @stock.products.new(product_params)
     if @product.save
@@ -224,7 +224,8 @@ class ProductsController < ApplicationController
                                       :piva,
                                       :brand_id,
                                       :pvneto,
-                                      :fecha_vencimiento
+                                      :fecha_vencimiento,
+                                      {:date_expirations_id => [:fecha_vencimiento,:cambio_fecha,:cantidad_cambiadas]}
 
       )
 

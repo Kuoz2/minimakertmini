@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :date_expirations
   resources :mrmsolutions
   resources :config_vouchers
   resources :archings
   resources :brands
   resources :taxes
-  resources :decreases
+  resources :decreases do
+    collection do
+      get 'muestra_situaciones'
+    end
+  end
   resources :providers
   devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
   devise_scope :user do

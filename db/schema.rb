@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_154920) do
+ActiveRecord::Schema.define(version: 2021_06_05_212000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 2021_05_10_154920) do
     t.binary "ExponenteLLave"
     t.bigint "identificacionLlave"
     t.string "rutEmisor"
+  end
+
+  create_table "date_expirations", force: :cascade do |t|
+    t.string "fecha_vencimiento", default: "sin fecha"
+    t.boolean "cambio_fecha", default: false
+    t.bigint "cantidad_cambiadas", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "decreases", force: :cascade do |t|
@@ -121,8 +129,10 @@ ActiveRecord::Schema.define(version: 2021_05_10_154920) do
     t.bigint "brand_id"
     t.bigint "pvneto"
     t.string "fecha_vencimiento"
+    t.bigint "date_expirations_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["date_expirations_id"], name: "index_products_on_date_expirations_id"
     t.index ["provider_id"], name: "index_products_on_provider_id"
     t.index ["stock_id"], name: "index_products_on_stock_id"
     t.index ["tax_id"], name: "index_products_on_tax_id"
