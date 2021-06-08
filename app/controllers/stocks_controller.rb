@@ -156,6 +156,11 @@ class StocksController < ApplicationController
       data.push({:Agos => a.stock_lost})
     when 9.to_s
       data.push({:Sep => a.stock_lost})
+    else
+      []
+    end
+
+    case a.created_at.to_s[6,1]
     when 10.to_s
       data.push({:Oct => a.stock_lost})
     when 11.to_s

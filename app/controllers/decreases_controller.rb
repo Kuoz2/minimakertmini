@@ -68,7 +68,7 @@ class DecreasesController < ApplicationController
 
   #cantidad de cada situacion
   def situaciones_mermas(merma, consumo, factura, quebrado, vencido, noresuelto, siresuelto)
-    case merma.causaMrm || merma.solution_boolean
+    case merma.causaMrm
     when "Consumo"
       consumo.push( merma.causaMrm)
     when "No, en factura"
@@ -77,6 +77,12 @@ class DecreasesController < ApplicationController
       quebrado.push(merma.causaMrm)
     when "Vencido"
       vencido.push(merma.causaMrm)
+
+    else
+      []
+    end
+
+    case merma.solution_boolean
     when false
       noresuelto.push(merma.solution_boolean)
     when true

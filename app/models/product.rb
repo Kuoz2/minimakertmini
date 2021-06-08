@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   #Relacion entre los impuestos y el producto.
   belongs_to :tax, class_name: 'Tax', foreign_key: 'tax_id'
   belongs_to :brand, foreign_key: "brand_id", class_name: "Brand"
-  belongs_to :date_expiration, optional: true, class_name: "date_expiration", :inverse_of => products, foreign_key: "date_expirations_id"
+  belongs_to :date_expiration, optional: true, class_name: "date_expiration", :inverse_of => Product, foreign_key: "date_expirations_id"
 
   has_many :decreases
 
