@@ -48,6 +48,9 @@ Rails.application.routes.draw do
           get 'mostrar_ganancias_por_mes'
     end
   end
+
+
+
   resources :products, shallow: true do
     collection do
       get 'product_total_valor'
@@ -60,6 +63,7 @@ Rails.application.routes.draw do
       get 'vencimientoproximomes'
     end
   end
+
   resources :stocks, shallow: true do
     collection do
       get 'buscar_las_fechas_perdidas'

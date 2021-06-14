@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_05_212000) do
+ActiveRecord::Schema.define(version: 2021_06_09_000635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2021_06_05_212000) do
     t.bigint "cantidad_cambiadas", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "stock_expiration", default: 0
+    t.boolean "actualizado_stockm", default: false
   end
 
   create_table "decreases", force: :cascade do |t|

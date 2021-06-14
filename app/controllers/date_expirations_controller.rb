@@ -46,6 +46,6 @@ class DateExpirationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def date_expiration_params
-      params.require(:date_expiration).permit(:fecha_vencimiento, :cambio_fecha, :cantidad_cambiadas)
+      params.require(:date_expiration).permit(:fecha_vencimiento, :cambio_fecha, :cantidad_cambiadas, :stock_expiration ,:stock_expiration)
     end
 end
