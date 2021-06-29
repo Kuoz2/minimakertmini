@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_000635) do
+ActiveRecord::Schema.define(version: 2021_06_22_060105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_000635) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "stock_expiration", default: 0
     t.boolean "actualizado_stockm", default: false
+    t.bigint "product_id",  default: 0, null:false
+    t.index ["product_id"], name: "index_date_expirations_on_product_id"
   end
 
   create_table "decreases", force: :cascade do |t|
@@ -176,6 +178,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_000635) do
     t.integer "stock_lost"
     t.integer "stock_security"
     t.bigint "provider_id"
+    t.bigint "product_id", default: 0, null:false
+    t.index ["product_id"], name: "index_stocks_on_product_id"
     t.index ["provider_id"], name: "index_stocks_on_provider_id"
   end
 

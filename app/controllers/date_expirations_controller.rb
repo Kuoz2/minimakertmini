@@ -3,14 +3,19 @@ class DateExpirationsController < ApplicationController
 
   # GET /date_expirations
   def index
-    @date_expirations = DateExpiration.all
+    @date_expirations = DateExpiration.all.where(product_id: 0)
 
-    render json: @date_expirations
+    render json: @date_expirations, :include => [:product]
+  end
+
+  def date_product_id_on
+    @date_expiration = DateExpiration.all.where.not(product_id: 0 )
+    render json: @date_expiration, :include => [:product => {include: [:stock, :category, :brand]}]
   end
 
   # GET /date_expirations/1
   def show
-    render json: @date_expiration
+    render json: @date_expiration, include: [:product => {include: [:category, :brand, :stock]}]
   end
 
   # POST /date_expirations
@@ -46,6 +51,6 @@ class DateExpirationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def date_expiration_params
-      params.require(:date_expiration).permit(:fecha_vencimiento, :cambio_fecha, :cantidad_cambiadas, :stock_expiration ,:stock_expiration)
+      params.require(:date_expiration).permit(:fecha_vencimiento, :cambio_fecha, :cantidad_cambiadas, :stock_expiration ,:stock_expiration, :product_id)
     end
 end

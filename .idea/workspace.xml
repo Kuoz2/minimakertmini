@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/db/schema.rb" line="176" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6da93d34-1e48-4395-b24b-598b2661313e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/controllers/date_expirations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/date_expirations_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/stocks_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/stocks_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/date_expiration.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/date_expiration.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/product.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/product.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/stock.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stock.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="prijectoeccommerspostsale_development2: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="prijectoeccommerspostsale_development2: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="prijectoeccommerspostsale_development2: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="prijectoeccommerspostsale_development2: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails prijectoeccommerspostsale: development" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="prijectoeccommerspostsale_development2: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="config_vouchers: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="prijectoeccommerspostsale" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/stock.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/date_expiration.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/schema.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1139">
+              <caret line="67" column="26" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="66" column="18" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/stocks_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/date_expirations_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>config.il8n.fallbacks</find>
+      <find>config.i18n.fallbacks = true</find>
+      <find>credentials.yml.enc</find>
+      <find>deep_symbolize_keys</find>
+      <find>deploy.rb</find>
+      <find>content_security_policy.rb</find>
+      <find>config.action_controller.default_protect_from_forgery</find>
+      <find>Rails.application.config.content_security_policy</find>
+      <find>date_expiration_id</find>
+      <find>create_table &quot;taxes&quot;</find>
+      <find>providers</find>
+    </findStrings>
+  </component>
+  <component name="GeneratorOptions">
+    <option name="VCS_SHOW_CONFIRMATION" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="C:\Program Files\Git\bin\git.exe" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="AUTO_COMMIT_ON_CHERRY_PICK" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/db/migrate/20201209165527_remove_identidadshema.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201209165714_add_identidadshema.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201209215458_change_string_binary.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201209220852_add_rebiew.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201209221358_remove_exponentellave.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201209221506_add_column_exponente.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201211161905_identifiacion_llave.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201212191607_fecha_emison.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201212194939_add_valor_neto.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201213192259_add_envio.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20201214015601_add_rut_emisor.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/config_vouchers_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/config/initializers/cors.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210116230833_add_solution_decrease.rb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/app/controllers/sales_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/voucher_details_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/voucher.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/db/migrate/20210501191039_add_fecha_vencimiento_product.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210503002119_change_column_product_fechavencimiento.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210503012504_change_column_decrease_default_situation.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210503012810_add_column.rb" />
+        <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210510154920_add_reference_solution.rb" />
+        <option value="$PROJECT_DIR$/app/models/decrease.rb" />
+        <option value="$PROJECT_DIR$/app/models/mrmsolution.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/vouchers_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/mrmsolutions_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210605210429_create_date_expirations.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/decreases_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210608155811_ad_d_stock_fecha.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210608182915_remove_date_expiration.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210609000635_to_dateexpiration.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210605212000_reference_product_expiredate.rb" />
+        <option value="$PROJECT_DIR$/app/models/voucher_detail.rb" />
+        <option value="$PROJECT_DIR$/app/models/date_expiration.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210617143449_add_stock_save_referenfece_product.rb" />
+        <option value="$PROJECT_DIR$/app/models/stock.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20210622060105_add_refere_fecha_expiration.rb" />
+        <option value="$PROJECT_DIR$/tmp/pids/server.pid" />
+        <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/db/schema.rb" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/stocks_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/date_expirations_controller.rb" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1168" />
+    <option name="height" value="840" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="tmp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prijectoeccommerspostsale" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
+            <path>
+              <item name="prijectoeccommerspostsale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+              <item name="schema" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="RailsProjectView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.settings.patched" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kuoz2\RubymineProjects\prijectoeccommerspostsale\marketmini\config" />
+      <recent name="C:\Users\kuoz2\RubymineProjects\prijectoeccommerspostsale\marketmini\app\models" />
+      <recent name="C:\Users\kuoz2\RubymineProjects\prijectoeccommerspostsale\marketmini\app\controllers" />
+      <recent name="C:\Users\kuoz2\RubymineProjects\prijectoeccommerspostsale\marketmini\db" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Rails.Development: prijectoeccommerspostsale">
+    <configuration name="Development: marketmini" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="marketmini" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Development: prijectoeccommerspostsale" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="prijectoeccommerspostsale" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Production: marketmini" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="marketmini" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Production: prijectoeccommerspostsale" type="RailsRunConfigurationType" factoryName="Rails">
+      <module name="prijectoeccommerspostsale" />
+      <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="127.0.0.1" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: marketmini" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="marketmini" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/marketmini" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="spec: prijectoeccommerspostsale" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="prijectoeccommerspostsale" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: marketmini" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="marketmini" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/marketmini" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test: prijectoeccommerspostsale" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="prijectoeccommerspostsale" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6da93d34-1e48-4395-b24b-598b2661313e" name="Default Changelist" comment="" />
+      <created>1577778023145</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577778023145</updated>
+      <workItem from="1577778024502" duration="905000" />
+      <workItem from="1578157393439" duration="18668000" />
+      <workItem from="1578331275349" duration="756000" />
+      <workItem from="1578593860313" duration="10793000" />
+      <workItem from="1578680437725" duration="760000" />
+      <workItem from="1578764700258" duration="796000" />
+      <workItem from="1579185217839" duration="33859000" />
+      <workItem from="1579279855128" duration="32760000" />
+      <workItem from="1579325062652" duration="7606000" />
+      <workItem from="1579366477953" duration="28844000" />
+      <workItem from="1579450547597" duration="17773000" />
+      <workItem from="1579532041693" duration="3193000" />
+      <workItem from="1579550302167" duration="9131000" />
+      <workItem from="1579727620175" duration="3904000" />
+      <workItem from="1579798898565" duration="2163000" />
+      <workItem from="1579981851144" duration="2783000" />
+      <workItem from="1580062493829" duration="5670000" />
+      <workItem from="1580131174524" duration="34970000" />
+      <workItem from="1580224940629" duration="20439000" />
+      <workItem from="1580313947824" duration="12738000" />
+      <workItem from="1580405385625" duration="15383000" />
+      <workItem from="1580504472517" duration="9062000" />
+      <workItem from="1580570003417" duration="6954000" />
+      <workItem from="1580606454674" duration="2893000" />
+      <workItem from="1580661531654" duration="3306000" />
+      <workItem from="1580835858100" duration="2654000" />
+      <workItem from="1580922688754" duration="2094000" />
+      <workItem from="1580939092414" duration="6885000" />
+      <workItem from="1581006213375" duration="4753000" />
+      <workItem from="1581115874405" duration="8303000" />
+      <workItem from="1581291222762" duration="4638000" />
+      <workItem from="1581349421140" duration="565000" />
+      <workItem from="1581381036076" duration="5254000" />
+      <workItem from="1581434215450" duration="1623000" />
+      <workItem from="1581458797683" duration="554000" />
+      <workItem from="1581522341118" duration="6818000" />
+      <workItem from="1581544486236" duration="1840000" />
+      <workItem from="1581613398317" duration="3542000" />
+      <workItem from="1581623028427" duration="6517000" />
+      <workItem from="1581799067837" duration="4500000" />
+      <workItem from="1581962318758" duration="7102000" />
+      <workItem from="1582126452238" duration="14626000" />
+      <workItem from="1582154584214" duration="18262000" />
+      <workItem from="1582400080351" duration="1607000" />
+      <workItem from="1582475178656" duration="4163000" />
+      <workItem from="1582558602034" duration="591000" />
+      <workItem from="1582655423738" duration="15211000" />
+      <workItem from="1582738226621" duration="2745000" />
+      <workItem from="1582746552590" duration="488000" />
+      <workItem from="1582747155353" duration="1552000" />
+      <workItem from="1582749185496" duration="18358000" />
+      <workItem from="1582823727854" duration="1942000" />
+      <workItem from="1582826108628" duration="10350000" />
+      <workItem from="1582839600949" duration="1615000" />
+      <workItem from="1582846668965" duration="9514000" />
+      <workItem from="1582901969098" duration="5674000" />
+      <workItem from="1582919262413" duration="12423000" />
+      <workItem from="1583078496761" duration="22359000" />
+      <workItem from="1583173873410" duration="2168000" />
+      <workItem from="1583322462179" duration="1803000" />
+      <workItem from="1583348608145" duration="1506000" />
+      <workItem from="1583411881897" duration="3371000" />
+      <workItem from="1583494563205" duration="2417000" />
+      <workItem from="1583519988404" duration="3041000" />
+      <workItem from="1583774238179" duration="10470000" />
+      <workItem from="1583840817914" duration="14080000" />
+      <workItem from="1583929946877" duration="8147000" />
+      <workItem from="1583974850327" duration="8046000" />
+      <workItem from="1584013543919" duration="7195000" />
+      <workItem from="1584169473673" duration="425000" />
+      <workItem from="1584629911115" duration="1972000" />
+      <workItem from="1584727237436" duration="785000" />
+      <workItem from="1584804553566" duration="1197000" />
+      <workItem from="1584986149438" duration="3145000" />
+      <workItem from="1585069067922" duration="2371000" />
+      <workItem from="1585150783079" duration="2763000" />
+      <workItem from="1585173576410" duration="1250000" />
+      <workItem from="1585250705959" duration="3480000" />
+      <workItem from="1585319944766" duration="2799000" />
+      <workItem from="1585342073487" duration="1193000" />
+      <workItem from="1585595579128" duration="3565000" />
+      <workItem from="1585677371648" duration="581000" />
+      <workItem from="1585691156817" duration="236000" />
+      <workItem from="1585771937173" duration="706000" />
+      <workItem from="1585844524522" duration="1196000" />
+      <workItem from="1585930034850" duration="589000" />
+      <workItem from="1586018959846" duration="3675000" />
+      <workItem from="1586029550327" duration="4791000" />
+      <workItem from="1586108531434" duration="578000" />
+      <workItem from="1586183773625" duration="16108000" />
+      <workItem from="1586241863714" duration="336000" />
+      <workItem from="1586278839566" duration="9220000" />
+      <workItem from="1586361109588" duration="2401000" />
+      <workItem from="1586536462506" duration="11178000" />
+      <workItem from="1586709192608" duration="276000" />
+      <workItem from="1586723021784" duration="3397000" />
+      <workItem from="1586797781841" duration="2218000" />
+      <workItem from="1586891641624" duration="1466000" />
+      <workItem from="1586907493602" duration="721000" />
+      <workItem from="1586959109816" duration="1186000" />
+      <workItem from="1586993287267" duration="749000" />
+      <workItem from="1587054000251" duration="1194000" />
+      <workItem from="1587144149186" duration="926000" />
+      <workItem from="1587313245411" duration="592000" />
+      <workItem from="1587401973622" duration="1782000" />
+      <workItem from="1587476605854" duration="1476000" />
+      <workItem from="1587510741829" duration="1015000" />
+      <workItem from="1587581586478" duration="9162000" />
+      <workItem from="1587652252057" duration="4926000" />
+      <workItem from="1587739501086" duration="1192000" />
+      <workItem from="1587831788159" duration="9612000" />
+      <workItem from="1587915940064" duration="1189000" />
+      <workItem from="1588003422191" duration="27339000" />
+      <workItem from="1588050320780" duration="2855000" />
+      <workItem from="1588086272295" duration="2562000" />
+      <workItem from="1588102958580" duration="6440000" />
+      <workItem from="1588173522689" duration="5751000" />
+      <workItem from="1588198397303" duration="1998000" />
+      <workItem from="1588265032968" duration="2298000" />
+      <workItem from="1588354769627" duration="5752000" />
+      <workItem from="1588456642490" duration="806000" />
+      <workItem from="1588525527713" duration="4623000" />
+      <workItem from="1588605571214" duration="19833000" />
+      <workItem from="1588689011535" duration="20813000" />
+      <workItem from="1588783706275" duration="4719000" />
+      <workItem from="1588866519587" duration="2716000" />
+      <workItem from="1588962833061" duration="583000" />
+      <workItem from="1588972829944" duration="617000" />
+      <workItem from="1589222784503" duration="4482000" />
+      <workItem from="1589293875063" duration="1760000" />
+      <workItem from="1589325830914" duration="1677000" />
+      <workItem from="1589386514821" duration="1321000" />
+      <workItem from="1589399201441" duration="1487000" />
+      <workItem from="1589564470501" duration="3102000" />
+      <workItem from="1589645706438" duration="1767000" />
+      <workItem from="1589822068453" duration="7651000" />
+      <workItem from="1589909601740" duration="18197000" />
+      <workItem from="1589988300256" duration="23478000" />
+      <workItem from="1590036477787" duration="284000" />
+      <workItem from="1590179586912" duration="14696000" />
+      <workItem from="1590248917945" duration="579000" />
+      <workItem from="1590451305271" duration="4668000" />
+      <workItem from="1590511480283" duration="2774000" />
+      <workItem from="1590522687213" duration="10704000" />
+      <workItem from="1590585744493" duration="8920000" />
+      <workItem from="1590678634243" duration="1024000" />
+      <workItem from="1590702717481" duration="7169000" />
+      <workItem from="1590852963452" duration="1192000" />
+      <workItem from="1590946392567" duration="603000" />
+      <workItem from="1591475339879" duration="1386000" />
+      <workItem from="1591478079929" duration="253000" />
+      <workItem from="1591542785389" duration="3552000" />
+      <workItem from="1591558390258" duration="5037000" />
+      <workItem from="1591636295409" duration="1913000" />
+      <workItem from="1591651861736" duration="155000" />
+      <workItem from="1591652157377" duration="7954000" />
+      <workItem from="1591898923543" duration="1788000" />
+      <workItem from="1591901655025" duration="18150000" />
+      <workItem from="1592237792889" duration="1252000" />
+      <workItem from="1592256925627" duration="2236000" />
+      <workItem from="1592325159452" duration="7992000" />
+      <workItem from="1592404912102" duration="14874000" />
+      <workItem from="1592497856848" duration="600000" />
+      <workItem from="1592585347190" duration="4779000" />
+      <workItem from="1592670608909" duration="3995000" />
+      <workItem from="1592694374846" duration="5185000" />
+      <workItem from="1592755112903" duration="2030000" />
+      <workItem from="1592857670629" duration="603000" />
+      <workItem from="1592866452554" duration="2349000" />
+      <workItem from="1592944069241" duration="1914000" />
+      <workItem from="1593025460814" duration="3791000" />
+      <workItem from="1593108868135" duration="1334000" />
+      <workItem from="1593284734659" duration="3290000" />
+      <workItem from="1593455132836" duration="738000" />
+      <workItem from="1593465984190" duration="1884000" />
+      <workItem from="1593558042119" duration="3129000" />
+      <workItem from="1593627684350" duration="1637000" />
+      <workItem from="1593707982135" duration="7507000" />
+      <workItem from="1593801534750" duration="614000" />
+      <workItem from="1593883868352" duration="4602000" />
+      <workItem from="1594001918522" duration="16656000" />
+      <workItem from="1594053472158" duration="9488000" />
+      <workItem from="1594073036960" duration="4821000" />
+      <workItem from="1594155721695" duration="1847000" />
+      <workItem from="1594165677510" duration="3330000" />
+      <workItem from="1594171104093" duration="1946000" />
+      <workItem from="1594224344200" duration="15780000" />
+      <workItem from="1594337320953" duration="3772000" />
+      <workItem from="1594405546171" duration="6602000" />
+      <workItem from="1594497131567" duration="1299000" />
+      <workItem from="1594575765490" duration="23610000" />
+      <workItem from="1594659404721" duration="21634000" />
+      <workItem from="1594759081451" duration="951000" />
+      <workItem from="1594766862413" duration="6047000" />
+      <workItem from="1594830622583" duration="23370000" />
+      <workItem from="1594922596529" duration="6712000" />
+      <workItem from="1595011237164" duration="1864000" />
+      <workItem from="1595094081643" duration="6569000" />
+      <workItem from="1595175307407" duration="10809000" />
+      <workItem from="1595257817142" duration="12536000" />
+      <workItem from="1595357361564" duration="1863000" />
+      <workItem from="1595448972312" duration="1024000" />
+      <workItem from="1595524626934" duration="11715000" />
+      <workItem from="1595609346270" duration="1537000" />
+      <workItem from="1595701658779" duration="1254000" />
+      <workItem from="1595786083231" duration="1884000" />
+      <workItem from="1595864648203" duration="1194000" />
+      <workItem from="1595963395778" duration="740000" />
+      <workItem from="1596044609247" duration="1323000" />
+      <workItem from="1596127384172" duration="4443000" />
+      <workItem from="1596213642768" duration="2042000" />
+      <workItem from="1596299585972" duration="2680000" />
+      <workItem from="1596386345516" duration="18984000" />
+      <workItem from="1596476183665" duration="5162000" />
+      <workItem from="1596559316085" duration="1771000" />
+      <workItem from="1596581720473" duration="6663000" />
+      <workItem from="1596659297274" duration="6857000" />
+      <workItem from="1596697331257" duration="577000" />
+      <workItem from="1596732703576" duration="10128000" />
+      <workItem from="1596815323715" duration="1792000" />
+      <workItem from="1596922585907" duration="7426000" />
+      <workItem from="1597000724923" duration="4896000" />
+      <workItem from="1597072035362" duration="1181000" />
+      <workItem from="1597088745995" duration="6177000" />
+      <workItem from="1597169962474" duration="2731000" />
+      <workItem from="1597256234712" duration="25397000" />
+      <workItem from="1597338199352" duration="3716000" />
+      <workItem from="1597422925468" duration="577000" />
+      <workItem from="1597459295093" duration="1234000" />
+      <workItem from="1597548300899" duration="920000" />
+      <workItem from="1597629125422" duration="1234000" />
+      <workItem from="1597771308670" duration="1194000" />
+      <workItem from="1599949791154" duration="1196000" />
+      <workItem from="1600198995928" duration="1186000" />
+      <workItem from="1600266400740" duration="1102000" />
+      <workItem from="1600354897864" duration="4682000" />
+      <workItem from="1600819695423" duration="582000" />
+      <workItem from="1600872684868" duration="844000" />
+      <workItem from="1600967024813" duration="1811000" />
+      <workItem from="1601047129209" duration="2618000" />
+      <workItem from="1601141193568" duration="4670000" />
+      <workItem from="1601220986834" duration="5559000" />
+      <workItem from="1601393365159" duration="4488000" />
+      <workItem from="1601571545129" duration="1909000" />
+      <workItem from="1601592969295" duration="1182000" />
+      <workItem from="1601657816785" duration="3281000" />
+      <workItem from="1601750412924" duration="11094000" />
+      <workItem from="1601774815116" duration="4637000" />
+      <workItem from="1601836557551" duration="9208000" />
+      <workItem from="1601914561252" duration="9156000" />
+      <workItem from="1602002114771" duration="573000" />
+      <workItem from="1602176130098" duration="2913000" />
+      <workItem from="1602198672789" duration="2377000" />
+      <workItem from="1602256731534" duration="5438000" />
+      <workItem from="1602343567472" duration="1288000" />
+      <workItem from="1602366265060" duration="2756000" />
+      <workItem from="1602433215941" duration="7723000" />
+      <workItem from="1602519883079" duration="4228000" />
+      <workItem from="1602540406873" duration="1384000" />
+      <workItem from="1602603426244" duration="7214000" />
+      <workItem from="1602658250248" duration="4908000" />
+      <workItem from="1602868140461" duration="2217000" />
+      <workItem from="1602953237779" duration="4411000" />
+      <workItem from="1603039178202" duration="7949000" />
+      <workItem from="1603118928906" duration="7872000" />
+      <workItem from="1603735299780" duration="926000" />
+      <workItem from="1603819208152" duration="16968000" />
+      <workItem from="1603899568653" duration="584000" />
+      <workItem from="1603929745300" duration="1789000" />
+      <workItem from="1603983682025" duration="588000" />
+      <workItem from="1604021491379" duration="584000" />
+      <workItem from="1604071971943" duration="1183000" />
+      <workItem from="1604336388375" duration="778000" />
+      <workItem from="1604338339149" duration="6559000" />
+      <workItem from="1604360546996" duration="1730000" />
+      <workItem from="1604431411023" duration="569000" />
+      <workItem from="1604445927085" duration="8998000" />
+      <workItem from="1604496945666" duration="2911000" />
+      <workItem from="1604690350486" duration="2922000" />
+      <workItem from="1604851790999" duration="10326000" />
+      <workItem from="1604943038478" duration="2023000" />
+      <workItem from="1605030227316" duration="2451000" />
+      <workItem from="1605712069340" duration="4861000" />
+      <workItem from="1606403249480" duration="8857000" />
+      <workItem from="1606498431982" duration="2087000" />
+      <workItem from="1606674885506" duration="5272000" />
+      <workItem from="1607101423193" duration="1184000" />
+      <workItem from="1607189864563" duration="589000" />
+      <workItem from="1607281972471" duration="22483000" />
+      <workItem from="1607470583231" duration="13990000" />
+      <workItem from="1607619923019" duration="3895000" />
+      <workItem from="1607702434936" duration="3145000" />
+      <workItem from="1607789427164" duration="4876000" />
+      <workItem from="1607827803119" duration="406000" />
+      <workItem from="1607881377740" duration="5341000" />
+      <workItem from="1607919048790" duration="1173000" />
+      <workItem from="1607963738176" duration="1275000" />
+      <workItem from="1609349683212" duration="1415000" />
+      <workItem from="1609601272530" duration="1484000" />
+      <workItem from="1609869343394" duration="3054000" />
+      <workItem from="1609882238470" duration="589000" />
+      <workItem from="1609951084129" duration="1181000" />
+      <workItem from="1610117259367" duration="1027000" />
+      <workItem from="1610372886858" duration="4450000" />
+      <workItem from="1610466191451" duration="9755000" />
+      <workItem from="1610547349876" duration="13035000" />
+      <workItem from="1610635897763" duration="4556000" />
+      <workItem from="1610734213101" duration="244000" />
+      <workItem from="1610819328970" duration="5014000" />
+      <workItem from="1611106275418" duration="4080000" />
+      <workItem from="1611152337728" duration="7719000" />
+      <workItem from="1611242475474" duration="1380000" />
+      <workItem from="1611354493915" duration="1319000" />
+      <workItem from="1611497305687" duration="520000" />
+      <workItem from="1611852961107" duration="48000" />
+      <workItem from="1611853053762" duration="117000" />
+      <workItem from="1612305665485" duration="696000" />
+      <workItem from="1612372610219" duration="639000" />
+      <workItem from="1612636621226" duration="303000" />
+      <workItem from="1612636950278" duration="196000" />
+      <workItem from="1612637168053" duration="222000" />
+      <workItem from="1612637409195" duration="2310000" />
+      <workItem from="1612651905494" duration="708000" />
+      <workItem from="1612713234696" duration="4224000" />
+      <workItem from="1612720752169" duration="856000" />
+      <workItem from="1612721727316" duration="3099000" />
+      <workItem from="1612807477988" duration="3096000" />
+      <workItem from="1612886469463" duration="17058000" />
+      <workItem from="1612992694040" duration="3568000" />
+      <workItem from="1613489845766" duration="11199000" />
+      <workItem from="1613684088662" duration="594000" />
+      <workItem from="1613689389509" duration="715000" />
+      <workItem from="1613744691271" duration="585000" />
+      <workItem from="1614015151994" duration="2505000" />
+      <workItem from="1614095512799" duration="582000" />
+      <workItem from="1614128940382" duration="571000" />
+      <workItem from="1614187856982" duration="2431000" />
+      <workItem from="1614264743927" duration="581000" />
+      <workItem from="1614356105984" duration="583000" />
+      <workItem from="1614439917280" duration="571000" />
+      <workItem from="1614534606201" duration="570000" />
+      <workItem from="1614620382504" duration="571000" />
+      <workItem from="1614790486094" duration="578000" />
+      <workItem from="1614889311742" duration="589000" />
+      <workItem from="1614955037188" duration="576000" />
+      <workItem from="1615043769193" duration="350000" />
+      <workItem from="1615126997853" duration="558000" />
+      <workItem from="1615160480095" duration="575000" />
+      <workItem from="1615223131100" duration="548000" />
+      <workItem from="1615312458033" duration="574000" />
+      <workItem from="1615383780994" duration="587000" />
+      <workItem from="1615990228950" duration="516000" />
+      <workItem from="1616078741255" duration="558000" />
+      <workItem from="1619135253060" duration="594000" />
+      <workItem from="1619451380739" duration="654000" />
+      <workItem from="1619457128223" duration="2653000" />
+      <workItem from="1619548068686" duration="1389000" />
+      <workItem from="1619895607623" duration="3697000" />
+      <workItem from="1619971154775" duration="9203000" />
+      <workItem from="1620060974836" duration="699000" />
+      <workItem from="1620134272159" duration="2850000" />
+      <workItem from="1620232046822" duration="2922000" />
+      <workItem from="1620328269450" duration="1165000" />
+      <workItem from="1620495637611" duration="5035000" />
+      <workItem from="1620575792365" duration="7441000" />
+      <workItem from="1620652273110" duration="5957000" />
+      <workItem from="1620736701869" duration="3887000" />
+      <workItem from="1620836859506" duration="12005000" />
+      <workItem from="1620913699228" duration="1955000" />
+      <workItem from="1621096481663" duration="12656000" />
+      <workItem from="1621255293042" duration="16668000" />
+      <workItem from="1621354297495" duration="6220000" />
+      <workItem from="1621427286566" duration="10889000" />
+      <workItem from="1621529236774" duration="589000" />
+      <workItem from="1621622556482" duration="8760000" />
+      <workItem from="1621703334038" duration="4930000" />
+      <workItem from="1621779144493" duration="31777000" />
+      <workItem from="1621834549418" duration="1758000" />
+      <workItem from="1621876345637" duration="2073000" />
+      <workItem from="1621975804437" duration="5435000" />
+      <workItem from="1622074686238" duration="1479000" />
+      <workItem from="1622300119402" duration="3002000" />
+      <workItem from="1622388089702" duration="3644000" />
+      <workItem from="1622467951531" duration="2999000" />
+      <workItem from="1622566593839" duration="2969000" />
+      <workItem from="1622818363254" duration="2360000" />
+      <workItem from="1622907483890" duration="1448000" />
+      <workItem from="1622924116297" duration="5453000" />
+      <workItem from="1622993162555" duration="11858000" />
+      <workItem from="1623074105512" duration="3301000" />
+      <workItem from="1623115790117" duration="629000" />
+      <workItem from="1623130825679" duration="580000" />
+      <workItem from="1623167163455" duration="4070000" />
+      <workItem from="1623253501123" duration="11485000" />
+      <workItem from="1623280171219" duration="569000" />
+      <workItem from="1623338690001" duration="20520000" />
+      <workItem from="1623422609718" duration="12970000" />
+      <workItem from="1623512767700" duration="16382000" />
+      <workItem from="1623609692309" duration="25795000" />
+      <workItem from="1623680970943" duration="5033000" />
+      <workItem from="1623777993739" duration="809000" />
+      <workItem from="1623855070716" duration="900000" />
+      <workItem from="1623938002400" duration="1848000" />
+      <workItem from="1624025084141" duration="1852000" />
+      <workItem from="1624117314263" duration="1422000" />
+      <workItem from="1624208584547" duration="5883000" />
+      <workItem from="1624319250356" duration="2358000" />
+      <workItem from="1624370919022" duration="4239000" />
+      <workItem from="1624409987256" duration="1901000" />
+      <workItem from="1624456412190" duration="4121000" />
+      <workItem from="1624545673385" duration="3187000" />
+      <workItem from="1624629085837" duration="5378000" />
+      <workItem from="1624715309045" duration="590000" />
+    </task>
+    <task id="LOCAL-00022" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597280090210</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1597280090210</updated>
+    </task>
+    <task id="LOCAL-00023" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597281992630</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1597281992630</updated>
+    </task>
+    <task id="LOCAL-00024" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597282166048</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1597282166048</updated>
+    </task>
+    <task id="LOCAL-00025" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597283688057</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1597283688057</updated>
+    </task>
+    <task id="LOCAL-00026" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597284672995</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1597284672995</updated>
+    </task>
+    <task id="LOCAL-00027" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597286047436</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1597286047436</updated>
+    </task>
+    <task id="LOCAL-00028" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597286376158</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1597286376158</updated>
+    </task>
+    <task id="LOCAL-00029" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597286787467</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1597286787467</updated>
+    </task>
+    <task id="LOCAL-00030" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597287059394</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1597287059394</updated>
+    </task>
+    <task id="LOCAL-00031" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597287207147</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1597287207147</updated>
+    </task>
+    <task id="LOCAL-00032" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597287399880</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1597287399880</updated>
+    </task>
+    <task id="LOCAL-00033" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597287539125</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1597287539125</updated>
+    </task>
+    <task id="LOCAL-00034" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597288012492</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1597288012492</updated>
+    </task>
+    <task id="LOCAL-00035" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597288474658</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1597288474658</updated>
+    </task>
+    <task id="LOCAL-00036" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597345601158</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1597345601158</updated>
+    </task>
+    <task id="LOCAL-00037" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597459454285</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1597459454286</updated>
+    </task>
+    <task id="LOCAL-00038" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597459965548</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1597459965548</updated>
+    </task>
+    <task id="LOCAL-00039" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1597551272556</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1597551272557</updated>
+    </task>
+    <task id="LOCAL-00040" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1599950334847</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1599950334847</updated>
+    </task>
+    <task id="LOCAL-00041" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1601772201403</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1601772201403</updated>
+    </task>
+    <task id="LOCAL-00042" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1602680244246</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1602680244247</updated>
+    </task>
+    <task id="LOCAL-00043" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1603129682719</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1603129682719</updated>
+    </task>
+    <task id="LOCAL-00044" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1603827720137</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1603827720137</updated>
+    </task>
+    <task id="LOCAL-00045" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1603836615695</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1603836615695</updated>
+    </task>
+    <task id="LOCAL-00046" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1603837503890</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1603837503890</updated>
+    </task>
+    <task id="LOCAL-00047" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1603839283145</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1603839283145</updated>
+    </task>
+    <task id="LOCAL-00048" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1603850888314</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1603850888314</updated>
+    </task>
+    <task id="LOCAL-00049" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604336531218</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1604336531218</updated>
+    </task>
+    <task id="LOCAL-00050" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604338604849</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1604338604850</updated>
+    </task>
+    <task id="LOCAL-00051" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604340295452</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1604340295452</updated>
+    </task>
+    <task id="LOCAL-00052" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604348084580</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1604348084580</updated>
+    </task>
+    <task id="LOCAL-00053" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604454805605</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1604454805606</updated>
+    </task>
+    <task id="LOCAL-00054" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604456317091</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1604456317091</updated>
+    </task>
+    <task id="LOCAL-00055" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1604456393380</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1604456393380</updated>
+    </task>
+    <task id="LOCAL-00056" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1607291093627</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1607291093628</updated>
+    </task>
+    <task id="LOCAL-00057" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1607296244691</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1607296244691</updated>
+    </task>
+    <task id="LOCAL-00058" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1607297673452</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1607297673452</updated>
+    </task>
+    <task id="LOCAL-00059" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1607308559406</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1607308559406</updated>
+    </task>
+    <task id="LOCAL-00060" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1607520228270</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1607520228270</updated>
+    </task>
+    <task id="LOCAL-00061" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1607520615989</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1607520615989</updated>
+    </task>
+    <task id="LOCAL-00062" summary="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock">
+      <created>1609878258223</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1609878258224</updated>
+    </task>
+    <task id="LOCAL-00063" summary="access token">
+      <created>1610473307427</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1610473307428</updated>
+    </task>
+    <task id="LOCAL-00064" summary="cambiarminute">
+      <created>1610476928075</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1610476928075</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Arreglando el token">
+      <created>1610637491043</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1610637491045</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Mostrar la authentificacion">
+      <created>1610734297514</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1610734297515</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Mostrar la authentificacion">
+      <created>1610839490756</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1610839490756</updated>
+    </task>
+    <task id="LOCAL-00068" summary="configuracion del controlador">
+      <created>1612904258026</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1612904258026</updated>
+    </task>
+    <task id="LOCAL-00069" summary="configuracion del controlador">
+      <created>1622910440637</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1622910440637</updated>
+    </task>
+    <task id="LOCAL-00070" summary="configuracion del controlador">
+      <created>1623681532946</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1623681532946</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="test__prijectoeccommerspostsale - 2020.02.26 at 17h 46m 59s.xml">
+      <configuration name="test: prijectoeccommerspostsale" configurationId="RakeRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2075519000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49888888" visible="true" weight="0.20682302" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5011111" side_tool="true" weight="0.24466951" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.48987207" visible="true" weight="0.32333332" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.60333335" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5101279" side_tool="true" weight="0.6288889" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49840087" weight="0.63" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3288889" />
+      <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32988507" />
+      <window_info anchor="bottom" id="Terminal" order="14" sideWeight="0.48987207" weight="0.5277778" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.27558637" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49888888" visible="true" weight="0.20042644" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5011111" side_tool="true" weight="0.24466951" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.48987207" visible="true" weight="0.32333332" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.60333335" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5101279" side_tool="true" weight="0.6288889" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49840087" weight="0.63" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3288889" />
+      <window_info anchor="bottom" id="SQL Generator" order="13" weight="0.32988507" />
+      <window_info anchor="bottom" id="Terminal" order="14" sideWeight="0.48987207" weight="0.5277778" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.27558637" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_DETAILS" value="true" />
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="1" />
+        <option value="3" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/marketmini" />
+    </ignored-roots>
+    <MESSAGE value="realizando el primer commit" />
+    <MESSAGE value="no esta funcionando esto" />
+    <MESSAGE value="no esta funcionando esto 2" />
+    <MESSAGE value="no esta funcionando esto 3" />
+    <MESSAGE value="no esta funcionando esto 5" />
+    <MESSAGE value="agregando los roles" />
+    <MESSAGE value="agregando y cambiando cambios de los stock y agragando la forma en como se mostrara el stock" />
+    <MESSAGE value="access token" />
+    <MESSAGE value="cambiarminute" />
+    <MESSAGE value="Arreglando el token" />
+    <MESSAGE value="Mostrar la authentificacion" />
+    <MESSAGE value="configuracion del controlador" />
+    <option name="LAST_COMMIT_MESSAGE" value="configuracion del controlador" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/prijectoeccommerspostsale@test__prijectoeccommerspostsale.rcov" NAME="test: prijectoeccommerspostsale Coverage Results" MODIFIED="1582750018637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="prijectoeccommerspostsale" />
+    <SUITE FILE_PATH="coverage/prijectoeccommerspostsale@Development__marketmini.rcov" NAME="Development: marketmini Coverage Results" MODIFIED="1603839122971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="prijectoeccommerspostsale" />
+    <SUITE FILE_PATH="coverage/prijectoeccommerspostsale@Production__prijectoeccommerspostsale.rcov" NAME="Production: prijectoeccommerspostsale Coverage Results" MODIFIED="1603839219694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="prijectoeccommerspostsale" />
+    <SUITE FILE_PATH="coverage/prijectoeccommerspostsale@Development__prijectoeccommerspostsale.rcov" NAME="Development: prijectoeccommerspostsale Coverage Results" MODIFIED="1624718612196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="prijectoeccommerspostsale" />
+    <SUITE FILE_PATH="coverage/prijectoeccommerspostsale@Production__marketmini.rcov" NAME="Production: marketmini Coverage Results" MODIFIED="1603839164514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="prijectoeccommerspostsale" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210503012504_change_column_decrease_default_situation.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby26-x64/lib/ruby/2.6.0/forwardable.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210503002119_change_column_product_fechavencimiento.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210501191039_add_fecha_vencimiento_product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/forwardable-1.3.2/lib/forwardable.rb" />
+    <entry file="file://$PROJECT_DIR$/app/controllers/archings_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/payments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1257">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/providers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/mrmsolution.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-6.0.3.6/lib/active_record/persistence.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1042">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210510022443_create_mrmsolutions.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210503012810_add_column.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="83" selection-start-line="2" selection-start-column="83" selection-end-line="2" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/config_vouchers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/decrease.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/puma.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/cors.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="59" selection-start-column="59" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/categories_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/sale.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210609000635_to_dateexpiration.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="79" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210608182915_remove_date_expiration.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="56" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210605210429_create_date_expirations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210510154920_add_reference_solution.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210608155811_ad_d_stock_fecha.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210605212000_reference_product_expiredate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="78" lean-forward="true" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/brands_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/voucher_detail.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/category.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/brand.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sales_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/mrmsolutions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/decreases_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-729">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/vouchers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="75" column="43" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/half_payments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/voucher.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="95" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210617143449_add_stock_save_referenfece_product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/taxes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20210622060105_add_refere_fecha_expiration.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="95" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/pids/server.pid">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/voucher_details_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3009">
+          <caret line="177" column="6" selection-start-line="177" selection-start-column="6" selection-end-line="177" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/stock.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/date_expiration.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="18" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/stocks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/date_expirations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

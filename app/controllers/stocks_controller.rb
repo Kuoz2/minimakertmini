@@ -6,9 +6,14 @@ class StocksController < ApplicationController
   before_action :buscar_fecha_perdidas, only: [:buscar_las_fechas_perdidas]
   # GET /stocks
   def index
-    @stocks = Stock.all
+    @stocks = Stock.all.where(product_id: 0)
 
-    render json: @stocks
+    render json: @stocks, :include => [:product]
+  end
+
+  def stock_product_id_on
+    @stocks = Stock.all.where.not(product_id: 0 )
+    render json: @stocks, :include => [:product]
   end
 
   def mostrat_todos
@@ -175,6 +180,6 @@ class StocksController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
     def stock_params
-      params.require(:stock).permit(:pstock,:pstockcatalogo,:stock_lost,:stock_security, :provider_id)
+      params.require(:stock).permit(:pstock,:pstockcatalogo,:stock_lost,:stock_security, :provider_id, :product_id)
     end
 end

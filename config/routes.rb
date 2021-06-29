@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :date_expirations
+  resources :date_expirations do
+    collection do
+      get 'date_product_id_on'
+    end
+  end
   resources :mrmsolutions
   resources :config_vouchers
   resources :archings
@@ -71,6 +75,7 @@ Rails.application.routes.draw do
       get 'mostrat_todos'
       get 'mostrar_stock_de_perdidas'
       get 'p_mes_anterior'
+      get 'stock_product_id_on'
     end
 
   end

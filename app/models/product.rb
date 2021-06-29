@@ -11,12 +11,15 @@ class Product < ApplicationRecord
   belongs_to :date_expiration,  foreign_key: :date_expirations_id, optional: true, :inverse_of => :products
   has_many :decreases
   has_many :voucher_details, inverse_of: :product
+  has_many :stocks
+  has_many :date_expirations, inverse_of: :products, foreign_key: :date_expirations_id
   validates_presence_of :category_id,:stock, :brand_id, :date_expiration
 
 
   accepts_nested_attributes_for :voucher_details, allow_destroy: true
   accepts_nested_attributes_for :decreases
-
+  accepts_nested_attributes_for :stocks
+  accepts_nested_attributes_for :date_expirations
 
 
 end

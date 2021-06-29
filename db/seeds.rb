@@ -48,10 +48,10 @@ q3 = Product.create!(
     :pvneto => 1000,
     :fecha_vencimiento => "2021-08-18",
     :stock => Stock.create!(
-    :pstock => 1,
+    :pstock => 100,
     :pstockcatalogo => 1,
     :stock_lost => 2,
-    :stock_security=> 3
+    :stock_security=> 3,
 
 ),
      :date_expiration => DateExpiration.create!(
@@ -59,7 +59,24 @@ q3 = Product.create!(
      :cambio_fecha => false,
      :cantidad_cambiadas => 1,
      :stock_expiration => 10,
-     :actualizado_stockm => true
+     :actualizado_stockm => true,
         )
+)
+
+q4 = Stock.create!(
+    :pstock => 100,
+    :pstockcatalogo => 1,
+    :stock_lost => 2,
+    :stock_security=> 3,
+    :product_id => 1
+)
+
+q5 = DateExpiration.create!(
+    fecha_vencimiento:'2021-10-20',
+    cambio_fecha: true,
+    cantidad_cambiadas: 200,
+    stock_expiration: 200,
+    actualizado_stockm: true,
+    product_id: 1
 )
 

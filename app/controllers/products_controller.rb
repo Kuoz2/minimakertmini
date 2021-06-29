@@ -41,7 +41,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
-    render json: @product, :include=>[:stock]
+    render json: @product, :include=>[:stock, :date_expiration]
   end
 
   #Mostrar los productos y los stock perdidos.
@@ -239,7 +239,7 @@ class ProductsController < ApplicationController
                                       :pvneto,
                                       :pvactivacioncatalogo,
                                       :fecha_vencimiento,
-                                      {stock_attributes: [:pstock,:pstockcatalogo,:stock_lost,:stock_security]},
+                                      {stock_attributes: [:pstock,:pstockcatalogo,:stock_lost,:stock_security, :product_id]},
                                       {date_expirations_attributes: [:fecha_vencimiento, :cambio_fecha, :cantidad_cambiadas, :stock_expiration ,:actualizado_stockm]}
                                       )
 
