@@ -34,10 +34,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = {host:'https://marketmini.herokuapp.com/', protocol: 'https'}
+  config.action_mailer.default_url_options = {host:'marketmini.herokuapp.com', protocol: 'https'}
   config.action_mailer.smtp_settings = {
    :addres => "smtp.gmail.com",
    :port => 587,
+   :domain => "gmail.com",
    :user_name => "pruebadenviodecorreo@gmail.com",
    :password => "krabe10251989",
    :authentication => "plain",
