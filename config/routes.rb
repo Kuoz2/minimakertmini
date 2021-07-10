@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get 'date_product_id_on'
     end
   end
+
   resources :mrmsolutions
   resources :config_vouchers
   resources :archings
@@ -65,6 +66,7 @@ Rails.application.routes.draw do
       get 'tomar_productos_meses_vencidos'
       get 'estado_vencimiento'
       get 'vencimientoproximomes'
+      get 'obtener_fecha_productos_mes'
     end
   end
 

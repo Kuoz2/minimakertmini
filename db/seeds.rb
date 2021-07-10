@@ -59,7 +59,7 @@ q3 = Product.create!(
      :cambio_fecha => false,
      :cantidad_cambiadas => 1,
      :stock_expiration => 10,
-     :actualizado_stockm => true,
+     :actualizado_stockm => true
         )
 )
 

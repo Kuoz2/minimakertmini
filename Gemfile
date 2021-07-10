@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #Gema para araques de fuersa bruta por parte de otros sistemas.
 gem 'rack-attack'
 
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise-jwt'
 group :development, :test do
