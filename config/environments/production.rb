@@ -37,7 +37,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host:'marketmini.herokuapp.com', protocol: 'https'}
   config.action_mailer.smtp_settings = {
    :addres => "smtp.gmail.com",
-   :port => 587,
+   :port => 465,
    :domain => "gmail.com",
    :user_name => "pruebadenviodecorreo@gmail.com",
    :password => "krabe10251989",
