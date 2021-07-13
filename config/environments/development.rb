@@ -1,6 +1,23 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = {host:'https://marketmini.herokuapp.com/', protocol: 'https'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   :addres => "smtp.gmail.com",
+   :port => 587,
+   :domain => "gmail.com",
+   :user_name => "pruebadenviodecorreo@gmail.com",
+   :password => "clwarpievsxyyhxb",
+   :authentication => "plain",
+   :ssl =>  true,
+   :enable_starttls_auto => true
+ 
+  }
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -40,22 +57,6 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
-
-  # Envío de correos electronicos Email.
- config.action_mailer.delivery_method = :smtp
- config.action_mailer.raise_delivery_errors = false
- config.action_mailer.perform_caching = false
- config.action_mailer.default_url_options = {host:'localhost:3000', protocol: 'http'}
- config.action_mailer.smtp_settings = {
-  :addres => "smtp.gmail.com",
-  :port => 587,
-  :user_name => "pruebadenviodecorreo@gmail.com",
-  :password => "krabe10251989",
-  :authentication => "plain",
-  :ssl =>  true,
-  :enable_starttls_auto => true
-
- }
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
