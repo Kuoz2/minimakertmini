@@ -25,7 +25,7 @@ module Prijectoeccommerspostsale
     config.load_defaults 6.0
     config.api_only = true
     config.angular_rails_csrf_domain = :all
-    config.force_ssl=true
+    config.force_ssl
     config.action_controller.include_all_helpers = true
     Dotenv::Railtie.load
     config.middleware.insert_before 0, Rack::Cors do
