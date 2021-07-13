@@ -24,3 +24,5 @@
 /config/credentials/development.key
 
 /config/credentials/credentials.key
+
+/master.key.new
