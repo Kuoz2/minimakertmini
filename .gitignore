@@ -26,3 +26,4 @@
 /config/credentials/credentials.key
 
 /master.key.new
+/config/master.key
