@@ -181,7 +181,7 @@ DEPENDENCIES
   devise-jwt
   dotenv-rails
   dry-configurable (= 0.9.0)
-  pg (>= 0.18, < 2.0)
+  pg (< 2.0)
   puma (~> 4.1)
   rack-attack
   rack-cors
