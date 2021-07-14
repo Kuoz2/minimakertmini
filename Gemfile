@@ -38,6 +38,9 @@ group :development, :test do
  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+group :production do 
+end
+
 #gem 'pg', '>= 0.18', '< 2.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms:  [:mingw, :mswin, :x64_mingw, :jruby]
