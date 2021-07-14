@@ -19,6 +19,8 @@ gem 'puma', '~> 4.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'rake', '~> 13.0.3'
+
 gem 'dry-configurable', '0.9.0'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -39,4 +41,4 @@ end
 
 #gem 'pg', '>= 0.18', '< 2.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-#gem 'tzinfo-data', platforms:  [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms:  [:mingw, :mswin, :x64_mingw, :jruby]
