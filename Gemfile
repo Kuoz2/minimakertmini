@@ -32,10 +32,11 @@ gem 'rack-attack'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise-jwt'
-#group :development, :test do
+group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
- # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-#end
+  gem 'pg', '< 2.0'
+ gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
 
 group :production do
   gem 'pg', '< 2.0'
