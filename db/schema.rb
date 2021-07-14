@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_060105) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "stock_expiration", default: 0
     t.boolean "actualizado_stockm", default: false
-    t.bigint "product_id",  default: 0, null:false
+    t.bigint "product_id", default: 0, null: false
     t.index ["product_id"], name: "index_date_expirations_on_product_id"
   end
 
@@ -178,7 +178,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_060105) do
     t.integer "stock_lost"
     t.integer "stock_security"
     t.bigint "provider_id"
-    t.bigint "product_id", default: 0, null:false
+    t.bigint "product_id", default: 0, null: false
     t.index ["product_id"], name: "index_stocks_on_product_id"
     t.index ["provider_id"], name: "index_stocks_on_provider_id"
   end
