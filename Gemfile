@@ -39,6 +39,7 @@ group :development, :test do
 end
 
 group :production do 
+ gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 #gem 'pg', '>= 0.18', '< 2.0'
