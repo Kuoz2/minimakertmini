@@ -40,7 +40,6 @@ Rails.application.configure do
    :user_name => Rails.application.credentials.dig(:google_smtp, :email),
    :password => Rails.application.credentials.dig(:google_smtp, :password),
    :authentication => "plain",
-   :ssl =>  true,
    :enable_starttls_auto => true
  
   }
