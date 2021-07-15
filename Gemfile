@@ -30,15 +30,14 @@ gem 'bootsnap', '>= 1.7.4', require: false
 #Gema para araques de fuersa bruta por parte de otros sistemas.
 gem 'rack-attack'
 
-
+gem 'dotenv-rails', groups: [:development, :test, :production]
 
 gem 'devise-jwt'
 
-group :development, :test do
+group :development, :test, :production do
  gem 'pg', '< 2.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
- gem 'dotenv-rails'
 end
 
 
