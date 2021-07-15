@@ -30,19 +30,16 @@ gem 'bootsnap', '>= 1.7.4', require: false
 #Gema para araques de fuersa bruta por parte de otros sistemas.
 gem 'rack-attack'
 
-#gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise-jwt'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+group :development, :test, :production do
  gem 'pg', '< 2.0'
- gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+# gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group  :production do
- gem 'pg', '< 2.0'
-end
 
 #gem 'pg', '>= 0.18', '< 2.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
