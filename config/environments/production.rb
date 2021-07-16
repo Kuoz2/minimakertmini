@@ -36,7 +36,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
    :addres => "smtp.gmail.com",
    :port => 587,
-   :domain => "gmail.com",
+   :domain => "heroku.com",
    :user_name => Rails.application.credentials.dig(:google_smtp, :email),
    :password => Rails.application.credentials.dig(:google_smtp, :password),
    :authentication => "plain",
