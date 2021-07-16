@@ -12,7 +12,7 @@ class Product < ApplicationRecord
   has_many :decreases
   has_many :voucher_details, inverse_of: :product
   has_many :stocks
-  has_many :date_expirations, inverse_of: :products, foreign_key: :date_expirations_id
+  has_many :date_expirations
   validates_presence_of :category_id, :stock, :brand_id, :date_expiration
   accepts_nested_attributes_for :voucher_details, allow_destroy: true
   accepts_nested_attributes_for :decreases
