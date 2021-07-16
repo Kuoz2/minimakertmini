@@ -29,14 +29,14 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :heroku
+  config.active_storage.service = :local
   config.action_mailer.default_url_options = { :host => 'marketmini.herokuapp.com'}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
    :addres => "smtp.gmail.com",
-   :port => 25,
-   :domain => "herokuapp.com",
+   :port => 465,
+   :domain => "gmail.com",
    :user_name => Rails.application.credentials.dig(:google_smtp, :email),
    :password => Rails.application.credentials.dig(:google_smtp, :password),
    :authentication => "plain",
