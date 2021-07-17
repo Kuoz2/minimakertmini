@@ -83,7 +83,7 @@ class ProductsController < ApplicationController
     #@product.DateExpiration.create(params!.permit![:date_expiration])
     if @product.save
       #.new_envio_email.deliver_later
-      EnvioTicketMailer.new_envio_email.deliver_now
+      ApplicationMailer.new_envio_email.deliver_now
 
       render json: @product, status: :created, location: @product
     else
