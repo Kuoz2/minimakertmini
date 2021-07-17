@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-default from: "pruebadenviodecorreo@gmail.com"
+#default from: "pruebadenviodecorreo@gmail.com"
 #layout 'mailer'
 
 def new_envio_email
