@@ -33,10 +33,11 @@ Rails.application.configure do
   config.active_storage.service = :local
   config.action_mailer.default_url_options = { :host => 'https://marketmini.herokuapp.com'}
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = 'smtp'
   config.action_mailer.smtp_settings = {
    :addres => "smtp.gmail.com",
-   :dimain => "gmail.com",
+   :domain => "gmail.com",
+   :port => 'marketmini.herokuapp.com',
    :port => 587,
    :user_name => Rails.application.credentials.dig(:google_smtp, :email),
    :password => Rails.application.credentials.dig(:google_smtp, :password),
