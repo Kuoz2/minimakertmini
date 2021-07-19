@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_060105) do
+ActiveRecord::Schema.define(version: 2021_07_19_045839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2021_06_22_060105) do
     t.bigint "decrease_id"
     t.index ["decrease_id"], name: "index_archings_on_decrease_id"
     t.index ["voucher_id"], name: "index_archings_on_voucher_id"
+  end
+
+  create_table "archives", force: :cascade do |t|
+    t.binary "nombreXML"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "brands", force: :cascade do |t|

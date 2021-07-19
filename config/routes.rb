@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :archives
   resources :date_expirations do
     collection do
       get 'date_product_id_on'
