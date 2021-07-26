@@ -4,10 +4,10 @@ class EnvioTicketMailer < ApplicationMailer
     @hola = 'david.palta.anes1989@gmail.com'
       info = Base64.decode64(archivo.nombreXML.to_s)
       @url = 'https://marketmini.herokuapp.com/products'
-      puts attachments['informacion.xml']  = File.read(URI.parse(info).open)
+      puts attachments['informacion.xml']  = File.read(URI.parse(info))
 
       
-mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo"
+    mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo"
   end
 
 end
