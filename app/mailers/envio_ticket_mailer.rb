@@ -6,7 +6,7 @@ class EnvioTicketMailer < ApplicationMailer
       @url = 'https://marketmini.herokuapp.com/products'
       
       
-            puts  attachments['info.xml'] = {:mime_type => 'data:text/xml', :content => info}
+            puts  attachments['info.xml'] = {:mime_type => 'text/xml', :content => info}
     mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo"
   end
 
