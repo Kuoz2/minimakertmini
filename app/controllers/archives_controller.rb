@@ -18,7 +18,7 @@ class ArchivesController < ApplicationController
     @archive = Archive.new(archive_params)
 
     if @archive.save
-      ApplicationMailer.new_envio_email.delivery
+      EnvioTicketMailer.new_envio_email(@archive).deliver
       render json: @archive, status: :created, location: @archive
     else
       render json: @archive.errors, status: :unprocessable_entity
