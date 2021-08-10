@@ -66,6 +66,9 @@ class VoucherDetailsController < ApplicationController
     @voucher =  Voucher.new(params.permit![:voucher])
     @voucher_detail = @voucher.voucher_details.new(voucher_detail_params)
     if @voucher_detail.save
+
+      EnvioTicketMailer.new_envio_email(@voucher_detail).deliver
+      #EnvioTicketMailer.new_envio_email(@archive).deliver
     render json: @voucher_detail, status: :created, location: @voucher_detail
     else
     render json: @voucher_detail.errors, status: :unprocessable_entity

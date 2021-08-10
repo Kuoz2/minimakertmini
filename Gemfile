@@ -29,11 +29,15 @@ gem 'bootsnap', '>= 1.7.4', require: false
  gem 'rack-cors'
 #Gema para araques de fuersa bruta por parte de otros sistemas.
 gem 'rack-attack'
+gem  'nokogiri'
+gem 'stringio'
 
 gem 'dotenv-rails', groups: [:development, :test, :production]
-
+gem 'open-uri'
+gem 'net-http'
+gem 'data_uri', '~> 0.1.0'
 gem 'devise-jwt'
-
+gem 'uri'
 group :development, :test, :production do
  gem 'pg', '< 2.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
