@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = '64d88c45014564e3291aab234b864928dc5be34820f9b51a3d7eda2fc542fcddc2c78bf19d032edec192ca0592728a95a33a15af5c1136c525f95b8da57cea9f'
+  config.secret_key = '9d7e7c200ac370f9db22aa5472c16feaa7c06cfeb553f50b921aefbd26035039bae4f34fb18ecce6693590aada951a828b2f3c370527a42a8aa9003c9faa05b3'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -297,14 +297,14 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   config.jwt do |jwt|
-    jwt.secret = "31e6f38762671085e6bb18cb646c97d08b57858ff050a4ca46bd2b6cb284874c632d3d4f0b455ed580505ec2a284b0ebefa54079908812ee6ca1c3ca8e0e0a30"
+    jwt.secret = "9d7e7c200ac370f9db22aa5472c16feaa7c06cfeb553f50b921aefbd26035039bae4f34fb18ecce6693590aada951a828b2f3c370527a42a8aa9003c9faa05b3"
     jwt.dispatch_requests = [
         ['POST',%r{^/logi$}]
     ]
     jwt.revocation_requests = [
         ['DELETE', %r{^/logout$}]
     ]
-    jwt.expiration_time = 14.days.to_i
+    jwt.expiration_time = 1.days.to_i
   end
 
 end
