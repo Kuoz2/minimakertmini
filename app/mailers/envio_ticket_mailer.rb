@@ -57,7 +57,7 @@ class EnvioTicketMailer < ApplicationMailer
           }
         }
       end
-      File.write("archivocml.xml", builder.to_xml)
+      File.write("archivoxml.xml", builder.to_xml)
       #puts builder.to_xml
       #File.write("archivo.xml", builder.to_xml)
      # puts orig_doc = Nokogiri.HTML.parse(open(info))
@@ -77,7 +77,9 @@ class EnvioTicketMailer < ApplicationMailer
      # data = URI::Data.new(loquecambia)
       #File.write("informacin.xml", data.data)
       #puts info
-      # mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo"
+      #encoded = SpecialEncode(File.read('archivoxml.xml'))
+      #mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo", attachments['archivo.xml'] = {
+       #    mime_type:'application/gzip', encoding: 'SpecialEncoding', content: encoded}
   end
 end
 
