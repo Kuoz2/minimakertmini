@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = '9d7e7c200ac370f9db22aa5472c16feaa7c06cfeb553f50b921aefbd26035039bae4f34fb18ecce6693590aada951a828b2f3c370527a42a8aa9003c9faa05b3'
+  config.secret_key = 'c940d3c71b622facca980778a9f0864e489603447be2ff1809d554a8bfa1eed585f49aff8eb7e132ab3f5e70eaf4055aa9d6dcdfe91a8d0fbf60165fbc0af28d'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -297,7 +297,7 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   config.jwt do |jwt|
-    jwt.secret = "9d7e7c200ac370f9db22aa5472c16feaa7c06cfeb553f50b921aefbd26035039bae4f34fb18ecce6693590aada951a828b2f3c370527a42a8aa9003c9faa05b3"
+    jwt.secret = "c940d3c71b622facca980778a9f0864e489603447be2ff1809d554a8bfa1eed585f49aff8eb7e132ab3f5e70eaf4055aa9d6dcdfe91a8d0fbf60165fbc0af28d"
     jwt.request_formats = {
       landlord: [nil, :json]
     }
