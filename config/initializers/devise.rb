@@ -298,6 +298,9 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
   config.jwt do |jwt|
     jwt.secret = "9d7e7c200ac370f9db22aa5472c16feaa7c06cfeb553f50b921aefbd26035039bae4f34fb18ecce6693590aada951a828b2f3c370527a42a8aa9003c9faa05b3"
+    jwt.request_formats = {
+      landlord: [nil, :json]
+    }
     jwt.dispatch_requests = [
         ['POST',%r{^/logi$}]
     ]
