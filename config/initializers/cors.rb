@@ -10,7 +10,7 @@
      origins '*'
 
      resource( '*',
-              headers: %w(Authorization),
+              headers: :any,
               expose: ['access-token', 'expiry', 'token-type', 'uid', 'client', 'Authorization','Some-Custom-Response-Header'],
               methods: [:get, :post, :put, :patch, :delete, :options, :head],
        max_age: 600
