@@ -2,9 +2,25 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
 
-  config.action_mailer.default_url_options = {host:'https://marketmini.herokuapp.com/', protocol: 'https'}
-  config.action_mailer.delivery_method = :letter_oponer
+ # config.action_mailer.default_url_options = {host:'https://marketmini.herokuapp.com/', protocol: 'https'}
+ # config.action_mailer.delivery_method = :letter_oponer
+ # config.action_mailer.perform_deliveries = true
+
+  config.require_master_key = true
+  config.active_storage.service = :local
+  config.action_mailer.default_url_options = { :host => 'localhost'}
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   :address => "smtp.gmail.com",
+   :domain => "gmail.com",
+   :port => 587,
+   :user_name => Rails.application.credentials.dig(:google_smtp, :email),
+   :password => Rails.application.credentials.dig(:google_smtp, :password),
+   :authentication => "plain",
+   :enable_starttls_auto => true
+ 
+  }
   
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

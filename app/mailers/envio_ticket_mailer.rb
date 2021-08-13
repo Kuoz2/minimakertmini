@@ -5,12 +5,16 @@ class EnvioTicketMailer < ApplicationMailer
   def new_envio_email(archivo)
     @hola = 'david.palta.anes1989@gmail.com'
     puts "lo que imprime"
-    puts archivo.product.pdetalle
+    #puts archivo.voucher.vhora
+    puts archivo.voucher.vtotal
+    puts archivo.voucher.vdia
+    puts archivo.voucher.vhora
+    puts archivo.voucher.vfecha
 
-    vfecha = archivo.voucher.vfecha
-    vtotal = archivo.voucher.vtotal
-    vdia = archivo.voucher.vdia 
-    vhora = archivo.voucher.vhora
+  #  vfecha = archivo.voucher.vfecha
+   # vtotal = archivo.voucher.vtotal
+    #vdia = archivo.voucher.vdia 
+    #vhora = archivo.voucher.vhora
 
      # info = Base64.decode64(archivo.nombreXML)
       #@url = 'https://marketmini.herokuapp.com/products'
@@ -30,10 +34,10 @@ class EnvioTicketMailer < ApplicationMailer
             xml.re '17246370-3'
             xml.td '39'
             xml.f '10'
-            xml.fe "'#{vfecha}'"
+            xml.fe "21321"
             xml.rr '17246370-3'
             xml.rsr 'sin informacion'
-            xml.mnt "'#{vtotal}'"
+            xml.mnt "1233"
             xml.caf {
               xml.da {
                 xml.re '17246370-3'
@@ -51,13 +55,13 @@ class EnvioTicketMailer < ApplicationMailer
                 xml.idk 'idk'
                }
                xml.frmt 'algoritmosha'
-               xml.tsted "'#{vhora}'"
+               xml.tsted "13123"
                xml.dd
             }
           }
         }
       end
-      File.write("archivoxml.xml", builder.to_xml)
+     escrito=File.write("archivoxml.xml", builder.to_xml)
       #puts builder.to_xml
       #File.write("archivo.xml", builder.to_xml)
      # puts orig_doc = Nokogiri.HTML.parse(open(info))
@@ -77,9 +81,9 @@ class EnvioTicketMailer < ApplicationMailer
      # data = URI::Data.new(loquecambia)
       #File.write("informacin.xml", data.data)
       #puts info
-      #encoded = SpecialEncode(File.read('archivoxml.xml'))
-      #mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo", attachments['archivo.xml'] = {
-       #    mime_type:'application/gzip', encoding: 'SpecialEncoding', content: encoded}
+      encoded =  File.read('archivoxml.xml')
+      attachments.inline['archivo.xml'] = encoded
+      mail from: 'pruebadenviodecorreo@gmail.com', to: @hola, subject: "Nuevo producto agregado" , body: "hola mundo"
   end
 end
 
