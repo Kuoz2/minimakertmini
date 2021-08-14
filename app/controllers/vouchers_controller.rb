@@ -63,7 +63,7 @@ class VouchersController < ApplicationController
   #MOSTRAR LAS FECHAS QUE SE REALIZARON LAS VENTAS Y ENVAR CUANTA GANANCIAS SE ISIERON.
   def obtener_ganancias_con_fechas
     informacion = []
-    @fecha_y_ganancias_obtenidas = Voucher.all.filter{|fv|
+    @fecha_y_ganancias_obtenidas = Voucher.all.map{|fv|
       busqueda_fv(fv,informacion)
     }
     @busqueda_fv = informacion
@@ -71,33 +71,33 @@ class VouchersController < ApplicationController
 
   def busqueda_fv(fv, informacion)
 
-    case fv.created_at.to_s[5, 2].to_i
-    when 1.to_s
+    case fv.created_at.to_s[6, 2].to_i
+    when 1
       informacion.push({:Ene => fv.vtotal})
-    when 2.to_s
+    when 2
       informacion.push({:Feb =>fv.vtotal})
-    when 3.to_s
+    when 3
       informacion.push({:Marz => fv.vtotal})
-    when 4.to_s
+    when 4
       informacion.push({:Abr => fv.vtotal})
-    when 5.to_s
+    when 5
       informacion.push({:May => fv.vtotal})
-    when 6.to_s
+    when 6
       informacion.push({:Jun => fv.vtotal})
-    when 7.to_s
+    when 7
       informacion.push({:Jul => fv.vtotal})
-    when 8.to_s
+    when 8
       informacion.push({:Agos => fv.vtotal})
-    when 9.to_s
+    when 9
       informacion.push({:Sep => fv.vtotal})
-    when 10.to_s
+    when 10
       informacion.push({:Oct => fv.vtotal})
-    when 11.to_s
+    when 11
       informacion.push({:Nov => fv.vtotal})
-    when 12.to_s
+    when 12
       informacion.push({:Dis => fv.vtotal})
     else
-      informacion.push(0)
+      informacion.push({:sinfecha => 0})
     end
 
   end
