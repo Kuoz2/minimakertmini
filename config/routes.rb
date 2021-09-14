@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quick_sales
   resources :archives
   resources :date_expirations do
     collection do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_045839) do
+ActiveRecord::Schema.define(version: 2021_09_12_185032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,18 @@ ActiveRecord::Schema.define(version: 2021_07_19_045839) do
     t.integer "contabilidad_provider"
     t.string "banco_provider"
     t.binary "factura_provider"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "quick_sales", force: :cascade do |t|
+    t.bigint "cod_product", default: 0
+    t.string "nombre_product", default: "sin nombre"
+    t.string "fecha_venta", default: "00-00-0000"
+    t.bigint "cantidad", default: 0
+    t.string "medio_pago", default: "no existe medio de pago"
+    t.bigint "precio", default: 0
+    t.bigint "efectivo", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

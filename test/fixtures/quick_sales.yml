@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod_product: 
+  nombre_product: MyString
+  fecha_venta: MyString
+  cantidad: 
+  medio_pago: MyString
+  precio: 
+  efectivo: 
+
+two:
+  cod_product: 
+  nombre_product: MyString
+  fecha_venta: MyString
+  cantidad: 
+  medio_pago: MyString
+  precio: 
+  efectivo: 

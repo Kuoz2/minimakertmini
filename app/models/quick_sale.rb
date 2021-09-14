@@ -1,0 +1,2 @@
+class QuickSale < ApplicationRecord
+end
