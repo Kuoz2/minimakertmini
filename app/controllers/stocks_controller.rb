@@ -70,7 +70,7 @@ class StocksController < ApplicationController
 
   # PATCH/PUT /stocks/1
   def update
-    if @stock.update_attributes(stock_params)
+    if @stock.update(stock_params)
       render json: @stock
     else
       render json: @stock.errors, status: :unprocessable_entity
@@ -112,8 +112,6 @@ class StocksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
       @stock = Stock.find(params[:id])
-
-
     end
 
     #Buscar el stock y el valor del producto
