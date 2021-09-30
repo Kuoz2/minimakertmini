@@ -7,8 +7,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
   def generate_jwt
-    JWT.encode({id: id, exp: 3.minutes}, Rails.application.secrets.secret_key_base)
+    JWT.encode({id: id, exp: 3.day.to_i}, Rails.application.secrets.secret_key_base)
   end
+  def jwt_payload
+    { 'role' => role}
+   
+  rescue
+    nil
+  end
+
 
 #before_save :encryptar_role
 #private

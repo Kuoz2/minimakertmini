@@ -8,8 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = 'c940d3c71b622facca980778a9f0864e489603447be2ff1809d554a8bfa1eed585f49aff8eb7e132ab3f5e70eaf4055aa9d6dcdfe91a8d0fbf60165fbc0af28d'
-
+  config.secret_key = Rails.application.credentials.dig(:secret_key_base)
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -88,7 +87,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = [:http_auth, :params_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
@@ -297,7 +296,7 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
   config.jwt do |jwt|
-    jwt.secret = "c940d3c71b622facca980778a9f0864e489603447be2ff1809d554a8bfa1eed585f49aff8eb7e132ab3f5e70eaf4055aa9d6dcdfe91a8d0fbf60165fbc0af28d"
+    jwt.secret = Rails.application.credentials.dig(:secret_key_base)
     jwt.request_formats = {
       landlord: [nil, :json]
     }
@@ -307,7 +306,8 @@ Devise.setup do |config|
     jwt.revocation_requests = [
         ['DELETE', %r{^/logout$}]
     ]
-    jwt.expiration_time = 5.minutes.to_i
+    jwt.expiration_time = 3.day.to_i
+
   end
 
 end

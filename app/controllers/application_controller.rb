@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
 
   def cors_set_access_control_headers
     response.headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Expose-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token, ' \
+    headers['Access-Control-Expose-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token, '
     'Auth-Token, Email, X-User-Token, X-User-Email, x-xsrf-token'
   end
 

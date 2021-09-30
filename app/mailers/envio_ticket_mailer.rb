@@ -4,14 +4,7 @@ class EnvioTicketMailer < ApplicationMailer
   #Envio de correo electronico cuando se agrega un nuevo producto.
   def new_envio_email(archivo)
     @hola = 'david.palta.anes1989@gmail.com'
-    puts "lo que imprime"
-    #puts archivo.voucher.vhora
-    puts archivo.voucher.vtotal
-    puts archivo.voucher.vdia
-    puts archivo.voucher.vhora
-    puts archivo.voucher.vfecha
-
-  #  vfecha = archivo.voucher.vfecha
+      #  vfecha = archivo.voucher.vfecha
    # vtotal = archivo.voucher.vtotal
     #vdia = archivo.voucher.vdia 
     #vhora = archivo.voucher.vhora
