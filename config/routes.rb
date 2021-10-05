@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :quick_sales
+  resources :quick_sales do 
+    collection do
+      get 'ventarapida_fechas'
+      get 'totalventasrapidas'
+    end
+  end
   resources :archives
   resources :date_expirations do
     collection do
       get 'date_product_id_on'
+      get 'buscar_las_fechas_perdidas'
+      get 'todaslasperdidasdos'
     end
   end
 
@@ -80,6 +87,7 @@ Rails.application.routes.draw do
       get 'mostrar_stock_de_perdidas'
       get 'p_mes_anterior'
       get 'stock_product_id_on'
+      get 'todaslasperdiadasinvprim'
     end
 
   end

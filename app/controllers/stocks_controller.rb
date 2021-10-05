@@ -4,6 +4,7 @@ class StocksController < ApplicationController
   before_action :mes_anterior, only: [:p_mes_anterior]
   before_action :productos_en_stock, only: [:stock_products]
   before_action :buscar_fecha_perdidas, only: [:buscar_las_fechas_perdidas]
+  before_action :totalperdidasinventario1, only:[:todaslasperdiadasinvprim]
   # GET /stocks
   def index
     @stocks = Stock.all.where(product_id: 0)
@@ -14,6 +15,11 @@ class StocksController < ApplicationController
   def stock_product_id_on
     @stocks = Stock.all.where.not(product_id: 0 )
     render json: @stocks, :include => [:product]
+  end
+
+  #Mostrar todas las perdidas
+  def todaslasperdiadasinvprim
+    render json:{totalperdiasinv: @totalperdiadsinv1}
   end
 
   def mostrat_todos
@@ -114,6 +120,13 @@ class StocksController < ApplicationController
       @stock = Stock.find(params[:id])
     end
 
+    #Total de perdidas ocurridas-
+    def totalperdidasinventario1
+      
+        @totalperdiadsinv1 = Stock.all.map(&:stock_lost).reduce(:+) 
+      
+    end
+
     #Buscar el stock y el valor del producto
     def productos_en_stock
       fecha = Time.zone.today.month - 1
@@ -140,39 +153,36 @@ class StocksController < ApplicationController
   end
 
   def method_name(a, data)
-    case a.created_at.to_s[5, 2] and a.created_at.to_s[6,1]
-    when 1.to_s
+    case a.created_at.to_s[5, 2].to_i
+    when 1
       data.push({:Ene => a.stock_lost})
-    when 2.to_s
+    when 2
       data.push({:Feb =>a.stock_lost})
-    when 3.to_s
+    when 3
       data.push({:Marz => a.stock_lost})
-    when 4.to_s
+    when 4
       data.push({:Abr => a.stock_lost})
-    when 5.to_s
+    when 5
       data.push({:May => a.stock_lost})
-    when 6.to_s
+    when 6
       data.push({:Jun => a.stock_lost})
-    when 7.to_s
+    when 7
       data.push({:Jul => a.stock_lost})
-    when 8.to_s
+    when 8
       data.push({:Agos => a.stock_lost})
-    when 9.to_s
+    when 9
       data.push({:Sep => a.stock_lost})
-    else
-      []
-    end
-
-    case a.created_at.to_s[6,1]
-    when 10.to_s
+    when 10
       data.push({:Oct => a.stock_lost})
-    when 11.to_s
+    when 11
       data.push({:Nov => a.stock_lost})
-    when 12.to_s
+    when 12
       data.push({:Dis => a.stock_lost})
     else
       []
     end
+
+   
   end
 
 
