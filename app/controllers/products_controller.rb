@@ -75,7 +75,7 @@ class ProductsController < ApplicationController
     #@product = [@stock, @date_expiration].each {|d| puts d.products.new(product_params)}
     #@stock = Stock.new(params.permit![:stock_attributes])
     #@date_expiration = DateExpiration.new(params.permit![:date_expiratoins_attributes])
-   
+    
     @product = Product.new(product_params)
     @product.create_stock!(params.permit![:stock])
     @product.create_date_expiration!(params.permit![:date_expiration])

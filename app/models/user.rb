@@ -10,7 +10,7 @@ class User < ApplicationRecord
     JWT.encode({id: id, exp: 3.day.to_i}, Rails.application.secrets.secret_key_base)
   end
   def jwt_payload
-    { 'role' => role}
+    { 'role' => role, 'maquin' => "20210714010"}
    
   rescue
     nil

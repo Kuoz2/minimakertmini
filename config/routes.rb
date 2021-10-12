@@ -92,6 +92,10 @@ Rails.application.routes.draw do
 
   end
   resources :sales
-  resources :categories
+  resources :categories do 
+    collection do 
+      post 'verificador_jti'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
