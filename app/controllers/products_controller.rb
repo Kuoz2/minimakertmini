@@ -50,6 +50,13 @@ class ProductsController < ApplicationController
     render json: @product, :include=>[:stock, :date_expiration]
   end
 
+  def codigos_debarra
+    @CodPrd = []
+    prod = Product.all
+    prod.map { |d| @CodPrd.push( d.pcodigo) }
+    render json: @CodPrd
+  end
+
   #Mostrar los productos y los stock perdidos.
   def productos_perdidas
     render json: @datos_producto
@@ -75,22 +82,27 @@ class ProductsController < ApplicationController
     #@product = [@stock, @date_expiration].each {|d| puts d.products.new(product_params)}
     #@stock = Stock.new(params.permit![:stock_attributes])
     #@date_expiration = DateExpiration.new(params.permit![:date_expiratoins_attributes])
-    
-    @product = Product.new(product_params)
-    @product.create_stock!(params.permit![:stock])
-    @product.create_date_expiration!(params.permit![:date_expiration])
+              if Rails.cache.read('Pverificado') == 'existe'
+
+              @product = Product.new(product_params)
+              @product.create_stock!(params.permit![:stock])
+              @product.create_date_expiration!(params.permit![:date_expiration])
     #@product.Stock.create(params!.permit![:stock])
     #@product.DateExpiration.create(params!.permit![:date_expiration])
-    if @product.save
-      #.new_envio_email.deliver_later
-      #ApplicationMailer.new_envio_email.deliver_now
+            if @product.save
+              Rails.cache.delete('Pverificado') || Rails.cache.delete('Pnverificado')
 
-      render json: @product, status: :created, location: @product
-    else
-      render json: @product.errors, status: :unprocessable_entity
+              #.new_envio_email.deliver_later
+              #ApplicationMailer.new_envio_email.deliver_now
+
+              render json: :created, status: :created, location: @product
+            else
+              render json: @product.errors, status: :unprocessable_entity
+            end
+          
+            else
+            render json: {resive: 'no tiene permiso'}
     end
-  
-
   end
 
 
@@ -108,7 +120,73 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
   end
+#Verieficandod si puede guardar 
+  def verif_befores_save
+    puts "entra aqui"
+    dato = Hash.new
+    dato  = request.raw_post  
+      puts "jtli entrante #{dato}"
+      if User.exists?(:jti => dato)
+       Rails.cache.write('Pverificado', 'existe') 
+       @informacion = {resultado: 'existe'}
+    else
+      Rails.cache.write('Pnverificado', 'inexistente') 
+      @informacion = {resultado: 'inexistente'}
+        #Ex:- :null => false
+    end
+    render json: @informacion
+  end
+#Verificar antes de actualizar
+def verif_before_update
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnuverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnuverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
 
+#Verificar antes de eliminar
+
+def verif_before_delete
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pndverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pndverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
+
+#Verificar si esta verificado para ver
+def verif_before_see
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnsverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnsverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
 
 
   private
@@ -256,6 +334,7 @@ class ProductsController < ApplicationController
 
     @vence_el_siguiente_mes = vmesiguiente
   end
+
 
     # Only allow a trusted parameter "white list" through.
     def product_params

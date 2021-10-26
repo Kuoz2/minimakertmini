@@ -46,6 +46,6 @@ class ProvidersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def provider_params
-      params.require(:provider).permit(:nombre_provider, :nip_provider, :direccion_provider, :ciudad_provider, :comuna_provider, :telefono_provider, :telefono_persona_provider, :correo_provider, :formadepago_provider, :plazo_provider, :contabilidad_provider, :gasto_provider, :concepto_gasto_provider, :banco_provider, :codigo_provider, :factura_provider)
+      params.require(:provider).permit(:nombre_provider)
     end
 end

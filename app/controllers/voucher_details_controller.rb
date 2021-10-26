@@ -9,7 +9,7 @@ class VoucherDetailsController < ApplicationController
   def index
     @voucher_details = VoucherDetail.all
 
-    render json: @voucher_details, :include => [:voucher, :product => {:include => [:category]} ]
+    render json: @voucher_details, :include => [:voucher, :product => {:include => [:category, :brand]} ]
   end
 
 #mOOSTRAR TODAS LAS GANANCIAS OBTENIDAS.
@@ -115,7 +115,7 @@ class VoucherDetailsController < ApplicationController
   def producto_mas_vendido
 
     producto_vendido =  VoucherDetail.all.map { |de|
-           de.as_json(:except =>[:id,:dvprecio,:voucher_id,:product_id ,:cRreated_at,:updated_at],
+           de.as_json(:except =>[:id,:dvprecio,:voucher_id,:product_id ,:created_at,:updated_at],
                                                                  :include => [:product => {:only =>[:pdescripcion, :pvalor, :pstock]}]) }
 
          @producto_max = producto_vendido

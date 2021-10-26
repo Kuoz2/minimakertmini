@@ -9,27 +9,17 @@ class CategoriesController < ApplicationController
   end
   # GET /categories
   def index
-    if  Rails.cache.read('verificado') == 'existe' 
-      Rails.cache.write('verificado', 'existe') 
 
-    @categories = Category.all
+    @categories = Category.all.order(:id)
 
     render json: @categories
-    else
-      render json: {resive: 'no tiene permiso'}
-    end
   end
 
   # GET /categories/1
   def show
-    if  Rails.cache.read('verificado') == 'existe' 
-      Rails.cache.delete('verificado') || Rails.cache.delete('inexistente')
+
 
     render json: @category
-    else
-      render json: {resive: 'no tiene permiso'}
-
-    end
   end
 
 
@@ -38,8 +28,7 @@ class CategoriesController < ApplicationController
       puts "entra aqui"
       dato = Hash.new
       dato  = request.raw_post  
-      a = Category.new
-
+        puts "jtli entrante #{dato}"
         if User.exists?(:jti => dato)
          Rails.cache.write('verificado', 'existe') 
          @informacion = {resultado: 'existe'}
@@ -48,15 +37,12 @@ class CategoriesController < ApplicationController
         @informacion = {resultado: 'inexistente'}
           #Ex:- :null => false
       end
+      render json: @informacion
     end
 
 
   # POST /categories
   def create 
-    puts Rails.cache.read('verificado')
-    @existe = Rails.cache.read('verificado')
-    puts "antes de guardar #{@existe}"
-    
   if  Rails.cache.read('verificado') == 'existe' 
 
     @category = Category.new(category_params)
@@ -75,16 +61,13 @@ class CategoriesController < ApplicationController
     
   # PATCH/PUT /categories/1
   def update
-    if  Rails.cache.read('verificado') == 'existe' 
+    puts Rails.cache.read('verificado')
+
       if @category.update(category_params)
-              Rails.cache.delete('verificado') || Rails.cache.delete('inexistente')
       render json: @category
     else
       render json: @category.errors, status: :unprocessable_entity
     end
-  else
-    render json: {resive: 'no tiene permiso'}
-  end
 
   end
 

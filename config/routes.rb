@@ -76,6 +76,8 @@ Rails.application.routes.draw do
       get 'estado_vencimiento'
       get 'vencimientoproximomes'
       get 'obtener_fecha_productos_mes'
+      get 'codigos_debarra'
+      post 'verif_befores_save'
     end
   end
 
