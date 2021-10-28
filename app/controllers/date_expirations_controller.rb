@@ -6,7 +6,7 @@ class DateExpirationsController < ApplicationController
   def index
     @date_expirations = DateExpiration.all.where(product_id: 0)
 
-    render json: @date_expirations, :include => [:product]
+    render json: @date_expirations, :include => [:product =>{include: [:stock, :category, :brand]}]
   end
 
   def date_product_id_on
