@@ -43,20 +43,20 @@ class CategoriesController < ApplicationController
 
   # POST /categories
   def create 
-  if  Rails.cache.read('verificado') == 'existe' 
+    
+  if  Rails.cache.read('PCAverificado') == 'existe' 
 
     @category = Category.new(category_params)
     if @category.save
-      Rails.cache.delete('verificado') || Rails.cache.delete('inexistente')
+      Rails.cache.delete('PCAverificado') 
 
-      render json: @category, status: :created, location: @category
+      render json: {guardado:'correctamente'}, status: :created, location: @category
     else
       render json: @category.errors, status: :not_found
     end
   else
     render json: {resive: 'no tiene permiso'}
   end
-  puts "verificar si se borro #{Rails.cache.read('verificado')}"
   end
     
   # PATCH/PUT /categories/1
@@ -73,16 +73,82 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1
   def destroy
-    if  Rails.cache.read('verificado') == 'existe' 
-      Rails.cache.delete('verificado') || Rails.cache.delete('inexistente')
+    if  Rails.cache.read('Pndeverificado') == 'existe' 
     @category.destroy
+    Rails.cache.delete('Pndeverificado') || Rails.cache.delete('inexistente')
+
     else
       render json: @category.errors, status: :unprocessable_entity
 
     end
 
   end
+  def verif_save_category
+    puts "entra aqui"
+    dato = Hash.new
+    dato  = request.raw_post  
+      puts "jtli entrante #{dato}"
+      if User.exists?(:jti => dato)
+       Rails.cache.write('PCAverificado', 'existe') 
+       @informacion = {resultado: 'existe'}
+    else
+      Rails.cache.write('PCAverificado', 'inexistente') 
+      @informacion = {resultado: 'inexistente'}
+        #Ex:- :null => false
+    end
+    render json: @informacion
+  end
+#Verificar antes de actualizar
+def verif_before_update_category
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnuverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnuverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
 
+#Verificar antes de eliminar
+
+def verif_before_delete_category
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pndeverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pndeverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
+
+#Verificar si esta verificado para ver
+def verif_before_see_category
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnsverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnsverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category

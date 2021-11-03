@@ -20,6 +20,8 @@ class QuickSalesController < ApplicationController
 
   # POST /quick_sales
   def create
+    if Rails.cache.read('PQverificado') == 'existe'
+
     @quick_sale = QuickSale.new(quick_sale_params)
 
     if @quick_sale.save
@@ -27,6 +29,10 @@ class QuickSalesController < ApplicationController
     else
       render json: @quick_sale.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # PATCH/PUT /quick_sales/1
@@ -47,7 +53,72 @@ class QuickSalesController < ApplicationController
   render json: @ventarapida_fechas  
   end
 
+  def verif_befores_save_quick
+    puts "entra aqui"
+    dato = Hash.new
+    dato  = request.raw_post  
+      puts "jtli entrante #{dato}"
+      if User.exists?(:jti => dato)
+       Rails.cache.write('PQverificado', 'existe') 
+       @informacion = {resultado: 'existe'}
+    else
+      Rails.cache.write('PQverificado', 'inexistente') 
+      @informacion = {resultado: 'inexistente'}
+        #Ex:- :null => false
+    end
+    render json: @informacion
+  end
+#Verificar antes de actualizar
+def verif_before_update_quick
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnuverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnuverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
 
+#Verificar antes de eliminar
+
+def verif_before_delete_quick
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pndverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pndverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
+
+#Verificar si esta verificado para ver
+def verif_before_see_quick
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnsverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnsverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quick_sale

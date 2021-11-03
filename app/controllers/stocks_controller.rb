@@ -63,6 +63,8 @@ class StocksController < ApplicationController
 
   # POST /stocks
   def create
+    if Rails.cache.read('PSverificado') == 'existe'
+
     @stock = Stock.new(stock_params)
 
     if @stock.save
@@ -70,6 +72,9 @@ class StocksController < ApplicationController
     else
       render json: @stock.errors, status: :unprocessable_entity
     end
+   else
+    render json: {resive: 'no tiene permiso'}
+   end
   end
 
 
@@ -87,7 +92,72 @@ class StocksController < ApplicationController
   def destroy
     @stock.destroy
   end
+  def verif_befores_save_stock
+    puts "entra aqui"
+    dato = Hash.new
+    dato  = request.raw_post  
+      puts "jtli entrante #{dato}"
+      if User.exists?(:jti => dato)
+       Rails.cache.write('PSverificado', 'existe') 
+       @informacion = {resultado: 'existe'}
+    else
+      Rails.cache.write('PSverificado', 'inexistente') 
+      @informacion = {resultado: 'inexistente'}
+        #Ex:- :null => false
+    end
+    render json: @informacion
+  end
+#Verificar antes de actualizar
+def verif_before_update_stock
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnuverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnuverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
 
+#Verificar antes de eliminar
+
+def verif_before_delete_stock
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pndverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pndverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
+
+#Verificar si esta verificado para ver
+def verif_before_see_stock
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnsverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnsverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
   private
 
     #Mostrar solamente las perdidas de este mes.

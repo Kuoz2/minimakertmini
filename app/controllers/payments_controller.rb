@@ -15,6 +15,8 @@ class PaymentsController < ApplicationController
 
   # POST /payments
   def create
+    if Rails.cache.read('PPAverificado') == 'existe'
+
     @payment = Payment.new(payment_params)
 
     if @payment.save
@@ -22,6 +24,10 @@ class PaymentsController < ApplicationController
     else
       render json: @payment.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # PATCH/PUT /payments/1
@@ -37,7 +43,72 @@ class PaymentsController < ApplicationController
   def destroy
     @payment.destroy
   end
+  def verif_befores_save_payme
+    puts "entra aqui"
+    dato = Hash.new
+    dato  = request.raw_post  
+      puts "jtli entrante #{dato}"
+      if User.exists?(:jti => dato)
+       Rails.cache.write('PPAverificado', 'existe') 
+       @informacion = {resultado: 'existe'}
+    else
+      Rails.cache.write('PPAverificado', 'inexistente') 
+      @informacion = {resultado: 'inexistente'}
+        #Ex:- :null => false
+    end
+    render json: @informacion
+  end
+#Verificar antes de actualizar
+def verif_before_update_payme
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnuverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnuverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
 
+#Verificar antes de eliminar
+
+def verif_before_delete_payme
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pndverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pndverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
+
+#Verificar si esta verificado para ver
+def verif_before_see_payme
+  puts "entra aqui"
+  dato = Hash.new
+  dato  = request.raw_post  
+    puts "jtli entrante #{dato}"
+    if User.exists?(:jti => dato)
+     Rails.cache.write('Pnsverificado', 'existe') 
+     @informacion = {resultado: 'existe'}
+  else
+    Rails.cache.write('Pnsverificado', 'inexistente') 
+    @informacion = {resultado: 'inexistente'}
+      #Ex:- :null => false
+  end
+  render json: @informacion
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_payment

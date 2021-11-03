@@ -38,6 +38,7 @@ gem 'net-http'
 gem 'data_uri', '~> 0.1.0'
 gem 'devise-jwt'
 gem 'uri'
+
 group :development, :test, :production do
  gem 'pg', '< 2.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

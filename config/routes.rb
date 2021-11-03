@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :mrmsolutions
   resources :config_vouchers
   resources :archings
-  resources :brands
+  resources :brands do 
+    collection do 
+      post 'verif_befores_save_brand'
+    end
+  end
   resources :taxes
   resources :decreases do
     collection do
@@ -78,6 +82,7 @@ Rails.application.routes.draw do
       get 'obtener_fecha_productos_mes'
       get 'codigos_debarra'
       post 'verif_befores_save'
+      post 'verif_before_update'
     end
   end
 
@@ -92,11 +97,14 @@ Rails.application.routes.draw do
       get 'todaslasperdiadasinvprim'
     end
 
+ 
+
   end
   resources :sales
   resources :categories do 
     collection do 
-      post 'verificador_jti'
+      post 'verif_save_category'
+
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -108,12 +108,16 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1
   def update
+    if Rails.cache.read('Pnuverificado') == 'existe'
 
     if @product.update(product_params)
       render json: @product
     else
       render json: @product.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+  end
   end
 
   # DELETE /products/1
