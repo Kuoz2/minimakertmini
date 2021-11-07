@@ -23,22 +23,7 @@ class CategoriesController < ApplicationController
   end
 
 
-  #Buscar si existe el jti
-  def verificador_jti
-      puts "entra aqui"
-      dato = Hash.new
-      dato  = request.raw_post  
-        puts "jtli entrante #{dato}"
-        if User.exists?(:jti => dato)
-         Rails.cache.write('verificado', 'existe') 
-         @informacion = {resultado: 'existe'}
-      else
-        Rails.cache.write('inexistente', 'inexistente') 
-        @informacion = {resultado: 'inexistente'}
-          #Ex:- :null => false
-      end
-      render json: @informacion
-    end
+  
 
 
   # POST /categories
@@ -98,7 +83,7 @@ class CategoriesController < ApplicationController
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
-    render json: []
+    render json: @informacion
   end
 #Verificar antes de actualizar
 def verif_before_update_category
