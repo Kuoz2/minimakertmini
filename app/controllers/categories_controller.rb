@@ -61,7 +61,7 @@ class CategoriesController < ApplicationController
     
   # PATCH/PUT /categories/1
   def update
-    if      Rails.cache.read('PCAnuverificado' ) == 'existe'
+    if Rails.cache.read('PCAnuverificado' ) == 'existe'
       Rails.cache.delete('PCAnuverificado' )
       if @category.update(category_params)
       render json: @category
@@ -89,7 +89,6 @@ class CategoriesController < ApplicationController
   end
   def verif_save_category
     puts "entra aqui"
-    dato = Hash.new
     dato  = request.raw_post  
       puts "jtli entrante #{dato}"
       if User.exists?(:jti => dato)
@@ -99,7 +98,7 @@ class CategoriesController < ApplicationController
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
-    render json: @informacion
+    render json: []
   end
 #Verificar antes de actualizar
 def verif_before_update_category
