@@ -15,12 +15,12 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
+  adapter: <%= Rails.application.credentials.dig(:basedatos, :adapter) %>
   encoding: unicode
-  host: localhost
-  port: 5432
-  username: postgres
-  password: Krabe10251989
+  host: <%= Rails.application.credentials.dig(:basedatos, :host) %>
+  port: <%= Rails.application.credentials.dig(:basedatos, :port) %>
+  username: <%= Rails.application.credentials.dig(:basedatos, :username) %>
+  password: <%= Rails.application.credentials.dig(:basedatos, :password) %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
