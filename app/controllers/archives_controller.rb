@@ -16,9 +16,9 @@ class ArchivesController < ApplicationController
   # POST /archives
   def create
     if  Rails.cache.read('PARverificado') == 'existe' 
+      Rails.cache.delete('PARverificado') 
 
     @archive = Archive.new(archive_params)
-
     if @archive.save
       EnvioTicketMailer.new_envio_email(@archive).deliver
       render json: @archive, status: :created, location: @archive
@@ -33,11 +33,17 @@ class ArchivesController < ApplicationController
 
   # PATCH/PUT /archives/1
   def update
+    if    Rails.cache.read('PARnuverificado') == 'existe' 
+      Rails.cache.delete('PARnuverificado') 
     if @archive.update(archive_params)
       render json: @archive
     else
       render json: @archive.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /archives/1
@@ -50,10 +56,9 @@ class ArchivesController < ApplicationController
     dato  = request.raw_post  
       puts "jtli entrante #{dato}"
       if User.exists?(:jti => dato)
-       Rails.cache.write('PARverificado', 'existe') 
+        Rails.cache.write('PARverificado','existe')
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PARverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -66,10 +71,9 @@ def verif_before_update_archive
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PARnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end
@@ -87,7 +91,6 @@ def verif_before_delete_archive
      Rails.cache.write('Pndverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pndverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

@@ -64,7 +64,7 @@ class StocksController < ApplicationController
   # POST /stocks
   def create
     if Rails.cache.read('PSverificado') == 'existe'
-
+      Rails.cache.delete('PSverificado')
     @stock = Stock.new(stock_params)
 
     if @stock.save
@@ -81,11 +81,17 @@ class StocksController < ApplicationController
 
   # PATCH/PUT /stocks/1
   def update
+    if Rails.cache.read('PSnuverificado') == 'existe' 
+      Rails.cache.delete('PSnuverificado')
     if @stock.update(stock_params)
       render json: @stock
     else
       render json: @stock.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /stocks/1
@@ -101,7 +107,6 @@ class StocksController < ApplicationController
        Rails.cache.write('PSverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PSverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -114,10 +119,9 @@ def verif_before_update_stock
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PSnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end
@@ -135,7 +139,6 @@ def verif_before_delete_stock
      Rails.cache.write('Pndverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pndverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end
@@ -152,7 +155,6 @@ def verif_before_see_stock
      Rails.cache.write('Pnsverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnsverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

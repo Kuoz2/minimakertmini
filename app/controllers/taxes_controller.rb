@@ -16,6 +16,7 @@ class TaxesController < ApplicationController
   # POST /taxes
   def create
     if Rails.cache.read('PTverificado') == 'existe'
+      Rails.cache.delete('PTverificado')
     @tax = Tax.new(tax_params)
 
     if @tax.save
@@ -30,11 +31,17 @@ class TaxesController < ApplicationController
 
   # PATCH/PUT /taxes/1
   def update
-    if @tax.update(tax_params)
+    if Rails.cache.read('Pnuverificado') =='existe' 
+      Rails.cache.delete('Pnuverificado')
+      if @tax.update(tax_params)
       render json: @tax
     else
       render json: @tax.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /taxes/1
@@ -50,7 +57,6 @@ class TaxesController < ApplicationController
        Rails.cache.write('PTverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PTverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -66,7 +72,6 @@ def verif_before_update_taxe
      Rails.cache.write('Pnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

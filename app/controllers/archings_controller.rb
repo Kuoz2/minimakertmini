@@ -16,12 +16,14 @@ class ArchingsController < ApplicationController
   # POST /archings
   def create
     if  Rails.cache.read('PARCHverificado') == 'existe' 
+      Rails.cache.delete('PARCHverificado') 
 
     @arching = Arching.new(arching_params)
 
     if @arching.save
       render json: @arching, status: :created, location: @arching
     else
+
       render json: @arching.errors, status: :unprocessable_entity
     end
     else
@@ -32,11 +34,18 @@ class ArchingsController < ApplicationController
 
   # PATCH/PUT /archings/1
   def update
+    if  Rails.cache.read('PARCHnuverificado') == 'existe' 
+      Rails.cache.delete('PARCHnuverificado') 
+
     if @arching.update(arching_params)
       render json: @arching
     else
       render json: @arching.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /archings/1
@@ -52,7 +61,6 @@ class ArchingsController < ApplicationController
        Rails.cache.write('PARCHverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PARCHverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -65,10 +73,9 @@ def verif_before_update_arching
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PARCHnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

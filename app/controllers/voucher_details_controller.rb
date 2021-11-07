@@ -64,6 +64,7 @@ class VoucherDetailsController < ApplicationController
   # POST /voucher_details
   def create
     if Rails.cache.read('PDVverificado') == 'existe'
+      Rails.cache.delete('PDVverificado') 
     @voucher =  Voucher.new(params.permit![:voucher])
     @voucher_detail = @voucher.voucher_details.new(voucher_detail_params)
     if @voucher_detail.save
@@ -82,11 +83,17 @@ class VoucherDetailsController < ApplicationController
 
   # PATCH/PUT /voucher_details/1
   def update
-    if @voucher_detail.update(voucher_detail_params)
+    if Rails.cache.read('Pnuverificado') == 'existe' 
+      Rails.cache.delete('Pnuverificado')
+      if @voucher_detail.update(voucher_detail_params)
       render json: @voucher_detail
     else
       render json: @voucher_detail.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /voucher_details/1
@@ -118,7 +125,6 @@ def verif_before_update_d_voucher
      Rails.cache.write('Pnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

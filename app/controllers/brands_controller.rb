@@ -16,7 +16,7 @@ class BrandsController < ApplicationController
   # POST /brands
   def create
     if  Rails.cache.read('PBRverificado') == 'existe' 
-
+      Rails.cache.delete('PBRverificado')
     @brand = Brand.new(brand_params)
 
     if @brand.save
@@ -32,11 +32,18 @@ class BrandsController < ApplicationController
 
   # PATCH/PUT /brands/1
   def update
+   if Rails.cache.read('PBRnuverificado') == 'existe'
+    Rails.cache.delete('PBRnuverificado')
+   
     if @brand.update(brand_params)
       render json: @brand
     else
       render json: @brand.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /brands/1
@@ -52,7 +59,6 @@ class BrandsController < ApplicationController
        Rails.cache.write('PBRverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PBRverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -65,10 +71,9 @@ def verif_before_update_brand
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PBRnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

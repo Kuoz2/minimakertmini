@@ -16,7 +16,7 @@ class SalesController < ApplicationController
 
   def create
     if Rails.cache.read('PSAverificado') == 'existe'
-
+      Rails.cache.delete('PSAverificado')
     @paymet = Payment.new(params.permit![:payment_id ])
     @sale = @paymet.sales.new(sales_params)
     if @sale.save
@@ -37,47 +37,11 @@ class SalesController < ApplicationController
        Rails.cache.write('PSAverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PSAverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
     render json: @informacion
   end
-#Verificar antes de actualizar
-def verif_before_update_sales
-  puts "entra aqui"
-  dato = Hash.new
-  dato  = request.raw_post  
-    puts "jtli entrante #{dato}"
-    if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
-     @informacion = {resultado: 'existe'}
-  else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
-    @informacion = {resultado: 'inexistente'}
-      #Ex:- :null => false
-  end
-  render json: @informacion
-end
-
-#Verificar antes de eliminar
-
-def verif_before_delete_sales
-  puts "entra aqui"
-  dato = Hash.new
-  dato  = request.raw_post  
-    puts "jtli entrante #{dato}"
-    if User.exists?(:jti => dato)
-     Rails.cache.write('Pndverificado', 'existe') 
-     @informacion = {resultado: 'existe'}
-  else
-    Rails.cache.write('Pndverificado', 'inexistente') 
-    @informacion = {resultado: 'inexistente'}
-      #Ex:- :null => false
-  end
-  render json: @informacion
-end
-
 #Verificar si esta verificado para ver
 def verif_before_see_sales
   puts "entra aqui"

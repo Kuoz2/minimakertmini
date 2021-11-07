@@ -16,7 +16,7 @@ class HalfPaymentsController < ApplicationController
   # POST /half_payments
   def create
     if Rails.cache.read('PHverificado') == 'existe'
-
+      Rails.cache.delete('PHverificado')
     @half_payment = HalfPayment.new(half_payment_params)
 
     if @half_payment.save
@@ -31,17 +31,24 @@ class HalfPaymentsController < ApplicationController
 
   # PATCH/PUT /half_payments/1
   def update
-    if @half_payment.update(half_payment_params)
+    if Rails.cache.read('PHnuverificado') == 'existe' 
+      Rails.cache.delete('PHnuverificado')
+      if @half_payment.update(half_payment_params)
       render json: @half_payment
     else
       render json: @half_payment.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /half_payments/1
   def destroy
     @half_payment.destroy
   end
+  
   def verif_befores_save_half
     puts "entra aqui"
     dato = Hash.new
@@ -51,7 +58,6 @@ class HalfPaymentsController < ApplicationController
        Rails.cache.write('PHverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PHverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -64,10 +70,9 @@ def verif_before_update_half
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PHnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end
@@ -85,7 +90,6 @@ def verif_before_delete_half
      Rails.cache.write('Pndverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pndverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

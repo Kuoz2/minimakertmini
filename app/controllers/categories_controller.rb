@@ -45,10 +45,10 @@ class CategoriesController < ApplicationController
   def create 
     
   if  Rails.cache.read('PCAverificado') == 'existe' 
+    Rails.cache.delete('PCAverificado') 
 
     @category = Category.new(category_params)
     if @category.save
-      Rails.cache.delete('PCAverificado') 
 
       render json: {guardado:'correctamente'}, status: :created, location: @category
     else
@@ -61,21 +61,25 @@ class CategoriesController < ApplicationController
     
   # PATCH/PUT /categories/1
   def update
-    puts Rails.cache.read('verificado')
-
+    if      Rails.cache.read('PCAnuverificado' ) == 'existe'
+      Rails.cache.delete('PCAnuverificado' )
       if @category.update(category_params)
       render json: @category
     else
       render json: @category.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
 
   end
 
   # DELETE /categories/1
   def destroy
     if  Rails.cache.read('Pndeverificado') == 'existe' 
-    @category.destroy
-    Rails.cache.delete('Pndeverificado') || Rails.cache.delete('inexistente')
+      Rails.cache.delete('Pndeverificado') 
+      @category.destroy
 
     else
       render json: @category.errors, status: :unprocessable_entity
@@ -92,7 +96,6 @@ class CategoriesController < ApplicationController
        Rails.cache.write('PCAverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PCAverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -105,10 +108,9 @@ def verif_before_update_category
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PCAnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

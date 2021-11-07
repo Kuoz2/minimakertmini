@@ -83,6 +83,7 @@ class ProductsController < ApplicationController
     #@stock = Stock.new(params.permit![:stock_attributes])
     #@date_expiration = DateExpiration.new(params.permit![:date_expiratoins_attributes])
               if Rails.cache.read('Pverificado') == 'existe'
+                Rails.cache.delete('Pverificado') 
 
               @product = Product.new(product_params)
               @product.create_stock!(params.permit![:stock])
@@ -90,13 +91,13 @@ class ProductsController < ApplicationController
     #@product.Stock.create(params!.permit![:stock])
     #@product.DateExpiration.create(params!.permit![:date_expiration])
             if @product.save
-              Rails.cache.delete('Pverificado') || Rails.cache.delete('Pnverificado')
 
               #.new_envio_email.deliver_later
               #ApplicationMailer.new_envio_email.deliver_now
 
               render json: {guardado: 'Se guardo'}, status: :created, location: @product
             else
+
               render json: @product.errors, status: :unprocessable_entity
             end
           
@@ -109,7 +110,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   def update
     if Rails.cache.read('Pnuverificado') == 'existe'
-
+      Rails.cache.delete('Pnuverificado') 
     if @product.update(product_params)
       render json: @product
     else
@@ -134,7 +135,6 @@ class ProductsController < ApplicationController
        Rails.cache.write('Pverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('Pnverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -150,7 +150,6 @@ def verif_before_update
      Rails.cache.write('Pnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

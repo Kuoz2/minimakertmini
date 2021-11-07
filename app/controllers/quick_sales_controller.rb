@@ -21,7 +21,7 @@ class QuickSalesController < ApplicationController
   # POST /quick_sales
   def create
     if Rails.cache.read('PQverificado') == 'existe'
-
+      Rails.cache.delete('PQverificado')
     @quick_sale = QuickSale.new(quick_sale_params)
 
     if @quick_sale.save
@@ -37,11 +37,15 @@ class QuickSalesController < ApplicationController
 
   # PATCH/PUT /quick_sales/1
   def update
-    if @quick_sale.update(quick_sale_params)
+    if Rails.cache.read('PQnuverificado') ==  'existe'
+      Rails.cache.delete('PQnuverificado') 
+      if @quick_sale.update(quick_sale_params)
       render json: @quick_sale
     else
       render json: @quick_sale.errors, status: :unprocessable_entity
     end
+  else
+  end
   end
 
   # DELETE /quick_sales/1
@@ -62,7 +66,6 @@ class QuickSalesController < ApplicationController
        Rails.cache.write('PQverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PQverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -75,10 +78,9 @@ def verif_before_update_quick
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PQnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

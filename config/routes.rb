@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get 'ventarapida_fechas'
       get 'totalventasrapidas'
+      post 'verif_befores_save_quick'
     end
   end
   resources :archives
@@ -11,24 +12,42 @@ Rails.application.routes.draw do
       get 'date_product_id_on'
       get 'buscar_las_fechas_perdidas'
       get 'todaslasperdidasdos'
+      post 'verif_befores_save_date'
     end
   end
 
-  resources :mrmsolutions
-  resources :config_vouchers
+  resources :mrmsolutions do 
+    collection do 
+      post 'verif_befores_save_solution'
+    end
+  end
+  resources :config_vouchers do 
+    collection do 
+      post 'verif_befores_save_config'
+    end
+  end
   resources :archings
   resources :brands do 
     collection do 
       post 'verif_befores_save_brand'
     end
   end
-  resources :taxes
+  resources :taxes do 
+    collection do 
+      post 'verif_befores_save_taxe'
+    end
+  end
   resources :decreases do
     collection do
       get 'muestra_situaciones'
+      post 'verif_before_update_decrease'
     end
   end
-  resources :providers
+  resources :providers do 
+    collection do 
+      post 'verif_befores_save_provi'
+    end
+  end
   devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
   devise_scope :user do
     post '/regi', to: 'users/registrations#create'
@@ -39,6 +58,9 @@ Rails.application.routes.draw do
   end
 
   resources :payments do
+    collection do 
+      post 'verif_befores_save_payme'
+    end
     resource :sales
   end
   resources :voucher_details do
@@ -51,11 +73,15 @@ Rails.application.routes.draw do
         get 'show_after_month'
         get 'producto_max_vend'
         get 'las_ganancias_totales_meses'
-
+        post 'verif_befores_save_d_voucher'
     end
   end
 
-  resources :half_payments
+  resources :half_payments do 
+    collection do
+      post 'verif_befores_save_half'
+    end
+  end
   resources :voucher_details do
 
     resource :vouchers
@@ -64,6 +90,7 @@ Rails.application.routes.draw do
     collection do
           get 'showlast'
           get 'mostrar_ganancias_por_mes'
+          post 'verif_befores_save_voucher'
     end
   end
 
@@ -95,12 +122,17 @@ Rails.application.routes.draw do
       get 'p_mes_anterior'
       get 'stock_product_id_on'
       get 'todaslasperdiadasinvprim'
+      post 'verif_befores_save_stock'
     end
 
  
 
   end
-  resources :sales
+  resources :sales do 
+    collection do 
+      post 'verif_befores_save_sales'
+    end
+  end
   resources :categories do 
     collection do 
       post 'verif_save_category'

@@ -18,7 +18,7 @@ class MrmsolutionsController < ApplicationController
   # POST /mrmsolutions
   def create
     if Rails.cache.read('PMverificado') == 'existe'
-
+      Rails.cache.delete('PMverificado')
     @mrmsolution = Mrmsolution.new(mrmsolution_params)
 
     if @mrmsolution.save
@@ -34,11 +34,17 @@ class MrmsolutionsController < ApplicationController
 
   # PATCH/PUT /mrmsolutions/1
   def update
-    if @mrmsolution.update(mrmsolution_params)
+    if Rails.cache.read('PMnuverificado') == 'existe' 
+      Rails.cache.delete('PMnuverificado')
+      if @mrmsolution.update(mrmsolution_params)
       render json: @mrmsolution
     else
       render json: @mrmsolution.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /mrmsolutions/1
@@ -54,7 +60,6 @@ class MrmsolutionsController < ApplicationController
        Rails.cache.write('PMverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PMverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -67,10 +72,9 @@ def verif_before_update_solution
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PMnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

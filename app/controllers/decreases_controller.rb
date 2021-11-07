@@ -23,7 +23,7 @@ class DecreasesController < ApplicationController
   # POST /decreases
   def create
     if Rails.cache.read('PDverificado') == 'existe'
-
+      Rails.cache.delete('PDverificado')
     @decrease = Decrease.new(decrease_params)
 
     if @decrease.save
@@ -39,11 +39,17 @@ class DecreasesController < ApplicationController
 
   # PATCH/PUT /decreases/1
   def update
+    if Rails.cache.read('PDnuverificado') == 'existe' 
+      Rails.cache.delete('PDnuverificado')
     if @decrease.update(decrease_params)
       render json: @decrease
     else
       render json: @decrease.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /decreases/1
@@ -59,7 +65,6 @@ class DecreasesController < ApplicationController
        Rails.cache.write('PDverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PDverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -72,10 +77,9 @@ def verif_before_update_decrease
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PDnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end
@@ -93,7 +97,6 @@ def verif_before_delete_decrease
      Rails.cache.write('Pndverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pndverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

@@ -16,7 +16,7 @@ class ConfigVouchersController < ApplicationController
   # POST /config_vouchers
   def create
     if Rails.cache.read('PCONverificado') == 'existe'
-
+      Rails.cache.delete('PCONverificado')
     @config_voucher = ConfigVoucher.new(config_voucher_params)
     if @config_vouchers == []
     if @config_voucher.save
@@ -33,11 +33,16 @@ end
 
   # PATCH/PUT /config_vouchers/1
   def update
+    if Rails.cache.read('PCONnuverificado' ) == 'existe'
+      Rails.cache.delete('PCONnuverificado' )
     if @config_voucher.update(config_voucher_params)
       render json: @config_voucher
     else
       render json: @config_voucher.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+  end
   end
 
   # DELETE /config_vouchers/1
@@ -53,7 +58,6 @@ end
        Rails.cache.write('PCONverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PCONverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -66,10 +70,9 @@ def verif_before_update_config
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PCONnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

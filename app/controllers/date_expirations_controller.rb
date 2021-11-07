@@ -30,7 +30,7 @@ class DateExpirationsController < ApplicationController
   # POST /date_expirations
   def create
     if Rails.cache.read('PDATverificado') == 'existe'
-
+      Rails.cache.delete('PDATverificado')
     @date_expiration = DateExpiration.new(date_expiration_params)
 
     if @date_expiration.save
@@ -46,11 +46,16 @@ class DateExpirationsController < ApplicationController
 
   # PATCH/PUT /date_expirations/1
   def update
+    if Rails.cache.delete('PDATverificado')
+      Rails.cache.delete('PDATverificado')
     if @date_expiration.update(date_expiration_params)
       render json: @date_expiration
     else
       render json: @date_expiration.errors, status: :unprocessable_entity
     end
+  else
+  end
+
   end
 
   # DELETE /date_expirations/1
@@ -66,7 +71,6 @@ class DateExpirationsController < ApplicationController
        Rails.cache.write('PDATverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PDATverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -82,7 +86,6 @@ def verif_before_update_date
      Rails.cache.write('Pnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

@@ -16,7 +16,7 @@ class ProvidersController < ApplicationController
   # POST /providers
   def create
     if Rails.cache.read('PPverificado') == 'existe'
-
+      Rails.cache.delete('PPverificado')
     @provider = Provider.new(provider_params)
 
     if @provider.save
@@ -32,11 +32,15 @@ class ProvidersController < ApplicationController
 
   # PATCH/PUT /providers/1
   def update
-    if @provider.update(provider_params)
+    if Rails.cache.read('PPnuverificado') == 'existe' 
+      Rails.cache.delete('PPnuverificado')
+      if @provider.update(provider_params)
       render json: @provider
     else
       render json: @provider.errors, status: :unprocessable_entity
     end
+  else
+  end
   end
 
   # DELETE /providers/1
@@ -52,7 +56,6 @@ class ProvidersController < ApplicationController
        Rails.cache.write('PPverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PPverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -65,10 +68,9 @@ def verif_before_update_provi
   dato  = request.raw_post  
     puts "jtli entrante #{dato}"
     if User.exists?(:jti => dato)
-     Rails.cache.write('Pnuverificado', 'existe') 
+     Rails.cache.write('PPnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end

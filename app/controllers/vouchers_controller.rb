@@ -24,7 +24,8 @@ class VouchersController < ApplicationController
   # POST /vouchers
   def create
     if Rails.cache.read('PVverificado') == 'existe'
-    @voucher = Voucher.new(voucher_params)
+      Rails.cache.delete('PVverificado')
+      @voucher = Voucher.new(voucher_params)
     if @voucher.save
       render json: @voucher, status: :created, location: @voucher
     else
@@ -47,11 +48,17 @@ class VouchersController < ApplicationController
 
   # PATCH/PUT /vouchers/1
   def update
-    if @voucher.update(voucher_params)
+    if Rails.cache.write('Pnuverificado') == 'existe' 
+      Rails.cache.delete('Pnuverificado')
+      if @voucher.update(voucher_params)
       render json: @voucher
     else
       render json: @voucher.errors, status: :unprocessable_entity
     end
+  else
+    render json: {resive: 'no tiene permiso'}
+
+  end
   end
 
   # DELETE /vouchers/1
@@ -67,7 +74,6 @@ class VouchersController < ApplicationController
        Rails.cache.write('PVverificado', 'existe') 
        @informacion = {resultado: 'existe'}
     else
-      Rails.cache.write('PVverificado', 'inexistente') 
       @informacion = {resultado: 'inexistente'}
         #Ex:- :null => false
     end
@@ -83,7 +89,6 @@ def verif_before_update_voucher
      Rails.cache.write('Pnuverificado', 'existe') 
      @informacion = {resultado: 'existe'}
   else
-    Rails.cache.write('Pnuverificado', 'inexistente') 
     @informacion = {resultado: 'inexistente'}
       #Ex:- :null => false
   end
