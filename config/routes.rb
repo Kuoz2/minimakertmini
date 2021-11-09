@@ -30,11 +30,13 @@ Rails.application.routes.draw do
   resources :brands do 
     collection do 
       post 'verif_befores_save_brand'
+      get 'verificar_blank_marca'
     end
   end
   resources :taxes do 
     collection do 
       post 'verif_befores_save_taxe'
+      get 'verificar_blank_tax'
     end
   end
   resources :decreases do
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
   resources :providers do 
     collection do 
       post 'verif_befores_save_provi'
+      get 'verificar_blank_provider'
     end
   end
   devise_for :users, controller: {registrations: 'users/autentications', sessions: 'users/sessions'}
@@ -136,7 +139,7 @@ Rails.application.routes.draw do
   resources :categories do 
     collection do 
       post 'verif_save_category'
-
+      get 'verificar_blank_category'
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

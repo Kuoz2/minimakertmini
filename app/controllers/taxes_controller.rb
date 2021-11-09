@@ -13,6 +13,14 @@ class TaxesController < ApplicationController
     render json: @tax
   end
 
+  #Verificar si el impuesto esta vacio
+  def verificar_blank_tax
+    @estavacio = Tax.all.blank?
+    render json: @estavacio
+  end
+  
+
+
   # POST /taxes
   def create
     if Rails.cache.read('PTverificado') == 'existe'

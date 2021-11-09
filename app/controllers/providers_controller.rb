@@ -13,6 +13,13 @@ class ProvidersController < ApplicationController
     render json: @provider
   end
 
+  #verificar si el proveedor esta vacio
+
+  def verificar_blank_provider
+    @estavacio = Provider.all.blank?
+    render json: @estavacio
+  end
+
   # POST /providers
   def create
     if Rails.cache.read('PPverificado') == 'existe'

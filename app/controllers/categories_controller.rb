@@ -22,7 +22,10 @@ class CategoriesController < ApplicationController
     render json: @category
   end
 
-
+  def verificar_blank_category
+    @estavacio = Category.all.blank?
+    render json: @estavacio
+  end
   
 
 

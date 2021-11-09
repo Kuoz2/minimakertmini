@@ -30,6 +30,12 @@ class BrandsController < ApplicationController
   end
   end
 
+  #verificar si existe la marca
+  def verificar_blank_marca
+    @estavacio = Brand.all.blank?
+    render json: @estavacio
+  end
+  
   # PATCH/PUT /brands/1
   def update
    if Rails.cache.read('PBRnuverificado') == 'existe'
