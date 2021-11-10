@@ -20,7 +20,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(payment_params)
 
     if @payment.save
-      render json: @payment, status: :created, location: @payment
+      render json: {guardado:'correctamente'}, status: :created, location: @payment
     else
       render json: @payment.errors, status: :unprocessable_entity
     end

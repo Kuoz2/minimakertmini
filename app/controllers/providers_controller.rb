@@ -27,7 +27,7 @@ class ProvidersController < ApplicationController
     @provider = Provider.new(provider_params)
 
     if @provider.save
-      render json: @provider, status: :created, location: @provider
+      render json: {guardado:'correctamente'}, status: :created, location: @provider
     else
       render json: @provider.errors, status: :unprocessable_entity
     end

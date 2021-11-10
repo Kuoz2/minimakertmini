@@ -20,7 +20,7 @@ class HalfPaymentsController < ApplicationController
     @half_payment = HalfPayment.new(half_payment_params)
 
     if @half_payment.save
-      render json: @half_payment, status: :created, location: @half_payment
+      render json: {guardado:'correctamente'}, status: :created, location: @half_payment
     else
       render json: @half_payment.errors, status: :unprocessable_entity
     end

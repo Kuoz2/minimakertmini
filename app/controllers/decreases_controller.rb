@@ -27,7 +27,7 @@ class DecreasesController < ApplicationController
     @decrease = Decrease.new(decrease_params)
 
     if @decrease.save
-      render json: @decrease, status: :created, location: @decrease
+      render json: {guardado:'correctamente'}, status: :created, location: @decrease
     else
       render json: @decrease.errors, status: :unprocessable_entity
     end

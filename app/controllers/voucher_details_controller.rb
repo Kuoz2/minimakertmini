@@ -71,7 +71,7 @@ class VoucherDetailsController < ApplicationController
 
       EnvioTicketMailer.new_envio_email(@voucher_detail).deliver
       #EnvioTicketMailer.new_envio_email(@archive).deliver
-    render json: @voucher_detail, status: :created, location: @voucher_detail
+    render json: {guardado:'correctamente'}, status: :created, location: @voucher_detail
     else
     render json: @voucher_detail.errors, status: :unprocessable_entity
     end

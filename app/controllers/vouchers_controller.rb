@@ -27,7 +27,7 @@ class VouchersController < ApplicationController
       Rails.cache.delete('PVverificado')
       @voucher = Voucher.new(voucher_params)
     if @voucher.save
-      render json: @voucher, status: :created, location: @voucher
+      render json: {guardado:'correctamente'}, status: :created, location: @voucher
     else
       render json: @voucher.errors, status: :unprocessable_entity
     end

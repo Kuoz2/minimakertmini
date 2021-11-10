@@ -20,7 +20,7 @@ class SalesController < ApplicationController
     @paymet = Payment.new(params.permit![:payment_id ])
     @sale = @paymet.sales.new(sales_params)
     if @sale.save
-      render json: @sale, status: :created, location: @sale
+      render json: {guardado:'correctamente'}, status: :created, location: @sale
     else
       render json: @sale.errors, status: :unprocessable_entity
     end

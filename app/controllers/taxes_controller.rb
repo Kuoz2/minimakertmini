@@ -28,7 +28,7 @@ class TaxesController < ApplicationController
     @tax = Tax.new(tax_params)
 
     if @tax.save
-      render json: @tax, status: :created, location: @tax
+      render json: {guardado:'correctamente'}, status: :created, location: @tax
     else
       render json: @tax.errors, status: :unprocessable_entity
     end

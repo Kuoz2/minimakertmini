@@ -25,7 +25,7 @@ class QuickSalesController < ApplicationController
     @quick_sale = QuickSale.new(quick_sale_params)
 
     if @quick_sale.save
-      render json: @quick_sale, status: :created, location: @quick_sale
+      render json: {guardado:'correctamente'}, status: :created, location: @quick_sale
     else
       render json: @quick_sale.errors, status: :unprocessable_entity
     end
