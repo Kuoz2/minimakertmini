@@ -20,7 +20,7 @@ class BrandsController < ApplicationController
     @brand = Brand.new(brand_params)
 
     if @brand.save
-      render json: {guardado: 'exitoso'}, status: :created, location: @brand
+      render json: {guardado: 'correctamente'}, status: :created, location: @brand
     else
       render json: @brand.errors, status: :unprocessable_entity
     end
