@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'buscar_las_fechas_perdidas'
       get 'todaslasperdidasdos'
       post 'verif_befores_save_date'
+      post 'verif_before_update_date'
     end
   end
 
@@ -126,6 +127,7 @@ Rails.application.routes.draw do
       get 'stock_product_id_on'
       get 'todaslasperdiadasinvprim'
       post 'verif_befores_save_stock'
+      post 'verif_before_update_stock'
     end
 
  
