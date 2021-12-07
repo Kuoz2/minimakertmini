@@ -153,7 +153,7 @@ end
       #Primero tengo q rutiar las fechas que estan y no estan despues debo suplementar los numeros que estan con 0
      inicio = DateExpiration.all.
          filter{|a|
-            if a.stock_expiration != 0
+            if a.stock_expiration != 0 && a.product_id != 0
            method_name(a, data)
             end
           
