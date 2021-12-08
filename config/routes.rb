@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :brands do 
     collection do 
       post 'verif_befores_save_brand'
+      post 'verif_before_update_brand'
       get 'verificar_blank_marca'
     end
   end
