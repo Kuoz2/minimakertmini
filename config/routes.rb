@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   end
   resources :taxes do 
     collection do 
+      post 'verif_before_update_taxe'
       post 'verif_befores_save_taxe'
       get 'verificar_blank_tax'
     end
