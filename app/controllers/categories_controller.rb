@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   def index
 
-    @categories = Category.all.order(:id)
+    @categories = Category.all.order(id: :desc)
 
     render json: @categories
   end

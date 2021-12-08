@@ -3,7 +3,7 @@ class BrandsController < ApplicationController
 
   # GET /brands
   def index
-    @brands = Brand.all
+    @brands = Brand.all.order(id: :desc)
 
     render json: @brands
   end
