@@ -142,6 +142,7 @@ Rails.application.routes.draw do
   resources :categories do 
     collection do 
       post 'verif_save_category'
+      post 'verif_before_update_category'
       get 'verificar_blank_category'
     end
   end
