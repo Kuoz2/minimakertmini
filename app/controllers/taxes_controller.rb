@@ -42,7 +42,7 @@ class TaxesController < ApplicationController
     if Rails.cache.read('Pnuverificado') =='existe' 
       Rails.cache.delete('Pnuverificado')
       if @tax.update(tax_params)
-      render json: {actualizado: 'correctamente'}
+      render json: {actualizado: 'correctamente '}
     else
       render json: @tax.errors, status: :unprocessable_entity
     end
