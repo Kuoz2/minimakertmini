@@ -52,7 +52,7 @@ class CategoriesController < ApplicationController
     if Rails.cache.read('PCAnuverificado' ) == 'existe'
       Rails.cache.delete('PCAnuverificado' )
       if @category.update(category_params)
-      render json: @category
+      render json: {actualizado: 'correctamente'}
     else
       render json: @category.errors, status: :unprocessable_entity
     end
