@@ -42,7 +42,7 @@ class BrandsController < ApplicationController
     Rails.cache.delete('PBRnuverificado')
    
     if @brand.update(brand_params)
-      render json: @brand
+      render json: {actualizado: 'correctamente' }
     else
       render json: @brand.errors, status: :unprocessable_entity
     end
