@@ -8,5 +8,5 @@ end
 
 
 def recargar 
-  Category.all().reload!
+  Category.all.reload!
 end
