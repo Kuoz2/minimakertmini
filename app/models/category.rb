@@ -4,6 +4,6 @@ class Category < ApplicationRecord
   attr_accessor :verificacion_jtil
   after_save :recargar
   def recargar
-    category.reloaded
+    Category.reloaded
   end
 end
