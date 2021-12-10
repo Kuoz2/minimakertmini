@@ -3,5 +3,4 @@ class Category < ApplicationRecord
   accepts_nested_attributes_for :products
  
   attr_accessor :verificacion_jtil
-  Category.status_change
 end
