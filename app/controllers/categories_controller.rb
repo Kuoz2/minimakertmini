@@ -9,10 +9,11 @@ class CategoriesController < ApplicationController
   end
   # GET /categories
   def index
-
+  
     @categories = Category.all.order(id: :desc)
 
     render json: @categories
+
   end
 
   # GET /categories/1
