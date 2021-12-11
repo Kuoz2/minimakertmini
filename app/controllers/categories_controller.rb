@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
     if @category.save
 
-      render json: {guardado:'correctamente'}, status: :created, location: @category
+      render json: @category, status: :created, location: @category
     else
       render json: @category.errors, status: :not_found
     end
