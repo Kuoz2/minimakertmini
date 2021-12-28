@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_201856) do
+ActiveRecord::Schema.define(version: 2021_12_21_170926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,8 @@ ActiveRecord::Schema.define(version: 2021_10_23_201856) do
     t.bigint "pvneto"
     t.string "fecha_vencimiento"
     t.bigint "date_expirations_id"
+    t.integer "utilidad", default: 0
+    t.integer "margen", default: 0
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["date_expirations_id"], name: "index_products_on_date_expirations_id"

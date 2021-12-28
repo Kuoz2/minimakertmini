@@ -9,9 +9,9 @@ class CategoriesController < ApplicationController
   end
   # GET /categories
   def index
-  
+    
     @categories = Category.all.order(id: :desc)
-
+    
     render json: @categories
 
   end
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
   def create 
     
   if  Rails.cache.read('PCAverificado') == 'existe' 
-    Rails.cache.delete('PCAverificado') 
+   Rails.cache.delete('PCAverificado') 
 
     @category = Category.new(category_params)
     if @category.save
@@ -43,9 +43,9 @@ class CategoriesController < ApplicationController
     else
       render json: @category.errors, status: :not_found
     end
-  else
-    render json: {resive: 'no tiene permiso'}
-  end
+ else
+  render json: {resive: 'no tiene permiso'}
+ end
   end
     
   # PATCH/PUT /categories/1
