@@ -357,7 +357,7 @@ end
                                       :pvneto,
                                       :pvactivacioncatalogo,
                                       :utilidad,
-                                      :margen
+                                      :margen,
                                       {stock: %i[id pstock pstockcatalogo stock_lost stock_security]},
                                       {date_expiration: %i[id fecha_vencimiento stock_expiration]}
                                       )
