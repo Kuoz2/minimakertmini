@@ -64,12 +64,12 @@ class VoucherDetailsController < ApplicationController
   # POST /voucher_details
   def create
     if Rails.cache.read('PDVverificado') == 'existe'
-      Rails.cache.delete('PDVverificado') 
     @voucher =  Voucher.new(params.permit![:voucher])
     @voucher_detail = @voucher.voucher_details.new(voucher_detail_params)
     if @voucher_detail.save
+      Rails.cache.delete('PDVverificado') 
 
-      EnvioTicketMailer.new_envio_email(@voucher_detail).deliver
+      #EnvioTicketMailer.new_envio_email(@voucher_detail).deliver
       #EnvioTicketMailer.new_envio_email(@archive).deliver
     render json: {guardado:'correctamente'}, status: :created, location: @voucher_detail
     else
