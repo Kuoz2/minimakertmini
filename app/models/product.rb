@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   belongs_to :brand, foreign_key: "brand_id", class_name: "Brand"
   belongs_to :date_expiration, optional: true, foreign_key: :date_expirations_id, inverse_of: :products
   has_many :decreases
-  has_many :voucher_details#, inverse_of: :product
+  has_many :voucher_details , dependent: :destroy#, inverse_of: :product
   has_many :stocks
   has_many :date_expirations , inverse_of: :products, foreign_key: :date_expirations_id
   validates_presence_of :category_id, :stock, :brand_id, :date_expiration
