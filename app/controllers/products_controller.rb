@@ -95,7 +95,7 @@ class ProductsController < ApplicationController
               #.new_envio_email.deliver_later
               #ApplicationMailer.new_envio_email.deliver_now
 
-              render json: {guardado: 'Se guardo'}, status: :created, location: @product
+              render json: {guardado: 'correctamente'}, status: :created, location: @product
             else
 
               render json: @product.errors, status: :unprocessable_entity
