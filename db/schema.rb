@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_170926) do
+ActiveRecord::Schema.define(version: 2022_02_14_000939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 2021_12_21_170926) do
     t.string "cnombre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "codes", force: :cascade do |t|
+    t.string "hora_emision", default: ""
+    t.boolean "market", default: false
+    t.boolean "panaderia", default: false
+    t.bigint "cod_market", default: 0
+    t.bigint "cod_panaderia", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_codes_on_product_id"
   end
 
   create_table "config_vouchers", force: :cascade do |t|
@@ -250,6 +262,7 @@ ActiveRecord::Schema.define(version: 2021_12_21_170926) do
 
   add_foreign_key "archings", "decreases"
   add_foreign_key "archings", "vouchers"
+  add_foreign_key "codes", "products"
   add_foreign_key "decreases", "users"
   add_foreign_key "payments", "half_payments"
   add_foreign_key "products", "brands"

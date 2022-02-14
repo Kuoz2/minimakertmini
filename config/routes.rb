@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :codes
   resources :quick_sales do 
     collection do
       get 'ventarapida_fechas'
