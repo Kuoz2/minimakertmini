@@ -9,6 +9,7 @@ class Product < ApplicationRecord
   belongs_to :tax, class_name: 'Tax', foreign_key: 'tax_id'
   belongs_to :brand, foreign_key: "brand_id", class_name: "Brand"
   belongs_to :date_expiration, optional: true, foreign_key: :date_expirations_id, inverse_of: :products
+  has_many :codes
   has_many :decreases
   has_many :voucher_details , dependent: :destroy#, inverse_of: :product
   has_many :stocks
@@ -18,4 +19,5 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :decreases
   accepts_nested_attributes_for :stocks
   accepts_nested_attributes_for :date_expirations
+  accepts_nested_attributes_for :codes
 end

@@ -5,7 +5,7 @@ class CodesController < ApplicationController
   def index
     @codes = Code.all
 
-    render json: @codes
+    render json: @codes, :include =>[:product]
   end
 
   # GET /codes/1
@@ -46,6 +46,6 @@ class CodesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def code_params
-      params.require(:code).permit(:hora_emision)
+      params.require(:code).permit(:hora_emision, :product_id)
     end
 end
