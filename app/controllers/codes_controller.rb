@@ -5,7 +5,7 @@ class CodesController < ApplicationController
   def index
     @codes = Code.all
 
-    render json: @codes, :include =>[:product]
+    render json: @codes, :include =>[:product => {:include => [:category]}]
   end
 
   # GET /codes/1
