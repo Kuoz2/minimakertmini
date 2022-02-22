@@ -19,16 +19,7 @@ q2 = Brand.create!(
 )
 q4 = Provider.create!(
                   :nombre_provider=> "poma",
-                  :rut_provider => 172463703,
-                  :web_provider => "dnaskjdasjk",
-                  :detalle_provider => "ndaskjnd",
-                  :direccion_provider => "djnaskjds",
-                  :comuna_provider => "calama",
-                  :telefono_provider => 516516,
-                  :telefono_persona_provider => 11616,
-                  :correo_provider => "kdasndlsa@dasdlsan.com",
-                  :contabilidad_provider => 45616,
-                  :banco_provider => "Estado"
+                 
 )
 
 q3 = Product.create!(
