@@ -50,17 +50,17 @@ class CategoriesController < ApplicationController
     
   # PATCH/PUT /categories/1
   def update
-    if Rails.cache.read('PCAnuverificado' ) == 'existe'
-      Rails.cache.delete('PCAnuverificado' )
+  #  if Rails.cache.read('PCAnuverificado' ) == 'existe'
+   #   Rails.cache.delete('PCAnuverificado' )
       if @category.update(category_params)
       render json: {actualizado: 'correctamente'}
     else
       render json: @category.errors, status: :unprocessable_entity
     end
-  else
-    render json: {resive: 'no tiene permiso'}
+  #else
+   # render json: {resive: 'no tiene permiso'}
 
-  end
+  #end
 
   end
 

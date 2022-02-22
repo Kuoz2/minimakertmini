@@ -80,3 +80,11 @@ q5 = DateExpiration.create!(
     product_id: 1
 )
 
+q6 = Code.create!(
+    :hora_emision => "30-20-10",
+     :product_id => 1,
+      :cod_market => "2",
+       :market => true, 
+       :panaderia => false,
+        :cod_panaderia => "2"
+)

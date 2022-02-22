@@ -364,4 +364,20 @@ end
 
     end
 
+    def update_para
+      params.require(:product).permit(:pcodigo,
+                                      :pactivado,
+                                      :pdescripcion,
+                                      :pdetalle,
+                                      :ppicture,
+                                      :pvalor,
+                                      :precio_provider,
+                                      :piva,
+                                      :pvneto,
+                                      :pvactivacioncatalogo,
+                                      :utilidad,
+                                      :margen
+                                    )
+    end
+
 end

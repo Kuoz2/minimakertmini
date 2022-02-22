@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :codes
+  resources :codes do 
+    collection do 
+      get 'last_code'
+    end
+  end
   resources :quick_sales do 
     collection do
       get 'ventarapida_fechas'
