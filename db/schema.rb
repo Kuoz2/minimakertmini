@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_22_015740) do
+ActiveRecord::Schema.define(version: 2022_02_24_151159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,6 +154,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_015740) do
     t.bigint "date_expirations_id"
     t.integer "utilidad", default: 0
     t.integer "margen", default: 0
+    t.bigint "preciva", default: 0
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["date_expirations_id"], name: "index_products_on_date_expirations_id"
