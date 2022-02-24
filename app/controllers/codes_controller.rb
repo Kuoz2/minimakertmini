@@ -41,7 +41,7 @@ class CodesController < ApplicationController
   def last_code
     @codes = Code.all
 
-    render json: @codes
+    render json: @codes.last
   end
 
   private

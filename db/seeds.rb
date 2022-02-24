@@ -23,7 +23,7 @@ q4 = Provider.create!(
 )
 
 q3 = Product.create!(
-    :pcodigo => 112312321,
+    :pcodigo => "0112312321",
     :pactivado => true,
     :pdescripcion => "hola",
     :pdetalle => "un detalle",
