@@ -304,7 +304,6 @@ end
 
     obtener_productos.includes(:date_expiration).map do |d|
         if d.date_expiration.fecha_vencimiento[5,2] == estemes then
-          if not d.date_expiration.fecha_vencimiento.nil? == true then
             tomar_producto_fecha.push({descripcion: d.pdescripcion, 
               marca: d.brand.bnombre, categoria: d.category.cnombre,
                fecha_vencimiento: d.date_expiration.fecha_vencimiento})
@@ -313,12 +312,15 @@ end
     end
     obtener_fecha.includes(:product).where.not(product_id:0).map do |x|
       if x.fecha_vencimiento[5,2] == estemes then
+        if not d.date_expiration.fecha_vencimiento.nil? == true then
+
         tomar_producto_fecha.push(
           {fecha_vencimiento2: x.fecha_vencimiento, 
             descripcion2: x.product.pdescripcion,
               marca2: x.product.brand.bnombre,
                 categoria2: x.product.category.cnombre})
       end
+    end
     end
       @fechas_y_productos = tomar_producto_fecha
 
