@@ -37,7 +37,7 @@ q3 = Product.create!(
     :piva => 19,
     :brand_id => 1,
     :pvneto => 1000,
-    :fecha_vencimiento => "2021-08-18",
+    :fecha_vencimiento => "",
     :stock => Stock.create!(
     :pstock => 100,
     :pstockcatalogo => 1,
@@ -46,7 +46,7 @@ q3 = Product.create!(
 
 ),
      :date_expiration => DateExpiration.create!(
-     :fecha_vencimiento => "2021-08-18",
+     :fecha_vencimiento => "",
      :cambio_fecha => false,
      :cantidad_cambiadas => 1,
      :stock_expiration => 10,
