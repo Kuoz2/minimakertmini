@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
 
   #GET los elementos de los productos que se deben gestionar
   def inventario_gestionable
-    render json: @variables_gestionables
+      render json: @variables_gestionables
   end
 
   #GET tomar por meses los productos vencidos
@@ -304,6 +304,7 @@ end
 
     obtener_productos.includes(:date_expiration).map do |d|
         if d.date_expiration.fecha_vencimiento[5,2] == estemes then
+          if not d.date_expiration.fecha_vencimiento.nil? == true then
             tomar_producto_fecha.push({descripcion: d.pdescripcion, 
               marca: d.brand.bnombre, categoria: d.category.cnombre,
                fecha_vencimiento: d.date_expiration.fecha_vencimiento})
@@ -320,8 +321,10 @@ end
               marca2: x.product.brand.bnombre,
                 categoria2: x.product.category.cnombre})
       
+          
+        end
      end
-    end
+  end
       @fechas_y_productos = tomar_producto_fecha
 
   end
