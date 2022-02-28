@@ -303,10 +303,12 @@ end
     estemes = Time.now.strftime("%F")[5,2]
 
     obtener_productos.includes(:date_expiration).map do |d|
-          if d.date_expiration.fecha_vencimiento[5,2] === estemes && d.date_expiration.fecha_vencimiento.nil? == true then
+        if d.date_expiration.fecha_vencimiento[5,2] === estemes then
+          if not d.date_expiration.fecha_vencimiento.nil? == true then
             tomar_producto_fecha.push({descripcion: d.pdescripcion, 
               marca: d.brand.bnombre, categoria: d.category.cnombre,
                fecha_vencimiento: d.date_expiration.fecha_vencimiento})
+            end
           end
     end
     obtener_fecha.includes(:product).where.not(product_id:0).map do |x|
