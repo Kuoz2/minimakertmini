@@ -319,7 +319,7 @@ end
             descripcion2: x.product.pdescripcion,
               marca2: x.product.brand.bnombre,
                 categoria2: x.product.category.cnombre})
-      end
+      
     end
     end
       @fechas_y_productos = tomar_producto_fecha
