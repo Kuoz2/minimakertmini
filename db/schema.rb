@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_151159) do
+ActiveRecord::Schema.define(version: 2022_03_29_172929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2022_02_24_151159) do
 
   create_table "categories", force: :cascade do |t|
     t.string "cnombre"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
   end
 
   create_table "codes", force: :cascade do |t|
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2022_02_24_151159) do
     t.bigint "product_id"
     t.bigint "cod_panaderia", default: 1
     t.bigint "cod_market", default: 1
+    t.bigint "pvalor", default: 0
+    t.boolean "voucher_vendido", default: false
     t.index ["product_id"], name: "index_codes_on_product_id"
   end
 
@@ -139,9 +141,9 @@ ActiveRecord::Schema.define(version: 2022_02_24_151159) do
     t.binary "ppicture"
     t.integer "pvalor"
     t.boolean "pvactivacioncatalogo"
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id"
+    t.datetime "created_at", precision: 6
+    t.datetime "updated_at", precision: 6
     t.boolean "pactivado"
     t.bigint "stock_id"
     t.bigint "provider_id"
