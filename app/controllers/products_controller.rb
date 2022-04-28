@@ -106,6 +106,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def envio_email_vencidos
+    ApplicationMailer.new_envio_email.deliver_now
+  end
+
 
   # PATCH/PUT /products/1
   def update

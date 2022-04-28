@@ -121,6 +121,7 @@ Rails.application.routes.draw do
       get 'codigos_debarra'
       post 'verif_befores_save'
       post 'verif_before_update'
+      post 'envio_email_vencidos'
     end
   end
 

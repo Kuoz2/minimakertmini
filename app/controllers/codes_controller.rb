@@ -1,6 +1,19 @@
 class CodesController < ApplicationController
   before_action :set_code, only: [:show, :update, :destroy]
 
+#Solo regreasa los valores no vendidos
+  def no_mitidos
+    @nCodes = Code.all
+    @nCodes.each { |d| 
+      unless d.voucher_vendido == false 
+        render json: []
+      else
+        render json: d
+      end
+    }
+
+  end
+  
   # GET /codes
   def index
     @codes = Code.all
@@ -23,6 +36,7 @@ class CodesController < ApplicationController
       render json: @code.errors, status: :unprocessable_entity
     end
   end
+  
 
   # PATCH/PUT /codes/1
   def update
